@@ -1,0 +1,319 @@
+/* Footer Container */
+.footer {
+  background: #1b5e20;
+  color: #ffffff;
+  margin-top: auto;
+  padding-bottom: 0;
+  border-top: 4px solid #0d3818;
+}
+
+/* Main Content Grid */
+.footerContent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Logo Section */
+.logoSection {
+  margin-bottom: 1rem;
+}
+
+.logoText {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 0.5px;
+}
+
+.tagline {
+  font-size: 0.85rem;
+  color: #c8e6c9;
+  margin: 0;
+  font-style: italic;
+}
+
+.aboutText {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #e8f5e9;
+  margin: 1rem 0 1.5rem 0;
+}
+
+/* Social Links */
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: auto;
+}
+
+.socialIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.socialIcon:hover {
+  background: #4caf50;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Column Title */
+.columnTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #4caf50;
+  display: inline-block;
+}
+
+/* Link Lists */
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.link {
+  color: #e8f5e9;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+}
+
+.link:hover {
+  color: #4caf50;
+  padding-left: 0.5rem;
+}
+
+.link::before {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #4caf50;
+  transition: width 0.3s ease;
+}
+
+.link:hover::before {
+  width: 100%;
+}
+
+/* Contact List */
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contactItem {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.contactIcon {
+  color: #4caf50;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.contactLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4caf50;
+  margin: 0 0 0.25rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.contactLink {
+  color: #e8f5e9;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  margin: 0;
+}
+
+.contactLink:hover {
+  color: #4caf50;
+  text-decoration: underline;
+}
+
+.contactText {
+  color: #e8f5e9;
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Copyright Bar */
+.copyrightBar {
+  background: #0d3818;
+  padding: 1.5rem 2rem;
+  border-top: 1px solid rgba(76, 175, 80, 0.2);
+}
+
+.copyrightText {
+  color: #c8e6c9;
+  text-align: center;
+  font-size: 0.9rem;
+  margin: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.copyrightLink {
+  color: #4caf50;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin: 0 0.25rem;
+}
+
+.copyrightLink:hover {
+  color: #81c784;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .footerContent {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .footerContent {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .columnTitle {
+    font-size: 1rem;
+  }
+
+  .logoSection {
+    margin-bottom: 0.5rem;
+  }
+
+  .logoText {
+    font-size: 1.3rem;
+  }
+
+  .aboutText {
+    font-size: 0.9rem;
+  }
+
+  .socialLinks {
+    flex-wrap: wrap;
+  }
+
+  .copyrightText {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding-bottom: 0;
+  }
+
+  .footerContent {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .columnTitle {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .logoText {
+    font-size: 1.2rem;
+  }
+
+  .tagline {
+    font-size: 0.8rem;
+  }
+
+  .aboutText {
+    font-size: 0.85rem;
+    margin: 0.75rem 0 1rem 0;
+  }
+
+  .linkList {
+    gap: 0.5rem;
+  }
+
+  .link {
+    font-size: 0.9rem;
+  }
+
+  .contactItem {
+    gap: 0.5rem;
+  }
+
+  .contactIcon {
+    font-size: 1rem;
+  }
+
+  .contactLabel {
+    font-size: 0.8rem;
+  }
+
+  .contactLink,
+  .contactText {
+    font-size: 0.9rem;
+  }
+
+  .socialLinks {
+    justify-content: flex-start;
+  }
+
+  .socialIcon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .copyrightBar {
+    padding: 1rem;
+  }
+
+  .copyrightText {
+    font-size: 0.8rem;
+  }
+}

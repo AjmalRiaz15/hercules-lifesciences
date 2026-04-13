@@ -1,0 +1,27 @@
+.button {
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.65rem 1.25rem;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.primary {
+  background: #f47b20;
+  color: #ffffff;
+}
+
+.secondary {
+  background: #1f5a2f;
+  color: #ffffff;
+}

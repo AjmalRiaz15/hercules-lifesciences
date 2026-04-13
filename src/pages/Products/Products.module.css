@@ -1,0 +1,17 @@
+.page {
+  display: grid;
+  gap: 1rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e3eee4;
+  border-radius: 12px;
+  padding: 1rem;
+}
