@@ -1,16 +1,112 @@
-import { useAppContext } from '../../context/AppContext';
+import { useState, useEffect } from 'react';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import styles from './Home.module.css';
 
 function Home() {
-  const { companyName } = useAppContext();
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAutoPlay, setIsAutoPlay] = useState(true);
+
+  const slides = [
+    {
+      image: 'https://images.unsplash.com/photo-1574943320219-553eb213f72d',
+      heading: 'Gandum ki Double Pedawar',
+      subheading: 'Premium Wheat Seeds for Maximum Yield',
+      button: 'Shop Now'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854',
+      heading: 'Behtareen Cotton Seeds',
+      subheading: 'High-Quality Cotton for Better Returns',
+      button: 'Explore'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399',
+      heading: 'Zameen ki Taqat Barhao',
+      subheading: 'Advanced Fertilizers for Fertile Soil',
+      button: 'Learn More'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449',
+      heading: 'Fasal ko Mehfooz Rakho',
+      subheading: 'Effective Pest Protection Solutions',
+      button: 'Get Protected'
+    }
+  ];
+
+  useEffect(() => {
+    if (!isAutoPlay) return;
+
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 4000);
+
+    return () => clearInterval(timer);
+  }, [isAutoPlay, slides.length]);
+
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+  };
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+    setIsAutoPlay(false);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    setIsAutoPlay(false);
+  };
 
   return (
-    <section className={styles.page}>
-      <h1>Welcome to {companyName}</h1>
-      <p>
-        We help farmers improve yield and resilience with research-backed products
-        and precision agriculture guidance.
-      </p>
+    <section
+      className={styles.slider}
+      onMouseEnter={() => setIsAutoPlay(false)}
+      onMouseLeave={() => setIsAutoPlay(true)}
+    >
+      {/* Slides */}
+      {slides.map((slide, index) => (
+        <div
+          key={index}
+          className={`${styles.slide} ${index === currentSlide ? styles.active : ''}`}
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${slide.image})`
+          }}
+        >
+          <div className={styles.slideContent}>
+            <h1 className={styles.slideHeading}>{slide.heading}</h1>
+            <p className={styles.slideSubheading}>{slide.subheading}</p>
+            <button className={styles.slideButton}>{slide.button}</button>
+          </div>
+        </div>
+      ))}
+
+      {/* Navigation Arrows */}
+      <button
+        onClick={prevSlide}
+        className={styles.navButton}
+        aria-label="Previous slide"
+      >
+        <FaChevronLeft size={24} />
+      </button>
+      <button
+        onClick={nextSlide}
+        className={`${styles.navButton} ${styles.rightArrow}`}
+        aria-label="Next slide"
+      >
+        <FaChevronRight size={24} />
+      </button>
+
+      {/* Dot Indicators */}
+      <div className={styles.dotsContainer}>
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goToSlide(index)}
+            className={`${styles.dot} ${index === currentSlide ? styles.activeDot : ''}`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
     </section>
   );
 }

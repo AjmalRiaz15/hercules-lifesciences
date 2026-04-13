@@ -5,6 +5,14 @@
   margin-top: auto;
   padding-bottom: 0;
   border-top: 4px solid #0d3818;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.footer.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Main Content Grid */
@@ -194,9 +202,15 @@
 
 .copyrightLink {
   color: #4caf50;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
   text-decoration: none;
   transition: color 0.3s ease;
   margin: 0 0.25rem;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 .copyrightLink:hover {

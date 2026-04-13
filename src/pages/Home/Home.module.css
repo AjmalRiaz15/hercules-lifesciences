@@ -1,4 +1,259 @@
-.page {
-  display: grid;
-  gap: 1rem;
+/* Slider Container */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #000000;
+}
+
+/* Individual Slides */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+/* Slide Content */
+.slideContent {
+  text-align: center;
+  color: #ffffff;
+  z-index: 10;
+  padding: 2rem;
+  max-width: 600px;
+  animation: slideInContent 0.8s ease-out;
+}
+
+@keyframes slideInContent {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slideHeading {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  letter-spacing: 0.5px;
+}
+
+.slideSubheading {
+  font-size: 1.3rem;
+  margin: 0 0 2rem 0;
+  color: #e3f2fd;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 300;
+}
+
+.slideButton {
+  background: #4caf50;
+  color: #ffffff;
+  border: none;
+  padding: 0.9rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.slideButton:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.slideButton:active {
+  transform: translateY(0);
+}
+
+/* Navigation Arrows */
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.navButton:hover {
+  background: rgba(76, 175, 80, 0.8);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.navButton:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.rightArrow {
+  right: 30px;
+  left: auto;
+}
+
+.navButton:not(.rightArrow) {
+  left: 30px;
+}
+
+/* Dot Indicators */
+.dotsContainer {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.75rem;
+  z-index: 20;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: scale(1.2);
+}
+
+.activeDot {
+  background: #4caf50;
+  width: 14px;
+  height: 14px;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.6);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .slideHeading {
+    font-size: 2.5rem;
+  }
+
+  .slideSubheading {
+    font-size: 1.1rem;
+  }
+
+  .slideButton {
+    padding: 0.8rem 1.8rem;
+    font-size: 1rem;
+  }
+
+  .navButton {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+
+  .navButton:not(.rightArrow) {
+    left: 15px;
+  }
+
+  .rightArrow {
+    right: 15px;
+  }
+
+  .dotsContainer {
+    bottom: 20px;
+    gap: 0.5rem;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .activeDot {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slideContent {
+    padding: 1rem;
+    max-width: 90%;
+  }
+
+  .slideHeading {
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .slideSubheading {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .slideButton {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .navButton {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+
+  .navButton:not(.rightArrow) {
+    left: 10px;
+  }
+
+  .rightArrow {
+    right: 10px;
+  }
+
+  .dotsContainer {
+    bottom: 15px;
+    gap: 0.4rem;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .activeDot {
+    width: 10px;
+    height: 10px;
+  }
 }

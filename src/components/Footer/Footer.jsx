@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useRef, useEffect, useState } from 'react';
 import {
   FaFacebook,
   FaTwitter,
@@ -11,7 +12,32 @@ import {
 import styles from './Footer.module.css';
 
 function Footer() {
+  const footerRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
   const currentYear = new Date().getFullYear();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const footerElement = footerRef.current;
+    if (footerElement) {
+      observer.observe(footerElement);
+    }
+
+    return () => {
+      if (footerElement) {
+        observer.unobserve(footerElement);
+      }
+    };
+  }, []);
 
   const quickLinks = [
     { label: 'Home', to: '/' },
@@ -23,11 +49,11 @@ function Footer() {
   ];
 
   const products = [
-    { label: 'Wheat Seeds', href: '#' },
-    { label: 'Cotton Seeds', href: '#' },
-    { label: 'Fertilizers', href: '#' },
-    { label: 'Pesticides', href: '#' },
-    { label: 'Equipment', href: '#' }
+    { label: 'Wheat Seeds', url: '/products' },
+    { label: 'Cotton Seeds', url: '/products' },
+    { label: 'Fertilizers', url: '/products' },
+    { label: 'Pesticides', url: '/products' },
+    { label: 'Equipment', url: '/products' }
   ];
 
   const socialLinks = [
@@ -38,16 +64,16 @@ function Footer() {
   ];
 
   return (
-    <footer className={styles.footer}>
+    <footer ref={footerRef} className={`${styles.footer} ${isVisible ? styles.visible : ''}`}>
       <div className={styles.footerContent}>
         {/* Logo & About Section */}
         <div className={styles.column}>
           <div className={styles.logoSection}>
-            <h3 className={styles.logoText}>AgroVerde</h3>
+            <h3 className={styles.logoText}>Hercules Life Sciences</h3>
             <p className={styles.tagline}>Cultivating Excellence in Agriculture</p>
           </div>
           <p className={styles.aboutText}>
-            AgroVerde is committed to providing premium agricultural products and solutions 
+            Hercules is committed to providing premium agricultural products and solutions 
             to farmers across Pakistan, ensuring sustainable farming practices and better yields.
           </p>
           <div className={styles.socialLinks}>
@@ -88,9 +114,9 @@ function Footer() {
           <ul className={styles.linkList}>
             {products.map((product, index) => (
               <li key={index}>
-                <a href={product.href} className={styles.link}>
+                <Link to={product.url} className={styles.link}>
                   {product.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -114,8 +140,8 @@ function Footer() {
               <FaEnvelope className={styles.contactIcon} />
               <div>
                 <p className={styles.contactLabel}>Email</p>
-                <a href="mailto:info@agroverde.com" className={styles.contactLink}>
-                  info@agroverde.com
+                <a href="mailto:herculeslifesciences@gmail.com" className={styles.contactLink}>
+                  herculeslifesciences@gmail.com
                 </a>
               </div>
             </div>
@@ -125,7 +151,7 @@ function Footer() {
               <div>
                 <p className={styles.contactLabel}>Address</p>
                 <p className={styles.contactText}>
-                  Islamabad, Punjab<br />
+                  Multan, Punjab<br />
                   Pakistan
                 </p>
               </div>
@@ -137,10 +163,10 @@ function Footer() {
       {/* Copyright Bar */}
       <div className={styles.copyrightBar}>
         <p className={styles.copyrightText}>
-          &copy; {currentYear} AgroVerde. All rights reserved. | 
-          <a href="#" className={styles.copyrightLink}> Privacy Policy </a>
+          &copy; {currentYear} Hercules Life Sciences. All rights reserved. | 
+          <button className={styles.copyrightLink}> Privacy Policy </button>
           |
-          <a href="#" className={styles.copyrightLink}> Terms of Service</a>
+          <button className={styles.copyrightLink}> Terms of Service</button>
         </p>
       </div>
     </footer>
