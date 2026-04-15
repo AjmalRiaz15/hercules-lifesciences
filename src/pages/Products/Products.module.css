@@ -1,6 +1,182 @@
 .page {
   display: grid;
+  gap: 2rem;
+}
+
+.hero {
+  align-items: end;
+  background: linear-gradient(135deg, #123024 0%, #1f4b32 50%, #4d7f3a 100%);
+  border-radius: 28px;
+  color: #f8fbf5;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1.5fr 1fr;
+  padding: 2rem;
+}
+
+.kicker {
+  color: #d6f2c7;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
+}
+
+.heroCopy h1 {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.05;
+  margin: 0;
+}
+
+.intro {
+  color: rgba(248, 251, 245, 0.86);
+  font-size: 1.02rem;
+  line-height: 1.7;
+  margin: 1rem 0 0;
+  max-width: 52ch;
+}
+
+.heroStats {
+  display: grid;
   gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.statCard {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 20px;
+  display: grid;
+  gap: 0.35rem;
+  padding: 1.1rem;
+}
+
+.statValue {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.statLabel {
+  color: rgba(248, 251, 245, 0.8);
+  font-size: 0.95rem;
+}
+
+.categoryGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.categoryCard {
+  background: #ffffff;
+  border: 1px solid #dfe8de;
+  border-radius: 22px;
+  box-shadow: 0 12px 30px rgba(22, 48, 31, 0.08);
+  display: grid;
+  gap: 1rem;
+  padding: 1.25rem;
+}
+
+.categoryHeader {
+  align-items: center;
+  display: flex;
+  gap: 0.9rem;
+}
+
+.iconWrap {
+  align-items: center;
+  border-radius: 16px;
+  display: inline-flex;
+  font-size: 1.2rem;
+  height: 48px;
+  justify-content: center;
+  width: 48px;
+}
+
+.categoryHeader h2,
+.categorySection h2,
+.card h3 {
+  margin: 0;
+}
+
+.categoryHeader p,
+.categoryText,
+.cardPrice {
+  margin: 0;
+}
+
+.categoryText {
+  color: #516152;
+  line-height: 1.6;
+}
+
+.categoryLink {
+  align-items: center;
+  color: #1f4b32;
+  display: inline-flex;
+  gap: 0.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.categoryLink svg {
+  font-size: 0.9rem;
+}
+
+.nutrition .iconWrap {
+  background: #e9f8e3;
+  color: #4d7f3a;
+}
+
+.stimulant .iconWrap {
+  background: #eef7ea;
+  color: #2f7a4a;
+}
+
+.fungicide .iconWrap {
+  background: #edf5ea;
+  color: #1d5d3a;
+}
+
+.herbicide .iconWrap {
+  background: #f3f7e8;
+  color: #6f8f22;
+}
+
+.catalog {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.categorySection {
+  display: grid;
+  gap: 1rem;
+}
+
+.sectionHeader {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.sectionLabel {
+  color: #4d7f3a;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  margin: 0 0 0.35rem;
+  text-transform: uppercase;
+}
+
+.sectionCount {
+  background: #e8f2e5;
+  border-radius: 999px;
+  color: #245033;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.55rem 0.9rem;
 }
 
 .grid {
@@ -10,8 +186,75 @@
 }
 
 .card {
-  background: #ffffff;
-  border: 1px solid #e3eee4;
-  border-radius: 12px;
-  padding: 1rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f7fbf5 100%);
+  border: 1px solid #dfe8de;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(22, 48, 31, 0.06);
+  display: grid;
+  gap: 0.85rem;
+  min-height: 150px;
+  padding: 1.1rem;
+}
+
+.cardTop {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cardBadge {
+  background: #edf5ea;
+  border-radius: 999px;
+  color: #4d7f3a;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.35rem 0.7rem;
+}
+
+.cardIcon {
+  color: #89a07b;
+  font-size: 1rem;
+}
+
+.card h3 {
+  color: #16301f;
+  font-size: 1.15rem;
+}
+
+.cardPrice {
+  color: #1f4b32;
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-top: auto;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .heroStats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    gap: 1.25rem;
+  }
+
+  .hero {
+    border-radius: 22px;
+    padding: 1.35rem;
+  }
+
+  .heroStats {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionHeader {
+    align-items: start;
+    flex-direction: column;
+  }
 }

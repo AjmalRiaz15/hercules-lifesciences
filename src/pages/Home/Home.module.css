@@ -1,4 +1,9 @@
 /* Slider Container */
+.homePage {
+  display: grid;
+  gap: 2rem;
+}
+
 .slider {
   position: relative;
   width: 100%;
@@ -162,6 +167,79 @@
   box-shadow: 0 0 8px rgba(76, 175, 80, 0.6);
 }
 
+.productsSection {
+  display: grid;
+  gap: 1.25rem;
+  padding: 0 0 1rem;
+}
+
+.sectionHeader {
+  align-items: end;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.sectionKicker {
+  color: #4d7f3a;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  margin: 0 0 0.5rem;
+  text-transform: uppercase;
+}
+
+.sectionHeader h2 {
+  color: #1e2a1f;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  margin: 0;
+}
+
+.sectionLink {
+  align-items: center;
+  color: #1f4b32;
+  display: inline-flex;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.categoryGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.categoryCard {
+  background: linear-gradient(180deg, #ffffff 0%, #f7fbf5 100%);
+  border: 1px solid #dfe8de;
+  border-radius: 22px;
+  box-shadow: 0 10px 24px rgba(22, 48, 31, 0.06);
+  display: grid;
+  gap: 0.75rem;
+  padding: 1.25rem;
+}
+
+.categoryCount {
+  color: #4d7f3a;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.categoryCard h3 {
+  color: #16301f;
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.categoryCard p {
+  color: #516152;
+  line-height: 1.6;
+  margin: 0;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .slideHeading {
@@ -255,5 +333,10 @@
   .activeDot {
     width: 10px;
     height: 10px;
+  }
+
+  .sectionHeader {
+    align-items: start;
+    flex-direction: column;
   }
 }

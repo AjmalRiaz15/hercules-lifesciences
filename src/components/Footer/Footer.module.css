@@ -1,10 +1,10 @@
 /* Footer Container */
 .footer {
-  background: #1b5e20;
+  background: linear-gradient(135deg, #123024 0%, #1f4b32 50%, #4d7f3a 100%);
   color: #ffffff;
   margin-top: auto;
   padding-bottom: 0;
-  border-top: 4px solid #0d3818;
+  border-top: 4px solid rgba(255, 255, 255, 0.1);
   opacity: 0;
   transform: translateY(60px);
   transition: opacity 0.6s ease, transform 0.6s ease;
@@ -186,9 +186,9 @@
 
 /* Copyright Bar */
 .copyrightBar {
-  background: #0d3818;
+  background: rgba(10, 28, 18, 0.45);
   padding: 1.5rem 2rem;
-  border-top: 1px solid rgba(76, 175, 80, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .copyrightText {
@@ -201,7 +201,7 @@
 }
 
 .copyrightLink {
-  color: #4caf50;
+  color: #d6f2c7;
   background: none;
   border: none;
   padding: 0;
@@ -214,7 +214,7 @@
 }
 
 .copyrightLink:hover {
-  color: #81c784;
+  color: #ffffff;
   text-decoration: underline;
 }
 
