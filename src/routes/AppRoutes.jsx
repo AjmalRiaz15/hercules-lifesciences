@@ -6,9 +6,11 @@ import AboutUs from '../pages/AboutUs/AboutUs';
 import ContactUs from '../pages/ContactUs/ContactUs';
 import OurMission from '../pages/OurMission/OurMission';
 import useScrollTop from '../hooks/useScrollTop';
+import useScrollPageNavigation from '../hooks/useScrollPageNavigation';
 
 function ScrollHandler() {
   useScrollTop();
+  useScrollPageNavigation();
   return null;
 }
 

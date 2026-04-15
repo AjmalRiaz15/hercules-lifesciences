@@ -86,7 +86,7 @@ function Products() {
               <p className={styles.categoryText}>{category.description}</p>
 
               <a className={styles.categoryLink} href={`#${category.name.toLowerCase().replace(/\s+/g, '-')}`}>
-                View category <FaArrowRight />
+                View more <FaArrowRight />
               </a>
             </article>
           );

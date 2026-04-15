@@ -52,7 +52,7 @@ function Home() {
 
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 4000);
+    }, 2000);
 
     return () => clearInterval(timer);
   }, [isAutoPlay, slides.length]);

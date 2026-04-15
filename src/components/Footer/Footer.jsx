@@ -42,7 +42,7 @@ function Footer() {
   const quickLinks = [
     { label: 'Home', to: '/' },
     { label: 'Products', to: '/products' },
-    { label: 'Seeds', to: '/seeds' },
+    { label: 'Crops', to: '/crops' },
     { label: 'About Us', to: '/about-us' },
     { label: 'Our Mission', to: '/our-mission' },
     { label: 'Contact Us', to: '/contact-us' }
@@ -53,7 +53,6 @@ function Footer() {
     { label: 'Cotton Seeds', url: '/products' },
     { label: 'Fertilizers', url: '/products' },
     { label: 'Pesticides', url: '/products' },
-    { label: 'Equipment', url: '/products' }
   ];
 
   const socialLinks = [
