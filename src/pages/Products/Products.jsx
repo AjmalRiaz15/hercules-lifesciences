@@ -1,64 +1,55 @@
+import { useMemo } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import { productsData } from '../../data/productsData';
-import { formatCurrency } from '../../utils/helpers';
-import {
-  FaSeedling,
-  FaLeaf,
-  FaShieldAlt,
-  FaFlask,
-  FaBoxOpen,
-  FaArrowRight
-} from 'react-icons/fa';
+import { productCategories, getCategoryBySlug } from '../../data/productCategories';
+import { FaBug, FaShieldAlt, FaFlask, FaLeaf, FaSeedling, FaHome } from 'react-icons/fa';
 import styles from './Products.module.css';
 
-const categoryMeta = [
-  {
-    name: 'Crop Nutrition',
-    icon: FaLeaf,
-    description: 'Balanced inputs that help crops grow stronger and perform better.',
-    accent: 'nutrition'
-  },
-  {
-    name: 'Bio Stimulant',
-    icon: FaSeedling,
-    description: 'Growth-support products designed to improve vigor and stress tolerance.',
-    accent: 'stimulant'
-  },
-  {
-    name: 'Fungicide',
-    icon: FaShieldAlt,
-    description: 'Protection solutions that defend crops against fungal pressure.',
-    accent: 'fungicide'
-  },
-  {
-    name: 'Herbicide',
-    icon: FaFlask,
-    description: 'Selective weed control products for cleaner, healthier fields.',
-    accent: 'herbicide'
-  }
-];
-
-const groupedProducts = categoryMeta.map((category) => ({
-  ...category,
-  products: productsData.filter((product) => product.category === category.name)
-}));
+const categoryIcons = {
+  Insecticide: FaBug,
+  Fungicide: FaShieldAlt,
+  Herbicide: FaFlask,
+  Fertilizer: FaLeaf,
+  Granious: FaSeedling,
+  Household: FaHome
+};
 
 function Products() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeCategorySlug = searchParams.get('type') || productCategories[0].slug;
+
+  const activeCategoryMeta = useMemo(
+    () => getCategoryBySlug(activeCategorySlug) || productCategories[0],
+    [activeCategorySlug]
+  );
+
+  const filteredProducts = useMemo(
+    () => productsData.filter((product) => product.category === activeCategoryMeta.name),
+    [activeCategoryMeta.name]
+  );
+
+  const selectedCount = filteredProducts.length;
+
+  const handleCategorySelect = (categorySlug) => {
+    setSearchParams({ type: categorySlug });
+  };
+
   return (
     <section className={styles.page}>
       <header className={styles.hero}>
         <div className={styles.heroCopy}>
           <p className={styles.kicker}>Product Categories</p>
-          <h1>Browse products by category</h1>
+          <h1>Browse products by type</h1>
           <p className={styles.intro}>
-            A clearer catalog view for farmers and distributors, grouped by product type so the
-            right solution is easier to find.
+            Select a medicine type from the navbar or here to see matching compact cards with
+            image, short description, and a read more view for the full product detail.
           </p>
         </div>
 
         <div className={styles.heroStats}>
           <div className={styles.statCard}>
-            <span className={styles.statValue}>{categoryMeta.length}</span>
-            <span className={styles.statLabel}>Core categories</span>
+            <span className={styles.statValue}>{productCategories.length}</span>
+            <span className={styles.statLabel}>Core types</span>
           </div>
           <div className={styles.statCard}>
             <span className={styles.statValue}>{productsData.length}</span>
@@ -67,62 +58,68 @@ function Products() {
         </div>
       </header>
 
-      <div className={styles.categoryGrid}>
-        {groupedProducts.map((category) => {
-          const Icon = category.icon;
+      <div className={styles.filterRow}>
+        {productCategories.map((category) => {
+          const Icon = categoryIcons[category.name] || FaLeaf;
+          const isActive = activeCategorySlug === category.slug;
+          const count = productsData.filter((product) => product.category === category.name).length;
 
           return (
-            <article key={category.name} className={`${styles.categoryCard} ${styles[category.accent]}`}>
+            <button
+              key={category.name}
+              type="button"
+              onClick={() => handleCategorySelect(category.slug)}
+              className={`${styles.categoryCard} ${styles[category.accent]} ${isActive ? styles.activeCategoryCard : ''}`}
+            >
               <div className={styles.categoryHeader}>
                 <span className={styles.iconWrap}>
                   <Icon />
                 </span>
                 <div>
                   <h2>{category.name}</h2>
-                  <p>{category.products.length} products</p>
+                  <p>{count} products</p>
                 </div>
               </div>
 
               <p className={styles.categoryText}>{category.description}</p>
 
-              <a className={styles.categoryLink} href={`#${category.name.toLowerCase().replace(/\s+/g, '-')}`}>
-                View more <FaArrowRight />
-              </a>
-            </article>
+              <span className={styles.categoryLink}>View products</span>
+            </button>
           );
         })}
       </div>
 
-      <div className={styles.catalog}>
-        {groupedProducts.map((category) => (
-          <section
-            key={category.name}
-            id={category.name.toLowerCase().replace(/\s+/g, '-')}
-            className={styles.categorySection}
-          >
-            <div className={styles.sectionHeader}>
-              <div>
-                <p className={styles.sectionLabel}>Category</p>
-                <h2>{category.name}</h2>
-              </div>
-              <span className={styles.sectionCount}>{category.products.length} items</span>
-            </div>
+      <section className={styles.catalog}>
+        <div className={styles.sectionHeader}>
+          <div>
+            <p className={styles.sectionLabel}>Selected Type</p>
+            <h2>{activeCategoryMeta.name}</h2>
+            <p className={styles.sectionDescription}>{activeCategoryMeta.description}</p>
+          </div>
+          <span className={styles.sectionCount}>{selectedCount} items</span>
+        </div>
 
-            <div className={styles.grid}>
-              {category.products.map((product) => (
-                <article key={product.id} className={styles.card}>
-                  <div className={styles.cardTop}>
-                    <span className={styles.cardBadge}>{product.category}</span>
-                    <FaBoxOpen className={styles.cardIcon} />
-                  </div>
-                  <h3>{product.name}</h3>
-                  <p className={styles.cardPrice}>{formatCurrency(product.price)}</p>
-                </article>
-              ))}
-            </div>
-          </section>
-        ))}
-      </div>
+        <div className={styles.grid}>
+          {filteredProducts.map((product) => (
+            <article key={product.id} className={styles.card}>
+              <div className={styles.cardImageWrap}>
+                <img className={styles.cardImage} src={product.image} alt={product.name} />
+              </div>
+              <div className={styles.cardBody}>
+                <div className={styles.cardTop}>
+                  <span className={styles.cardBadge}>{product.category}</span>
+                  <span className={styles.cardType}>{product.category}</span>
+                </div>
+                <h3>{product.name}</h3>
+                <p className={styles.cardDescription}>{product.description}</p>
+                <Link className={styles.readMoreButton} to={`/products/${product.slug}`}>
+                  Read more
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
     </section>
   );
 }

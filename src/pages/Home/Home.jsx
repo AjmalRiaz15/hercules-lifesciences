@@ -5,10 +5,12 @@ import { productsData } from '../../data/productsData';
 import styles from './Home.module.css';
 
 const categoryMeta = [
-  { name: 'Crop Nutrition', description: 'Balanced inputs for stronger growth.' },
-  { name: 'Bio Stimulant', description: 'Support products that improve vigor.' },
+  { name: 'Insecticide', description: 'Fast crop protection against harmful insects.' },
   { name: 'Fungicide', description: 'Protection against fungal pressure.' },
-  { name: 'Herbicide', description: 'Selective solutions for weed control.' }
+  { name: 'Herbicide', description: 'Selective solutions for weed control.' },
+  { name: 'Fertilizer', description: 'Balanced inputs for stronger growth.' },
+  { name: 'Granious', description: 'Granular formulations for even field coverage.' },
+  { name: 'Household', description: 'Everyday protection products for home use.' }
 ];
 
 function Home() {

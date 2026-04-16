@@ -62,20 +62,36 @@
   font-size: 0.95rem;
 }
 
-.categoryGrid {
+.filterRow {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
 }
 
 .categoryCard {
+  appearance: none;
   background: #ffffff;
   border: 1px solid #dfe8de;
   border-radius: 22px;
   box-shadow: 0 12px 30px rgba(22, 48, 31, 0.08);
+  cursor: pointer;
   display: grid;
   gap: 1rem;
   padding: 1.25rem;
+  text-align: left;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.categoryCard:hover {
+  border-color: #b6cfaf;
+  box-shadow: 0 16px 34px rgba(22, 48, 31, 0.12);
+  transform: translateY(-2px);
+}
+
+.activeCategoryCard {
+  border-color: #4d7f3a;
+  box-shadow: 0 16px 34px rgba(31, 75, 50, 0.16);
+  transform: translateY(-1px);
 }
 
 .categoryHeader {
@@ -95,14 +111,14 @@
 }
 
 .categoryHeader h2,
-.categorySection h2,
 .card h3 {
   margin: 0;
 }
 
 .categoryHeader p,
 .categoryText,
-.cardPrice {
+.cardPrice,
+.cardDescription {
   margin: 0;
 }
 
@@ -112,26 +128,13 @@
 }
 
 .categoryLink {
-  align-items: center;
   color: #1f4b32;
-  display: inline-flex;
-  gap: 0.5rem;
   font-weight: 700;
-  text-decoration: none;
 }
 
-.categoryLink svg {
-  font-size: 0.9rem;
-}
-
-.nutrition .iconWrap {
-  background: #e9f8e3;
+.insecticide .iconWrap {
+  background: #edf7e8;
   color: #4d7f3a;
-}
-
-.stimulant .iconWrap {
-  background: #eef7ea;
-  color: #2f7a4a;
 }
 
 .fungicide .iconWrap {
@@ -144,14 +147,24 @@
   color: #6f8f22;
 }
 
+.fertilizer .iconWrap {
+  background: #eef7ea;
+  color: #2f7a4a;
+}
+
+.granious .iconWrap {
+  background: #f4f0e5;
+  color: #8a6d2d;
+}
+
+.household .iconWrap {
+  background: #edf2ec;
+  color: #2f5664;
+}
+
 .catalog {
   display: grid;
   gap: 1.5rem;
-}
-
-.categorySection {
-  display: grid;
-  gap: 1rem;
 }
 
 .sectionHeader {
@@ -170,6 +183,13 @@
   text-transform: uppercase;
 }
 
+.sectionDescription {
+  color: #516152;
+  line-height: 1.6;
+  margin: 0.45rem 0 0;
+  max-width: 56ch;
+}
+
 .sectionCount {
   background: #e8f2e5;
   border-radius: 999px;
@@ -182,18 +202,42 @@
 .grid {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(245px, 245px));
+  justify-content: start;
 }
 
 .card {
   background: linear-gradient(180deg, #ffffff 0%, #f7fbf5 100%);
   border: 1px solid #dfe8de;
-  border-radius: 18px;
+  border-radius: 16px;
   box-shadow: 0 8px 24px rgba(22, 48, 31, 0.06);
   display: grid;
-  gap: 0.85rem;
-  min-height: 150px;
-  padding: 1.1rem;
+  min-height: 390px;
+  overflow: hidden;
+}
+
+.cardImageWrap {
+  background: #e8efe4;
+  height: 0;
+  overflow: hidden;
+  padding-top: 72%;
+  position: relative;
+}
+
+.cardImage {
+  display: block;
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.cardBody {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0.95rem 1rem 1.05rem;
 }
 
 .cardTop {
@@ -207,26 +251,51 @@
   background: #edf5ea;
   border-radius: 999px;
   color: #4d7f3a;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  padding: 0.35rem 0.7rem;
+  padding: 0.3rem 0.6rem;
 }
 
-.cardIcon {
-  color: #89a07b;
-  font-size: 1rem;
+.cardType {
+  color: #8a9a87;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 .card h3 {
   color: #16301f;
-  font-size: 1.15rem;
+  font-size: 1rem;
 }
 
-.cardPrice {
-  color: #1f4b32;
-  font-size: 1.1rem;
-  font-weight: 800;
+.cardDescription {
+  color: #516152;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.readMoreButton {
   margin-top: auto;
+  width: fit-content;
+}
+
+.readMoreButton {
+  align-items: center;
+  background: #f47b20;
+  border-radius: 999px;
+  color: #ffffff;
+  display: inline-flex;
+  font-size: 0.85rem;
+  font-weight: 700;
+  justify-content: center;
+  padding: 0.7rem 0.95rem;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.readMoreButton:hover {
+  box-shadow: 0 10px 20px rgba(244, 123, 32, 0.28);
+  transform: translateY(-1px);
 }
 
 @media (max-width: 900px) {
@@ -256,5 +325,13 @@
   .sectionHeader {
     align-items: start;
     flex-direction: column;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: unset;
   }
 }

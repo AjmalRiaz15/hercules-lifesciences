@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import Home from '../pages/Home/Home';
 import Products from '../pages/Products/Products';
+import ProductDetail from '../pages/Products/ProductDetail';
 import Seeds from '../pages/Seeds/Seeds';
 import AboutUs from '../pages/AboutUs/AboutUs';
 import ContactUs from '../pages/ContactUs/ContactUs';
@@ -21,6 +22,7 @@ function AppRoutes() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/products/:productSlug" element={<ProductDetail />} />
         <Route path="/seeds" element={<Seeds />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/contact-us" element={<ContactUs />} />
