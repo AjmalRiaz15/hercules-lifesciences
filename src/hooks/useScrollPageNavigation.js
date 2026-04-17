@@ -32,11 +32,11 @@ function useScrollPageNavigation() {
       if (event.deltaY > 0 && atBottom && currentIndex < routeOrder.length - 1) {
         event.preventDefault();
         isCoolingDown.current = true;
-        navigate(routeOrder[currentIndex + 1]);
+        navigate(routeOrder[currentIndex + 1], { state: { preserveScroll: true } });
       } else if (event.deltaY < 0 && atTop && currentIndex > 0) {
         event.preventDefault();
         isCoolingDown.current = true;
-        navigate(routeOrder[currentIndex - 1]);
+        navigate(routeOrder[currentIndex - 1], { state: { preserveScroll: true } });
       }
     };
 

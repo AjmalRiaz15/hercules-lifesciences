@@ -28,13 +28,15 @@ function Home() {
       image: imageAssets.homeBannerPrimary,
       // heading: 'Hercules Life Sciences',
       // subheading: 'Behtareen quality products for better and safer crop yield.',
-      // button: 'Explore Products'
+      // button: 'Explore Products',
+      // buttonTo: '/products'
     },
     {
       image: imageAssets.homeBannerSecondary,
       // heading: 'Barhayein Pedawar, Mehfooz Bunyaad',
       // subheading: 'Advanced crop protection and nutrition solutions for every season.',
-      // button: 'View Catalog'
+      // button: 'View Catalog',
+      // buttonTo: '/products'
     }
   ];
 
@@ -76,13 +78,7 @@ function Home() {
             style={{
               backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${slide.image})`
             }}
-          >
-            <div className={styles.slideContent}>
-              <h1 className={styles.slideHeading}>{slide.heading}</h1>
-              <p className={styles.slideSubheading}>{slide.subheading}</p>
-              <button className={styles.slideButton}>{slide.button}</button>
-            </div>
-          </div>
+          />
         ))}
 
         <button
