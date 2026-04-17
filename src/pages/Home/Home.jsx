@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { productsData } from '../../data/productsData';
+import { imageAssets } from '../../assets/images';
 import styles from './Home.module.css';
 
 const categoryMeta = [
@@ -24,28 +25,16 @@ function Home() {
 
   const slides = [
     {
-      image: 'https://images.unsplash.com/photo-1574943320219-553eb213f72d',
-      heading: 'Gandum ki Double Pedawar',
-      subheading: 'Premium Wheat Seeds for Maximum Yield',
-      button: 'Shop Now'
+      image: imageAssets.homeBannerPrimary,
+      // heading: 'Hercules Life Sciences',
+      // subheading: 'Behtareen quality products for better and safer crop yield.',
+      // button: 'Explore Products'
     },
     {
-      image: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854',
-      heading: 'Behtareen Cotton Seeds',
-      subheading: 'High-Quality Cotton for Better Returns',
-      button: 'Explore'
-    },
-    {
-      image: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399',
-      heading: 'Zameen ki Taqat Barhao',
-      subheading: 'Advanced Fertilizers for Fertile Soil',
-      button: 'Learn More'
-    },
-    {
-      image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449',
-      heading: 'فصل کو محفوظ رکھو',
-      subheading: 'Effective Pest Protection Solutions',
-      button: 'Get Protected'
+      image: imageAssets.homeBannerSecondary,
+      // heading: 'Barhayein Pedawar, Mehfooz Bunyaad',
+      // subheading: 'Advanced crop protection and nutrition solutions for every season.',
+      // button: 'View Catalog'
     }
   ];
 
