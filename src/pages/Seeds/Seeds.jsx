@@ -1,15 +1,15 @@
 import styles from './Seeds.module.css';
 
-function Seeds() {
+function Crops() {
   return (
     <section className={styles.page}>
-      <h1>Seed Portfolio</h1>
+      <h1>Crops Portfolio</h1>
       <p>
-        Explore certified seed varieties engineered for higher germination,
-        climate adaptation, and long-term crop quality.
+        Discover high-performance crop solutions tailored for yield stability,
+        local climate adaptation, and stronger farm outcomes season after season.
       </p>
     </section>
   );
 }
 
-export default Seeds;
+export default Crops;

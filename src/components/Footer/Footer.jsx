@@ -1,14 +1,12 @@
 import { Link } from 'react-router-dom';
 import { useRef, useEffect, useState } from 'react';
 import {
-  FaFacebook,
-  FaTwitter,
-  FaInstagram,
-  FaYoutube,
   FaPhone,
   FaEnvelope,
   FaMapMarkerAlt
 } from 'react-icons/fa';
+import { socialMediaLinks } from '../../data/socialMediaData';
+import { contactInfo } from '../../data/contactData';
 import styles from './Footer.module.css';
 
 function Footer() {
@@ -55,13 +53,6 @@ function Footer() {
     { label: 'Pesticides', url: '/products' },
   ];
 
-  const socialLinks = [
-    { icon: FaFacebook, url: '#', label: 'Facebook' },
-    { icon: FaTwitter, url: '#', label: 'Twitter' },
-    { icon: FaInstagram, url: '#', label: 'Instagram' },
-    { icon: FaYoutube, url: '#', label: 'YouTube' }
-  ];
-
   return (
     <footer ref={footerRef} className={`${styles.footer} ${isVisible ? styles.visible : ''}`}>
       <div className={styles.footerContent}>
@@ -76,12 +67,14 @@ function Footer() {
             to farmers across Pakistan, ensuring sustainable farming practices and better yields.
           </p>
           <div className={styles.socialLinks}>
-            {socialLinks.map((social, index) => {
+            {socialMediaLinks.map((social) => {
               const Icon = social.icon;
               return (
                 <a
-                  key={index}
-                  href={social.url}
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noreferrer"
                   className={styles.socialIcon}
                   title={social.label}
                   aria-label={social.label}
@@ -129,8 +122,8 @@ function Footer() {
               <FaPhone className={styles.contactIcon} />
               <div>
                 <p className={styles.contactLabel}>Phone</p>
-                <a href="tel:+923001234567" className={styles.contactLink}>
-                  +92 (300) 123-4567
+                <a href={contactInfo.phoneHref} className={styles.contactLink}>
+                  {contactInfo.phone}
                 </a>
               </div>
             </div>
@@ -139,8 +132,8 @@ function Footer() {
               <FaEnvelope className={styles.contactIcon} />
               <div>
                 <p className={styles.contactLabel}>Email</p>
-                <a href="mailto:herculeslifesciences@gmail.com" className={styles.contactLink}>
-                  herculeslifesciences@gmail.com
+                <a href={contactInfo.emailHref} className={styles.contactLink}>
+                  {contactInfo.email}
                 </a>
               </div>
             </div>
@@ -150,8 +143,8 @@ function Footer() {
               <div>
                 <p className={styles.contactLabel}>Address</p>
                 <p className={styles.contactText}>
-                  Multan, Punjab<br />
-                  Pakistan
+                  {contactInfo.address.city}, Punjab<br />
+                  {contactInfo.address.country}
                 </p>
               </div>
             </div>

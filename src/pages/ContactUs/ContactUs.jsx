@@ -68,7 +68,11 @@ function ContactUs() {
             </p>
           </div>
 
-          <form ref={formRef} className={styles.form} onSubmit={onSubmit}>
+          <div className={styles.contentWrapper}>
+            <div className={styles.columnSection}>
+              <h2 className={styles.sectionHeading}>Send us a Message</h2>
+              <div className={styles.formCard}>
+                <form ref={formRef} className={styles.form} onSubmit={onSubmit}>
             <div className={styles.rowFields}>
               <div className={styles.inputGroup}>
                 <label className={styles.inputLabel} htmlFor="name">
@@ -144,6 +148,29 @@ function ContactUs() {
               </button>
             </div>
           </form>
+              </div>
+            </div>
+
+            <div className={styles.columnSection}>
+              <h2 className={styles.sectionHeading}>Our Location</h2>
+              <div className={styles.locationCard}>
+                <div className={styles.mapSection}>
+                <div className={styles.mapContainer}>
+                  <iframe
+                    title="Hercules Life Sciences Location - Multan, Pakistan"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3424.6891267234567!2d71.4346!3d30.1575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1sHercules%20Life%20Sciences%20Multan!2s30.1575%2C71.4346!5e0!3m2!1sen!2s!4v1713607200"
+                    width="100%"
+                    height="300"
+                    style={{ border: 'none', borderRadius: '12px' }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -5,6 +5,14 @@
   gap: 1rem;
 }
 
+.menuButton {
+  display: none;
+}
+
+.backdrop {
+  display: none;
+}
+
 .link {
   align-items: center;
   background: transparent;
@@ -31,8 +39,23 @@
 }
 
 .chevron {
-  font-size: 0.85rem;
+  align-items: center;
+  background: #f0f5ef;
+  border-radius: 999px;
+  color: #2e6a42;
+  display: inline-flex;
+  font-size: 0.68rem;
+  height: 20px;
+  justify-content: center;
   line-height: 1;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  width: 20px;
+}
+
+.chevronOpen {
+  background: #1f4b32;
+  color: #ffffff;
+  transform: rotate(180deg);
 }
 
 .dropdownMenu {
@@ -63,14 +86,80 @@
 }
 
 @media (max-width: 900px) {
+  .menuButton {
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #dce6dd;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+    justify-content: center;
+    margin-left: auto;
+    min-height: 42px;
+    min-width: 44px;
+    padding: 0.45rem;
+  }
+
+  .menuLine {
+    background: #1f4b32;
+    border-radius: 999px;
+    display: block;
+    height: 2px;
+    width: 18px;
+  }
+
+  .backdrop {
+    background: rgba(0, 0, 0, 0.45);
+    border: none;
+    display: block;
+    inset: 0;
+    position: fixed;
+    z-index: 90;
+  }
+
   .nav {
-    flex-wrap: wrap;
-    row-gap: 0.5rem;
+    background: #ffffff;
+    border-radius: 0 0 18px 0;
+    box-shadow: 8px 0 32px rgba(22, 48, 31, 0.2);
+    flex-direction: column;
+    gap: 0.5rem;
+    height: 100vh;
+    inset: 0 auto 0 0;
+    max-width: 320px;
+    padding: 1rem;
+    position: fixed;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    width: min(80vw, 320px);
+    z-index: 100;
+  }
+
+  .navOpen {
+    transform: translateX(0);
+  }
+
+  .link {
+    font-size: 1rem;
+    padding: 0.4rem 0;
+    width: 100%;
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropdownToggle {
+    justify-content: space-between;
+    width: 100%;
   }
 
   .dropdownMenu {
+    border-radius: 12px;
+    margin-top: 0.35rem;
     position: static;
     min-width: 100%;
-    margin-top: 0.5rem;
+    box-shadow: none;
   }
 }
