@@ -1,31 +1,31 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaChevronLeft, FaChevronRight, FaArrowRight } from 'react-icons/fa';
 import { productsData } from '../../data/productsData';
+import { productCategories } from '../../data/productCategories';
 import { imageAssets } from '../../assets/images';
 import styles from './Home.module.css';
-
-const categoryMeta = [
-  { name: 'Insecticide', description: 'Fast crop protection against harmful insects.' },
-  { name: 'Fungicide', description: 'Protection against fungal pressure.' },
-  { name: 'Herbicide', description: 'Selective solutions for weed control.' },
-  { name: 'Fertilizer', description: 'Balanced inputs for stronger growth.' },
-  { name: 'Granious', description: 'Granular formulations for even field coverage.' },
-  { name: 'Household', description: 'Everyday protection products for home use.' }
-];
 
 function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlay, setIsAutoPlay] = useState(true);
 
-  const groupedCategories = categoryMeta.map((category) => ({
-    ...category,
-    count: productsData.filter((product) => product.category === category.name).length
-  }));
+  const groupedCategories = productCategories.map((category) => {
+    const representativeProduct = productsData.find((product) => product.category === category.name);
+
+    return {
+      ...category,
+      count: productsData.filter((product) => product.category === category.name).length,
+      image: representativeProduct?.image || imageAssets.homeBannerPrimary,
+      productName: representativeProduct?.name || category.label,
+      productPackSize: representativeProduct?.packSize || 'Premium field solution'
+    };
+  });
 
   const slides = [
     {
       image: imageAssets.homeBannerPrimary,
+      position: 'left center'
       // heading: 'Hercules Life Sciences',
       // subheading: 'Behtareen quality products for better and safer crop yield.',
       // button: 'Explore Products',
@@ -33,6 +33,7 @@ function Home() {
     },
     {
       image: imageAssets.homeBannerSecondary,
+      position: 'left center'
       // heading: 'Barhayein Pedawar, Mehfooz Bunyaad',
       // subheading: 'Advanced crop protection and nutrition solutions for every season.',
       // button: 'View Catalog',
@@ -76,7 +77,8 @@ function Home() {
             key={index}
             className={`${styles.slide} ${index === currentSlide ? styles.active : ''}`}
             style={{
-              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${slide.image})`
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.38)), url(${slide.image})`,
+              backgroundPosition: slide.position || 'left center'
             }}
           />
         ))}
@@ -122,9 +124,21 @@ function Home() {
         <div className={styles.categoryGrid}>
           {groupedCategories.map((category) => (
             <article key={category.name} className={styles.categoryCard}>
-              <p className={styles.categoryCount}>{category.count} items</p>
-              <h3>{category.name}</h3>
-              <p>{category.description}</p>
+              <div className={styles.categoryImageWrap}>
+                <img className={styles.categoryImage} src={category.image} alt={category.productName} />
+                <span className={styles.categoryCount}>{category.count} items</span>
+              </div>
+
+              <div className={styles.categoryBody}>
+                <p className={styles.categoryType}>{category.label}</p>
+                <h3>{category.name}</h3>
+                <p className={styles.categoryDescription}>{category.description}</p>
+                <p className={styles.categoryMeta}>{category.productName} and more field-ready options.</p>
+
+                <Link className={styles.categoryMoreButton} to={`/products?type=${category.slug}`}>
+                  More <FaArrowRight size={13} />
+                </Link>
+              </div>
             </article>
           ))}
         </div>

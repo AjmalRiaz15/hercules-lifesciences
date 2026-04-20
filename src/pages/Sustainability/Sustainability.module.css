@@ -1,4 +1,382 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;700&display=swap');
+
 .page {
+  color: #17301f;
+  display: grid;
+  gap: 1.5rem;
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  padding: clamp(0.75rem, 2vw, 1rem);
+}
+
+.hero {
+  background: linear-gradient(140deg, #0d3320 0%, #1a4d2e 45%, #2d6a3f 100%);
+  border-radius: 30px;
+  box-shadow: 0 24px 50px rgba(18, 48, 36, 0.18);
+  margin-bottom: 0.25rem;
+  overflow: hidden;
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem);
+  position: relative;
+  text-align: center;
+}
+
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+}
+
+.hero::before {
+  background: rgba(168, 213, 162, 0.07);
+  height: 260px;
+  left: -80px;
+  top: -80px;
+  width: 260px;
+}
+
+.hero::after {
+  background: rgba(168, 213, 162, 0.05);
+  bottom: -100px;
+  height: 300px;
+  right: -50px;
+  width: 300px;
+}
+
+.badge {
+  background: rgba(168, 213, 162, 0.2);
+  border: 1px solid rgba(168, 213, 162, 0.32);
+  border-radius: 999px;
+  color: #a8d5a2;
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  margin-bottom: 1.2rem;
+  padding: 0.45rem 1rem;
+  position: relative;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.heroTitle {
+  color: #ffffff;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.35rem, 5vw, 4.2rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 1.2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.heroTitle em {
+  color: #a8d5a2;
+  font-style: italic;
+}
+
+.heroSub {
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.8;
+  margin: 0 auto 2rem;
+  max-width: 36rem;
+  position: relative;
+  z-index: 1;
+}
+
+.heroPillRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.heroPill {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.88);
+  display: inline-flex;
+  font-size: 0.84rem;
+  gap: 0.5rem;
+  padding: 0.45rem 0.95rem;
+}
+
+.heroPillDot {
+  background: #a8d5a2;
+  border-radius: 50%;
+  height: 7px;
+  width: 7px;
+}
+
+.impactRow {
+  display: grid;
+  gap: 0.85rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.impactCard {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(20, 48, 33, 0.08);
+  border-radius: 22px;
+  box-shadow: 0 12px 28px rgba(18, 48, 36, 0.06);
+  padding: 1.25rem 1rem;
+  text-align: center;
+}
+
+.impactNum {
+  color: #2d6a3f;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.7rem, 4vw, 2.35rem);
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.impactLabel {
+  color: #57705c;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.promiseGrid {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+
+.promiseCard {
+  background: #ffffff;
+  border: 1px solid #dce6d8;
+  border-top: 3px solid #2d6a3f;
+  border-radius: 24px;
+  box-shadow: 0 10px 24px rgba(18, 48, 36, 0.05);
+  padding: 1.5rem 1.35rem;
+}
+
+.pIcon {
+  align-items: center;
+  background: #e8f5e9;
+  border-radius: 12px;
+  color: #2d6a3f;
+  display: inline-flex;
+  height: 42px;
+  justify-content: center;
+  margin-bottom: 0.95rem;
+  width: 42px;
+}
+
+.pIcon svg {
+  height: 20px;
+  width: 20px;
+}
+
+.pTitle {
+  color: #17301f;
+  font-size: 0.98rem;
+  font-weight: 700;
+  margin: 0 0 0.35rem;
+}
+
+.pDesc {
+  color: #516152;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.approachSection {
   display: grid;
   gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.approachCard {
+  background: #f6f8f3;
+  border: 1px solid #dce6d8;
+  border-radius: 26px;
+  box-shadow: 0 10px 24px rgba(18, 48, 36, 0.05);
+  padding: 1.75rem;
+}
+
+.greenTint {
+  background: #f0f8f0;
+  border-color: #b8ddb8;
+}
+
+.secLabel {
+  color: #2d6a3f;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  margin: 0 0 0.7rem;
+  text-transform: uppercase;
+}
+
+.secHeading {
+  color: #17301f;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.22rem;
+  font-weight: 400;
+  line-height: 1.3;
+  margin: 0 0 0.9rem;
+}
+
+.secBody {
+  color: #516152;
+  font-size: 0.94rem;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.goalsSection {
+  background: #ffffff;
+  border: 1px solid #dce6d8;
+  border-radius: 28px;
+  box-shadow: 0 10px 24px rgba(18, 48, 36, 0.05);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.sectionHeading {
+  color: #17301f;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.45rem, 2.8vw, 2rem);
+  font-weight: 400;
+  margin: 0 0 1.6rem;
+}
+
+.sectionHeading span {
+  color: #2d6a3f;
+}
+
+.goalsList {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.goalRow {
+  align-items: flex-start;
+  background: #f6f8f3;
+  border: 1px solid #dce6d8;
+  border-radius: 18px;
+  display: flex;
+  gap: 0.85rem;
+  padding: 0.95rem 1.1rem;
+}
+
+.goalNum {
+  color: #c8e6c8;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-top: 0.1rem;
+  min-width: 34px;
+}
+
+.goalText h4 {
+  color: #17301f;
+  font-size: 0.94rem;
+  font-weight: 700;
+  margin: 0 0 0.2rem;
+}
+
+.goalText p {
+  color: #516152;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.pledgeBanner {
+  background: linear-gradient(135deg, #1a4d2e, #2d6a3f);
+  border-radius: 28px;
+  box-shadow: 0 18px 42px rgba(18, 48, 36, 0.18);
+  overflow: hidden;
+  padding: clamp(2.2rem, 5vw, 3rem) clamp(1.4rem, 4vw, 2.5rem);
+  position: relative;
+  text-align: center;
+}
+
+.pledgeBanner::before {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  content: '';
+  height: 180px;
+  position: absolute;
+  right: -50px;
+  top: -50px;
+  width: 180px;
+}
+
+.pledgeBanner h2 {
+  color: #ffffff;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.55rem, 3vw, 2.05rem);
+  font-weight: 400;
+  margin: 0 0 0.9rem;
+  position: relative;
+  z-index: 1;
+}
+
+.pledgeBanner h2 em {
+  color: #a8d5a2;
+  font-style: italic;
+}
+
+.pledgeBanner p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.94rem;
+  font-weight: 300;
+  line-height: 1.8;
+  margin: 0 auto 1.7rem;
+  max-width: 32rem;
+  position: relative;
+  z-index: 1;
+}
+
+.pledgeDivider {
+  background: #a8d5a2;
+  border-radius: 999px;
+  height: 2px;
+  margin: 0 auto;
+  position: relative;
+  width: 50px;
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .impactRow,
+  .approachSection {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    gap: 1rem;
+    padding: 0.65rem;
+  }
+
+  .hero,
+  .goalsSection,
+  .pledgeBanner,
+  .approachCard,
+  .promiseCard,
+  .impactCard {
+    border-radius: 22px;
+  }
+
+  .hero {
+    padding: 2.15rem 1.2rem;
+  }
+
+  .goalRow {
+    padding: 0.9rem 0.9rem;
+  }
 }

@@ -1,4 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;700&display=swap');
+
 .page {
+  background:
+    radial-gradient(circle at top left, rgba(77, 127, 58, 0.14), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(31, 75, 50, 0.1), transparent 34%),
+    linear-gradient(180deg, #f5f8f2 0%, #eef4ea 54%, #e7efe2 100%);
+  color: #17301f;
+  display: grid;
+  gap: 1.5rem;
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  padding: clamp(0.75rem, 2vw, 1rem);
+}
+
+.heroBanner {
+  background: linear-gradient(135deg, #123024 0%, #1f4b32 52%, #4d7f3a 100%);
+  border-radius: 30px;
+  overflow: hidden;
+  padding: clamp(2.5rem, 5vw, 4.25rem) clamp(1.5rem, 4vw, 3rem);
+  position: relative;
+  text-align: center;
+  box-shadow: 0 24px 50px rgba(18, 48, 36, 0.18);
+}
+
+.heroBanner::before,
+.heroBanner::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.heroBanner::before {
+  height: 220px;
+  right: -70px;
+  top: -60px;
+  width: 220px;
+}
+
+.heroBanner::after {
+  bottom: -90px;
+  height: 280px;
+  left: -90px;
+  width: 280px;
+}
+
+.missionLabel {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  color: #d9f1ce;
+  display: inline-flex;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  margin-bottom: 1.25rem;
+  padding: 0.5rem 1rem;
+  position: relative;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.heroTitle {
+  color: #ffffff;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.4rem, 5vw, 4.3rem);
+  font-weight: 700;
+  line-height: 1.08;
+  margin: 0 auto 1.25rem;
+  max-width: 10ch;
+  position: relative;
+  z-index: 1;
+}
+
+.heroStatement {
+  color: rgba(255, 255, 255, 0.84);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  font-weight: 300;
+  line-height: 1.8;
+  margin: 0 auto 2rem;
+  max-width: 40rem;
+  position: relative;
+  z-index: 1;
+}
+
+.heroDivider {
+  background: #c7e6ba;
+  border-radius: 999px;
+  height: 2px;
+  margin: 0 auto;
+  position: relative;
+  width: 64px;
+  z-index: 1;
+}
+
+.statsRow {
+  display: grid;
+  gap: 0.85rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.statCard {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(20, 48, 33, 0.08);
+  border-radius: 22px;
+  box-shadow: 0 12px 28px rgba(18, 48, 36, 0.06);
+  padding: 1.25rem 1rem;
+  text-align: center;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.statNum {
+  color: #2d6a3f;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.7rem, 4vw, 2.35rem);
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.statLabel {
+  color: #57705c;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.pillarsGrid {
   display: grid;
   gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+
+.pillarCard {
+  background: linear-gradient(180deg, #ffffff 0%, #f5f8f2 100%);
+  border: 1px solid #d9e4d4;
+  border-radius: 24px;
+  box-shadow: 0 10px 24px rgba(18, 48, 36, 0.05);
+  padding: 1.5rem 1.35rem;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pillarCard:hover {
+  border-color: #b9d1ae;
+  box-shadow: 0 14px 28px rgba(18, 48, 36, 0.08);
+  transform: translateY(-2px);
+}
+
+.pillarIcon {
+  align-items: center;
+  background: linear-gradient(135deg, #e7f3de 0%, #d6ebca 100%);
+  border-radius: 16px;
+  color: #2d6a3f;
+  display: inline-flex;
+  height: 48px;
+  justify-content: center;
+  margin-bottom: 1rem;
+  width: 48px;
+}
+
+.pillarIcon svg {
+  height: 22px;
+  width: 22px;
+}
+
+.pillarTitle {
+  color: #16301f;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.55rem;
+}
+
+.pillarDesc {
+  color: #516152;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.valuesSection {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid #dce7d7;
+  border-radius: 28px;
+  box-shadow: 0 12px 30px rgba(18, 48, 36, 0.06);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.sectionHeading {
+  color: #17301f;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.55rem, 3vw, 2rem);
+  font-weight: 400;
+  margin: 0 0 1.4rem;
+}
+
+.sectionHeading span {
+  color: #2d6a3f;
+}
+
+.valuesList {
+  display: grid;
+  gap: 1rem;
+}
+
+.valueRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+.valueDot {
+  background: #4d7f3a;
+  border-radius: 50%;
+  flex: 0 0 0.55rem;
+  height: 0.55rem;
+  margin-top: 0.45rem;
+  width: 0.55rem;
+}
+
+.valueText {
+  color: #516152;
+  font-size: 0.96rem;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.valueText strong {
+  color: #17301f;
+  font-weight: 700;
+}
+
+.ctaBanner {
+  align-items: center;
+  background: linear-gradient(135deg, #123024 0%, #1f4b32 55%, #4d7f3a 100%);
+  border-radius: 28px;
+  box-shadow: 0 18px 42px rgba(18, 48, 36, 0.18);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: space-between;
+  padding: 2rem 2.25rem;
+}
+
+.ctaText h3 {
+  color: #ffffff;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+  font-weight: 400;
+  margin: 0 0 0.35rem;
+}
+
+.ctaText p {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.ctaBtn {
+  align-items: center;
+  background: #d9efcf;
+  border: 0;
+  border-radius: 999px;
+  color: #1f4b32;
+  display: inline-flex;
+  font-size: 0.92rem;
+  font-weight: 700;
+  justify-content: center;
+  padding: 0.9rem 1.5rem;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.ctaBtn:hover {
+  background: #edf8e7;
+  box-shadow: 0 10px 22px rgba(18, 48, 36, 0.18);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 900px) {
+  .statsRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    gap: 1rem;
+    padding: 0.65rem;
+  }
+
+  .heroBanner {
+    border-radius: 24px;
+    padding: 2.2rem 1.25rem;
+  }
+
+  .valuesSection,
+  .ctaBanner {
+    border-radius: 22px;
+  }
+
+  .ctaBanner {
+    padding: 1.45rem 1.25rem;
+  }
+
+  .valueRow {
+    gap: 0.75rem;
+  }
 }
