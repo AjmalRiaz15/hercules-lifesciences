@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { productsData } from '../../data/productsData';
 import { productCategories, getCategoryBySlug } from '../../data/productCategories';
-import { FaBug, FaShieldAlt, FaFlask, FaLeaf, FaSeedling, FaHome } from 'react-icons/fa';
+import { FaBug, FaShieldAlt, FaFlask, FaLeaf, FaSeedling, FaHome, FaCubes } from 'react-icons/fa';
 import styles from './Products.module.css';
 
 const categoryIcons = {
@@ -10,9 +10,24 @@ const categoryIcons = {
   Fungicide: FaShieldAlt,
   Herbicide: FaFlask,
   Fertilizer: FaLeaf,
+  'Special Nutrients': FaCubes,
+  'Soil Reclamation': FaSeedling,
   Granious: FaSeedling,
   Household: FaHome
 };
+
+const normalizeProductName = (name) =>
+  name
+    .replace(/\s*\([^)]*\)/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .toLowerCase();
+
+const formatProductName = (name) =>
+  name
+    .replace(/\s*\([^)]*\)/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
 
 function Products() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -28,7 +43,36 @@ function Products() {
     [activeCategoryMeta.name]
   );
 
-  const selectedCount = filteredProducts.length;
+  const uniqueProducts = useMemo(() => {
+    const uniqueMap = new Map();
+
+    filteredProducts.forEach((product) => {
+      const normalizedName = normalizeProductName(product.name);
+      if (!uniqueMap.has(normalizedName)) {
+        uniqueMap.set(normalizedName, {
+          ...product,
+          displayName: formatProductName(product.name)
+        });
+      }
+    });
+
+    return Array.from(uniqueMap.values());
+  }, [filteredProducts]);
+
+  const categoryCounts = useMemo(() => {
+    return productCategories.reduce((accumulator, category) => {
+      const uniqueNames = new Set(
+        productsData
+          .filter((product) => product.category === category.name)
+          .map((product) => normalizeProductName(product.name))
+      );
+
+      accumulator[category.name] = uniqueNames.size;
+      return accumulator;
+    }, {});
+  }, []);
+
+  const selectedCount = uniqueProducts.length;
 
   const handleCategorySelect = (categorySlug) => {
     setSearchParams({ type: categorySlug });
@@ -62,7 +106,7 @@ function Products() {
         {productCategories.map((category) => {
           const Icon = categoryIcons[category.name] || FaLeaf;
           const isActive = activeCategorySlug === category.slug;
-          const count = productsData.filter((product) => product.category === category.name).length;
+          const count = categoryCounts[category.name] || 0;
 
           return (
             <button
@@ -100,7 +144,7 @@ function Products() {
         </div>
 
         <div className={styles.grid}>
-          {filteredProducts.map((product) => (
+          {uniqueProducts.map((product) => (
             <article key={product.id} className={styles.card}>
               <div className={styles.cardImageWrap}>
                 <img className={styles.cardImage} src={product.image} alt={product.name} />
@@ -110,7 +154,7 @@ function Products() {
                   <span className={styles.cardBadge}>{product.category}</span>
                   <span className={styles.cardType}>{product.category}</span>
                 </div>
-                <h3>{product.name}</h3>
+                <h3>{product.displayName || product.name}</h3>
                 <p className={styles.cardDescription}>{product.description}</p>
                 <Link className={styles.readMoreButton} to={`/products/${product.slug}`}>
                   Read more

@@ -71,11 +71,47 @@
   margin: 0;
 }
 
-.packSize {
+.sizeBlock {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.sizeLabel {
   color: #1f4b32;
   font-size: 1rem;
   font-weight: 800;
   margin: 0;
+}
+
+.sizeChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.sizeChip {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #b9c9b8;
+  border-radius: 4px;
+  color: #1f1f1f;
+  display: inline-flex;
+  font-size: 1rem;
+  justify-content: center;
+  min-width: 78px;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.sizeChip:hover {
+  border-color: #16301f;
+}
+
+.sizeChipActive {
+  background: #151515;
+  border-color: #151515;
+  color: #ffffff;
 }
 
 .description {

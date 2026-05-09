@@ -35,6 +35,10 @@ function AboutUs() {
             <div className={styles.heroStatNum}>Punjab</div>
             <div className={styles.heroStatLabel}>Primary Service Area</div>
           </div>
+          <div className={styles.heroStat}>
+            <div className={styles.heroStatNum}>KPK</div>
+            <div className={styles.heroStatLabel}>Regional Office</div>
+          </div>
         </div>
       </div>
 

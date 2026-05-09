@@ -28,6 +28,20 @@ export const productCategories = [
     accent: 'fertilizer'
   },
   {
+    name: 'Special Nutrients',
+    label: 'Special Nutrients',
+    description: 'Special nutrient products for targeted crop support.',
+    slug: 'special-nutrients',
+    accent: 'fertilizer'
+  },
+  {
+    name: 'Soil Reclamation',
+    label: 'Soil Reclamation',
+    description: 'Products that help restore and improve soil health.',
+    slug: 'soil-reclamation',
+    accent: 'granious'
+  },
+  {
     name: 'Granious',
     label: 'Granules',
     description: 'Granular medicine for even application.',

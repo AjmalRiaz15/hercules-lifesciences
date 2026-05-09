@@ -7,7 +7,7 @@ export const productsData = [
     slug: 'abamectin-1-8-ec',
     packSize: '400 ml',
     price: 575,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/abamectin-1-8-ec.jpeg',
     description: 'Imported insecticide for effective pest control.',
     fullDescription: 'Abamectin 1.8% EC is an imported insecticide formulation designed for fast-acting pest control across various crops and field conditions.'
   },
@@ -18,7 +18,7 @@ export const productsData = [
     slug: 'acephate-75-sp',
     packSize: '250 gm',
     price: 650,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/acephate-75-sp.jpeg',
     description: 'Imported systemic insecticide formulation.',
     fullDescription: 'Acephate 75% SP is an imported systemic insecticide that provides effective control against a wide range of sucking and chewing insects.'
   },
@@ -29,7 +29,7 @@ export const productsData = [
     slug: 'acephate-75-sp-300',
     packSize: '300 gm',
     price: 735,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/acephate-75-sp-300.jpeg',
     description: 'Larger pack size of imported systemic insecticide.',
     fullDescription: 'Acephate 75% SP in 300gm pack offers economical option for larger field applications with systemic action against various pests.'
   },
@@ -40,7 +40,7 @@ export const productsData = [
     slug: 'acetamiprid-20-sp',
     packSize: '250 gm',
     price: 450,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/acetamiprid-20-sp.jpeg',
     description: 'Neonicotinoid insecticide for sucking insects.',
     fullDescription: 'Acetamiprid 20% SP is an imported neonicotinoid insecticide effective against sucking insects like aphids, whiteflies and leafhoppers.'
   },
@@ -51,7 +51,7 @@ export const productsData = [
     slug: 'aluminium-phosphide-56-tube',
     packSize: '30gm/16tube/40tin',
     price: 95,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/aluminium-phosphide-56-tube.jpeg',
     description: 'Fumigant for grain storage protection.',
     fullDescription: 'Aluminium Phosphide 56% in tube form is an imported fumigant for effective grain storage protection and pest control.'
   },
@@ -62,7 +62,7 @@ export const productsData = [
     slug: 'aluminium-phosphide-56-gandum-goli',
     packSize: '1.5 kg',
     price: 3000,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/aluminium-phosphide-56-gandum-goli.jpeg',
     description: 'Grain fumigant in larger pack.',
     fullDescription: 'Aluminium Phosphide 56% Gandum Goli provides effective fumigation for large grain storage facilities.'
   },
@@ -73,7 +73,7 @@ export const productsData = [
     slug: 'bifenthrin-10-ec-250',
     packSize: '250 ml',
     price: 500,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/bifenthrin-10-ec-250.jpeg',
     description: 'Imported broad-spectrum synthetic pyrethroid.',
     fullDescription: 'Bifenthrin 10% EC imported is a broad-spectrum synthetic pyrethroid for effective control of various crop pests.'
   },
@@ -84,7 +84,7 @@ export const productsData = [
     slug: 'bifenthrin-10-ec-500',
     packSize: '500 ml',
     price: 900,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/bifenthrin-10-ec-500.jpeg',
     description: 'Medium pack of imported pyrethroid insecticide.',
     fullDescription: 'Bifenthrin 10% EC in 500ml pack offers better value for medium to large field applications.'
   },

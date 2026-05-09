@@ -1,5 +1,6 @@
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import WhatsAppFab from './components/common/WhatsAppFab/WhatsAppFab';
 import AppRoutes from './routes/AppRoutes';
 import { AppProvider } from './context/AppContext';
 import './App.css';
@@ -13,6 +14,7 @@ function App() {
           <AppRoutes />
         </main>
         <Footer />
+        <WhatsAppFab />
       </div>
     </AppProvider>
   );

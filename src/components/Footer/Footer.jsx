@@ -47,9 +47,9 @@ function Footer() {
   ];
 
   const products = [
-    { label: 'Wheat Seeds', url: '/products' },
-    { label: 'Cotton Seeds', url: '/products' },
-    { label: 'Fertilizers', url: '/products' },
+    // { label: 'Wheat Seeds', url: '/products' },
+    // { label: 'Cotton Seeds', url: '/products' },
+    { label: 'Agro Chemicals', url: '/products' },
     { label: 'Pesticides', url: '/products' },
   ];
 
