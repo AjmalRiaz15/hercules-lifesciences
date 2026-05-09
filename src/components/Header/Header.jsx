@@ -2,6 +2,7 @@ import Navbar from '../common/Navbar/Navbar';
 import { FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
 import { contactInfo } from '../../data/contactData';
 import { socialMediaLinks } from '../../data/socialMediaData';
+import mainLogo from '../../assets/images/main-logo.png';
 import styles from './Header.module.css';
 
 function Header() {
@@ -127,8 +128,11 @@ function Header() {
 
       <div className={styles.header}>
         <div className={styles.brandBlock}>
-          <span className={styles.brand}>Hercules Life Sciences</span>
-          <span className={styles.tagline}>Growing Better Every Season</span>
+          <img className={styles.brandLogo} src={mainLogo} alt="Hercules Life Sciences" />
+          <div className={styles.brandTextGroup}>
+            <span className={styles.brand}>Hercules Life Sciences</span>
+            <span className={styles.tagline}>Growing Better Every Season</span>
+          </div>
         </div>
         <Navbar />
       </div>

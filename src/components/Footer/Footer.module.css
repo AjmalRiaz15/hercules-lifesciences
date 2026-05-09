@@ -35,6 +35,14 @@
   margin-bottom: 1rem;
 }
 
+.logoImage {
+  display: block;
+  height: 72px;
+  margin-bottom: 0.75rem;
+  object-fit: contain;
+  width: 72px;
+}
+
 .logoText {
   font-size: 1.5rem;
   font-weight: 700;
@@ -242,6 +250,11 @@
     margin-bottom: 0.5rem;
   }
 
+  .logoImage {
+    height: 60px;
+    width: 60px;
+  }
+
   .logoText {
     font-size: 1.3rem;
   }
@@ -278,6 +291,11 @@
 
   .logoText {
     font-size: 1.2rem;
+  }
+
+  .logoImage {
+    height: 52px;
+    width: 52px;
   }
 
   .tagline {

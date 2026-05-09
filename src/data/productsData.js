@@ -9,11 +9,11 @@ export const productsData = [
     price: 575,
     image: '/images/abamectin-1-8-ec.jpeg',
     description: 'Imported insecticide for effective pest control.',
-    fullDescription: 'Abamectin 1.8% EC is an imported insecticide formulation designed for fast-acting pest control across various crops and field conditions.'
+    fullDescription: ' Abamectin is an insecticide and acaricide belonging to the avermectin family (a subset of macrocyclic lactones) and is classified under IRAC Group 6 (Glutamate-gated chloride channel activators). Derived from the soil bacterium Streptomyces avermitilis, it is a natural fermentation product used to control mites and insects, acting primarily through ingestion and contact to paralyze pests.'
   },
   {
     id: 2,
-    name: 'Acephate 75% SP',
+    name: 'Acephate 75% SP111',
     category: 'Insecticide',
     slug: 'acephate-75-sp',
     packSize: '250 gm',
@@ -480,7 +480,7 @@ export const productsData = [
     slug: 'sadi-25-zc',
     packSize: '200 ml',
     price: 650,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+     image: '/images/sadi-25-zc.jpeg',
     description: 'Combined pyrethroid and neonicotinoid.',
     fullDescription: 'Sadi 25% ZC imported contains Lambda-cyhalothrin and Clothianidin for broad-spectrum pest control.'
   },

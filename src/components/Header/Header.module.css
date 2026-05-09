@@ -110,6 +110,21 @@
 }
 
 .brandBlock {
+  align-items: center;
+  display: flex;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.brandLogo {
+  display: block;
+  flex-shrink: 0;
+  height: 46px;
+  object-fit: contain;
+  width: 46px;
+}
+
+.brandTextGroup {
   display: flex;
   flex-direction: column;
   min-width: 0;
@@ -145,6 +160,11 @@
     grid-template-columns: 1fr auto;
     padding: 1rem;
   }
+
+  .brandLogo {
+    height: 40px;
+    width: 40px;
+  }
 }
 
 @media (max-width: 520px) {
@@ -167,6 +187,19 @@
   .socialLink {
     height: 24px;
     width: 24px;
+  }
+
+  .brandLogo {
+    height: 34px;
+    width: 34px;
+  }
+
+  .brand {
+    font-size: 1.05rem;
+  }
+
+  .tagline {
+    font-size: 0.78rem;
   }
 }
 
