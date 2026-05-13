@@ -194,7 +194,7 @@ export const productsData = [
     slug: 'dimethoate-40',
     packSize: '400 ml',
     price: 700,
-    image: '/images/dimethoat.jpeg',
+    image: '/images/dimethoate.jpeg',
     description: 'Imported systemic and contact insecticide.',
     fullDescription: 'Dimethoate 40% imported combines systemic and contact action for comprehensive pest control.'
   },
@@ -249,7 +249,7 @@ export const productsData = [
     slug: 'dursban-40-ec-imported',
     packSize: '1000 ml',
     price: 1595,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: "/images/dursban-40-ec-imported.jpeg",
     description: 'Premium imported organophosphate.',
     fullDescription: 'Dursban 40% EC imported (1L) offers premium quality organophosphate for reliable pest control.'
   },
@@ -392,7 +392,7 @@ export const productsData = [
     slug: 'lamdacyhalothrin-2-5-1000',
     packSize: '1000 ml',
     price: 840,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/lambdacythorine.jpeg',
     description: 'Synthetic pyrethroid concentrate.',
     fullDescription: 'Lamdacyhalothrin 2.5% EC is a synthetic pyrethroid for effective broad-spectrum pest control.'
   },
@@ -403,7 +403,7 @@ export const productsData = [
     slug: 'lamdacyhalothrin-2-5-500',
     packSize: '500 ml',
     price: 450,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/lambdacythorine.jpeg',
     description: 'Medium pack pyrethroid concentrate.',
     fullDescription: 'Lamdacyhalothrin 2.5% EC in 500ml pack provides practical size for field applications.'
   },
@@ -414,7 +414,7 @@ export const productsData = [
     slug: 'lamdacyhalothrin-2-5-250',
     packSize: '250 ml',
     price: 280,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/lambdacythorine.jpeg',
     description: 'Small pack pyrethroid concentrate.',
     fullDescription: 'Lamdacyhalothrin 2.5% EC in 250ml pack is ideal for small field applications.'
   },
@@ -447,7 +447,7 @@ export const productsData = [
     slug: 'manyu-27-fs-seed-treatment',
     packSize: '150 ml',
     price: 650,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/minyou.jpeg',
     description: 'Imported seed treatment formulation.',
     fullDescription: 'Manyu 27% FS imported is specifically designed for seed treatment to protect against soil and seed-borne pests.'
   },
@@ -524,7 +524,7 @@ export const productsData = [
     slug: 'thiamethaxim-25-wg',
     packSize: '48 gm',
     price: 180,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/BogataPlus.jpeg',
     description: 'Imported neonicotinoid wettable granule.',
     fullDescription: 'Thiamethaxim 25% WG imported is a neonicotinoid for sucking insect control.'
   },
@@ -614,7 +614,7 @@ export const productsData = [
     slug: 'metalaxyl-mancozeb-72-100',
     packSize: '100 gm',
     price: 240,
-    image: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/Metalaxyl+mancozab.jpeg',
     description: 'Small pack combination fungicide.',
     fullDescription: 'Metalaxyl+Mancozeb 72% WP imported in small pack is ideal for trial applications.'
   },
@@ -1058,7 +1058,7 @@ export const productsData = [
     slug: 'bogata-plus-p2o5-900',
     packSize: '20 ltr',
     price: 900,
-    image: 'https://images.unsplash.com/photo-1589923188938-c8b3f7f7cdd3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/bogataPlus.jpeg',
     description: 'Phosphorus-rich liquid fertilizer.',
     fullDescription: 'Bogata Plus with P2O5 provides concentrated phosphorus for root development and flowering.'
   },
@@ -1113,7 +1113,7 @@ export const productsData = [
     slug: 'joba-biostimulant-500',
     packSize: '500 ml',
     price: 690,
-    image: 'https://images.unsplash.com/photo-1589923188938-c8b3f7f7cdd3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/jobaplus.jpeg',
     description: 'Biostimulant growth promoter.',
     fullDescription: 'Joba Biostimulant enhances plant vigor and stress tolerance for better yields.'
   },
@@ -1124,7 +1124,7 @@ export const productsData = [
     slug: 'joba-biostimulant-1000',
     packSize: '1000 ml',
     price: 1200,
-    image: 'https://images.unsplash.com/photo-1589923188938-c8b3f7f7cdd3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/jobaplus.jpeg',
     description: 'Medium pack biostimulant.',
     fullDescription: 'Joba Biostimulant in 1L pack provides economical option for larger applications.'
   },
@@ -1135,7 +1135,7 @@ export const productsData = [
     slug: 'joba-biostimulant-3ltr',
     packSize: '3 ltr',
     price: 3150,
-    image: 'https://images.unsplash.com/photo-1589923188938-c8b3f7f7cdd3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/jobaplus.jpeg',
     description: 'Large pack biostimulant.',
     fullDescription: 'Joba Biostimulant in 3L pack is economical for extensive field coverage.'
   },
@@ -1146,7 +1146,7 @@ export const productsData = [
     slug: 'joba-plus-npk-8-8-6',
     packSize: '1000 ml',
     price: 675,
-    image: '/images/JOBA.jpeg',
+    image: '/images/jobaplus.jpeg',
     description: 'Balanced NPK liquid fertilizer.',
     fullDescription: 'Joba Plus NPK 8:8:6 provides balanced nutrition for overall plant development.'
   },
@@ -1245,7 +1245,7 @@ export const productsData = [
     slug: 'meedan-13-5-potassium-humate-4ltr',
     packSize: '4 ltr',
     price: 825,
-    image: 'https://images.unsplash.com/photo-1589923188938-c8b3f7f7cdd3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/MedanPlus.jpeg',
     description: 'Humic acid soil conditioner.',
     fullDescription: 'Meedan 13.5% Potassium Humate improves soil structure and nutrient availability.'
   },
@@ -1256,7 +1256,7 @@ export const productsData = [
     slug: 'meedan-13-5-potassium-humate-10ltr',
     packSize: '10 ltr',
     price: 1600,
-    image: 'https://images.unsplash.com/photo-1589923188938-c8b3f7f7cdd3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/MedanPlus.jpeg',
     description: 'Medium pack humic acid.',
     fullDescription: 'Meedan 13.5% Potassium Humate in 10L pack is economical for larger applications.'
   },
@@ -1267,7 +1267,7 @@ export const productsData = [
     slug: 'meedan-13-5-potassium-humate-20ltr',
     packSize: '20 ltr',
     price: 2950,
-    image: 'https://images.unsplash.com/photo-1589923188938-c8b3f7f7cdd3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/MedanPlus.jpeg',
     description: 'Large pack humic acid.',
     fullDescription: 'Meedan 13.5% Potassium Humate in 20L pack provides economical soil conditioning.'
   },
@@ -1278,7 +1278,7 @@ export const productsData = [
     slug: 'meedan-13-5-potassium-humate-200ltr',
     packSize: '200 ltr',
     price: 28500,
-    image: 'https://images.unsplash.com/photo-1589923188938-c8b3f7f7cdd3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/MedanPlus.jpeg',
     description: 'Industrial pack humic acid.',
     fullDescription: 'Meedan 13.5% Potassium Humate in 200L drum is ideal for large-scale operations.'
   },
@@ -1289,7 +1289,7 @@ export const productsData = [
     slug: 'meedan-plus-20-n-200ltr',
     packSize: '200 ltr',
     price: 65550,
-    image: 'https://images.unsplash.com/photo-1589923188938-c8b3f7f7cdd3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/MedanPlus.jpeg',
     description: 'Industrial nitrogen fertilizer.',
     fullDescription: 'Meedan Plus 20% with 20% nitrogen in 200L drum is ideal for large commercial operations.'
   },
@@ -1300,7 +1300,7 @@ export const productsData = [
     slug: 'meedan-plus-20-n-20ltr',
     packSize: '20 ltr',
     price: 6800,
-    image: 'https://images.unsplash.com/photo-1589923188938-c8b3f7f7cdd3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/MedanPlus.jpeg',
     description: 'Bulk nitrogen fertilizer.',
     fullDescription: 'Meedan Plus 20% with high nitrogen content supports vegetative growth.'
   },
@@ -1428,9 +1428,33 @@ export const productsData = [
     fullDescription: 'Alcone 0.4G in 8kg pack provides effective soil pest control for larger areas.'
   },
 
-  // HOUSEHOLD PRODUCTS (132-133)
+  // MORE GRANULES PRODUCTS (130-131)
   {
     id: 130,
+    name: 'Spectral 0.69G (CTPR+Thiamethaxim)',
+    category: 'Granules',
+    slug: 'spectral-0-69g-ctpr-thiamethaxim',
+    packSize: '7 kg',
+    price: 0,
+    image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=900&q=80',
+    description: 'Combined granular insecticide.',
+    fullDescription: 'Spectral 0.69G is a granular formulation combining Chlorantraniliprole and Thiamethaxim for effective soil and contact pest protection.'
+  },
+  {
+    id: 131,
+    name: 'Monomehypo 5G',
+    category: 'Granules',
+    slug: 'monomehypo-5g',
+    packSize: '7 kg',
+    price: 0,
+    image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=900&q=80',
+    description: 'Granular pest control product.',
+    fullDescription: 'Monomehypo 5G is a granular formulation for effective pest management and soil application.'
+  },
+
+  // HOUSEHOLD PRODUCTS (132-133)
+  {
+    id: 132,
     name: 'Rada',
     category: 'Household',
     slug: 'rada',
@@ -1441,7 +1465,7 @@ export const productsData = [
     fullDescription: 'Rada is an everyday household product for practical pest protection around the home.'
   },
   {
-    id: 131,
+    id: 133,
     name: 'Lambda 25% WP Sachet',
     category: 'Household',
     slug: 'lambda-25-wp-sachet',

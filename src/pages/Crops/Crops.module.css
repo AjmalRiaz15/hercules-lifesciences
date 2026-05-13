@@ -1,0 +1,482 @@
+/* TOPBAR */
+.topbar {
+  background: #1a4d2e;
+  padding: 0.6rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.topbar span {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.topbar a {
+  font-size: 12px;
+  color: #a8d5a2;
+  text-decoration: none;
+}
+
+/* NAV */
+.nav {
+  background: #fff;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.brandName {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a4d2e;
+}
+
+.brandTag {
+  font-size: 11px;
+  color: #888;
+  display: block;
+  margin-top: 1px;
+}
+
+.navLinks {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.navLinks a {
+  font-size: 13px;
+  color: #444;
+  text-decoration: none;
+}
+
+.navLinks a:hover {
+  color: #2d6a3f;
+}
+
+.navActive {
+  color: #2d6a3f !important;
+  font-weight: 500;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(140deg, #0d3320 0%, #1a4d2e 45%, #2d6a3f 100%);
+  padding: 4rem 2rem 3.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: rgba(168, 213, 162, 0.06);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: -40px;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.pageBadge {
+  display: inline-block;
+  background: rgba(168, 213, 162, 0.18);
+  color: #a8d5a2;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 5px 15px;
+  border-radius: 20px;
+  border: 1px solid rgba(168, 213, 162, 0.28);
+  margin-bottom: 1.25rem;
+}
+
+.heroTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.5rem;
+  line-height: 1.2;
+}
+
+.heroTitle em {
+  font-style: italic;
+  color: #a8d5a2;
+}
+
+.heroUrdu {
+  font-size: 22px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 1.25rem;
+  font-weight: 300;
+  direction: rtl;
+}
+
+.heroDesc {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.68);
+  max-width: 520px;
+  margin: 0 auto 2rem;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.heroPills {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.hp {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* MAIN WRAP */
+.wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+}
+
+/* INTRO STRIP */
+.introStrip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-bottom: 3rem;
+}
+
+.isCard {
+  background: #fff;
+  border: 0.5px solid rgba(0, 0, 0, 0.09);
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.isNum {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #2d6a3f;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.isLbl {
+  font-size: 12px;
+  color: #888;
+}
+
+/* SECTION HEADER */
+.secHeader {
+  margin-bottom: 2rem;
+}
+
+.secLbl {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #2d6a3f;
+  margin: 0 0 0.4rem;
+}
+
+.secHd {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: #1c1c1a;
+}
+
+.secHd span {
+  color: #2d6a3f;
+}
+
+/* CROP CARDS */
+.cropCard {
+  background: #fff;
+  border: 0.5px solid rgba(0, 0, 0, 0.09);
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  min-height: 320px;
+}
+
+.cropCard.reverse {
+  grid-template-columns: 1fr 420px;
+}
+
+.cropImg {
+  position: relative;
+  overflow: hidden;
+}
+
+.cropImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.cropCard:hover .cropImg img {
+  transform: scale(1.04);
+}
+
+.cropImgOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.25rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent);
+}
+
+.cropEmoji {
+  font-size: 28px;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.cropUrduName {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 400;
+  direction: rtl;
+  text-align: right;
+}
+
+.cropBody {
+  padding: 2rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cropTag {
+  display: inline-block;
+  background: #e8f5e9;
+  color: #2d6a3f;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.cropEnName {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1c1c1a;
+  margin: 0 0 0.25rem;
+  line-height: 1.1;
+}
+
+.cropSci {
+  font-size: 12px;
+  color: #aaa;
+  font-style: italic;
+  margin: 0 0 1rem;
+}
+
+.cropDescEn {
+  font-size: 13.5px;
+  color: #555;
+  line-height: 1.75;
+  margin: 0 0 0.75rem;
+}
+
+.cropDescUr {
+  font-size: 14px;
+  color: #777;
+  line-height: 1.8;
+  direction: rtl;
+  text-align: right;
+  margin: 0 0 1.25rem;
+  font-weight: 300;
+}
+
+.cropDivider {
+  width: 40px;
+  height: 2px;
+  background: #c8e6c8;
+  border-radius: 2px;
+  margin: 1rem 0;
+}
+
+/* PRODUCTS USED */
+.prodLabel {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #2d6a3f;
+  margin: 0 0 0.75rem;
+}
+
+.prodTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.prodTag {
+  background: #f5f5f0;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  color: #444;
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+/* SEASON BAR */
+.seasonBar {
+  margin-top: 1.25rem;
+}
+
+.seasonLabel {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #2d6a3f;
+  margin: 0 0 0.5rem;
+}
+
+.seasonMonths {
+  display: flex;
+  gap: 4px;
+}
+
+.sm {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: #e0e0e0;
+}
+
+.sm.active {
+  background: #2d6a3f;
+}
+
+.sm.partial {
+  background: #a8d5a2;
+}
+
+/* CTA */
+.cta {
+  background: linear-gradient(135deg, #1a4d2e, #2d6a3f);
+  border-radius: 16px;
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.cta h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 0.4rem;
+}
+
+.cta h2 em {
+  font-style: italic;
+  color: #a8d5a2;
+}
+
+.ctaUr {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  direction: rtl;
+  margin: 0;
+}
+
+.ctaBtn {
+  background: #a8d5a2;
+  color: #1a4d2e;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 12px 26px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* FOOTER */
+.footer {
+  background: #1a4d2e;
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer a {
+  color: #a8d5a2;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+@media (max-width: 720px) {
+  .cropCard,
+  .cropCard.reverse {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .cropImg {
+    height: 220px;
+  }
+
+  .heroTitle {
+    font-size: 30px;
+  }
+
+  .cropCard.reverse .cropImg {
+    order: -1;
+  }
+}
