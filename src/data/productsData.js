@@ -18,7 +18,7 @@ export const productsData = [
     slug: 'acephate-75-sp',
     packSize: '250 gm',
     price: 650,
-    image: '/images/acephate-75-sp.jpeg',
+    image: '/images/acephate.jpeg',
     description: 'Imported systemic insecticide formulation.',
     fullDescription: 'Acephate 75% SP is an imported systemic insecticide that provides effective control against a wide range of sucking and chewing insects.'
   },
@@ -29,7 +29,7 @@ export const productsData = [
     slug: 'acephate-75-sp-300',
     packSize: '300 gm',
     price: 735,
-    image: '/images/acephate-75-sp-300.jpeg',
+    image: '/images/acephate.jpeg',
     description: 'Larger pack size of imported systemic insecticide.',
     fullDescription: 'Acephate 75% SP in 300gm pack offers economical option for larger field applications with systemic action against various pests.'
   },
@@ -40,7 +40,7 @@ export const productsData = [
     slug: 'acetamiprid-20-sp',
     packSize: '250 gm',
     price: 450,
-    image: '/images/acetamiprid-20-sp.jpeg',
+    image: '/images/acetaamiprid.jpeg',
     description: 'Neonicotinoid insecticide for sucking insects.',
     fullDescription: 'Acetamiprid 20% SP is an imported neonicotinoid insecticide effective against sucking insects like aphids, whiteflies and leafhoppers.'
   },
@@ -51,7 +51,7 @@ export const productsData = [
     slug: 'aluminium-phosphide-56-tube',
     packSize: '30gm/16tube/40tin',
     price: 95,
-    image: '/images/aluminium-phosphide-56-tube.jpeg',
+    image: '/images/aluminium.jpeg',
     description: 'Fumigant for grain storage protection.',
     fullDescription: 'Aluminium Phosphide 56% in tube form is an imported fumigant for effective grain storage protection and pest control.'
   },
@@ -62,7 +62,7 @@ export const productsData = [
     slug: 'aluminium-phosphide-56-gandum-goli',
     packSize: '1.5 kg',
     price: 3000,
-    image: '/images/aluminium-phosphide-56-gandum-goli.jpeg',
+    image: '/images/aluminium.jpeg',
     description: 'Grain fumigant in larger pack.',
     fullDescription: 'Aluminium Phosphide 56% Gandum Goli provides effective fumigation for large grain storage facilities.'
   },
@@ -73,7 +73,7 @@ export const productsData = [
     slug: 'bifenthrin-10-ec-250',
     packSize: '250 ml',
     price: 500,
-    image: '/images/bifenthrin-10-ec-250.jpeg',
+    image: '/images/bifenthrin.jpeg',
     description: 'Imported broad-spectrum synthetic pyrethroid.',
     fullDescription: 'Bifenthrin 10% EC imported is a broad-spectrum synthetic pyrethroid for effective control of various crop pests.'
   },
@@ -84,7 +84,7 @@ export const productsData = [
     slug: 'bifenthrin-10-ec-500',
     packSize: '500 ml',
     price: 900,
-    image: '/images/bifenthrin-10-ec-500.jpeg',
+    image: '/images/bifenthrin.jpeg',
     description: 'Medium pack of imported pyrethroid insecticide.',
     fullDescription: 'Bifenthrin 10% EC in 500ml pack offers better value for medium to large field applications.'
   },
@@ -95,7 +95,7 @@ export const productsData = [
     slug: 'bifenthrin-10-ec-1000',
     packSize: '1000 ml',
     price: 1600,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/bifenthrin.jpeg',
     description: 'Large pack synthetic pyrethroid concentrate.',
     fullDescription: 'Bifenthrin 10% EC in 1L pack provides economical option for extensive pest management programs.'
   },
@@ -106,7 +106,7 @@ export const productsData = [
     slug: 'ceedo-20-sc-200',
     packSize: '200 ml',
     price: 370,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/ceedo.jpeg',
     description: 'Suspension concentrate insecticide formulation.',
     fullDescription: 'Ceedo 20% SC is an effective suspension concentrate formulation for pest management.'
   },
@@ -117,7 +117,7 @@ export const productsData = [
     slug: 'ceedo-20-sc-1000',
     packSize: '1000 ml',
     price: 1300,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/ceedo20%sc.jpeg',
     description: 'Large pack of suspension concentrate.',
     fullDescription: 'Ceedo 20% SC in 1L pack provides economical option for larger scale applications.'
   },
@@ -128,7 +128,7 @@ export const productsData = [
     slug: 'chlorfenapyr-36-sc',
     packSize: '200 ml',
     price: 800,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/chlorphenpyr.jpeg',
     description: 'Imported pro-insecticide for broad pest control.',
     fullDescription: 'Chlorfenapyr 36% SC imported offers broad-spectrum pest control with unique mode of action.'
   },
@@ -139,7 +139,7 @@ export const productsData = [
     slug: 'clada-25-wp-200',
     packSize: '200 gm',
     price: 375,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/clada.jpeg',
     description: 'Imported neonicotinoid wettable powder.',
     fullDescription: 'Clada 25% WP containing Imidacloprid is an imported neonicotinoid for effective sucking pest control.'
   },
@@ -150,7 +150,7 @@ export const productsData = [
     slug: 'clada-25-wp-250',
     packSize: '250 gm',
     price: 475,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/clada.jpeg',
     description: 'Medium pack of neonicotinoid wettable powder.',
     fullDescription: 'Clada 25% WP in larger 250gm pack provides economical option for field applications.'
   },
@@ -161,7 +161,7 @@ export const productsData = [
     slug: 'cladda-25-wp-100',
     packSize: '100 gm',
     price: 225,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/clada.jpeg',
     description: 'Small pack neonicotinoid for trial applications.',
     fullDescription: 'Cladda 25% WP with Imidacloprid in small 100gm pack is ideal for small field trials and applications.'
   },
@@ -172,7 +172,7 @@ export const productsData = [
     slug: 'cypermethrin-10-ec-250',
     packSize: '250 ml',
     price: 350,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/cypermethrin.jpeg',
     description: 'Synthetic pyrethroid for broad pest control.',
     fullDescription: 'Cypermethrin 10% EC is a reliable synthetic pyrethroid for effective control of various crop pests.'
   },
@@ -183,7 +183,7 @@ export const productsData = [
     slug: 'cypermethrin-10-ec-1000',
     packSize: '1000 ml',
     price: 985,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/cypermethrin.jpeg',
     description: 'Large pack pyrethroid concentrate.',
     fullDescription: 'Cypermethrin 10% EC in 1L pack provides economical solution for large-scale pest management.'
   },
@@ -194,7 +194,7 @@ export const productsData = [
     slug: 'dimethoate-40',
     packSize: '400 ml',
     price: 700,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/dimethoat.jpeg',
     description: 'Imported systemic and contact insecticide.',
     fullDescription: 'Dimethoate 40% imported combines systemic and contact action for comprehensive pest control.'
   },
@@ -260,7 +260,7 @@ export const productsData = [
     slug: 'emamectin-1-9-ec-200',
     packSize: '200 ml',
     price: 320,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/emamectinbenzoate.jpeg',
     description: 'Avermectin-based insecticide concentrate.',
     fullDescription: 'Emamectin 1.9% EC is an avermectin-based insecticide effective against lepidopteran and mite pests.'
   },
@@ -271,7 +271,7 @@ export const productsData = [
     slug: 'emamectin-1-9-ec-1000',
     packSize: '1000 ml',
     price: 1350,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/emamectinbenzoate.jpeg',
     description: 'Large pack avermectin concentrate.',
     fullDescription: 'Emamectin 1.9% EC in 1L pack is economical for large field applications.'
   },
@@ -282,7 +282,7 @@ export const productsData = [
     slug: 'emamectin-1-9-ec-imported-1000',
     packSize: '1000 ml',
     price: 1450,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/emamectinbenzoate.jpeg',
     description: 'Premium imported avermectin concentrate.',
     fullDescription: 'Emamectin 1.9% EC imported (1L) provides premium quality for critical pest management.'
   },
@@ -293,7 +293,7 @@ export const productsData = [
     slug: 'emamectin-1-9-ec-imported-400',
     packSize: '400 ml',
     price: 640,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/emamectinbenzoate.jpeg',
     description: 'Medium pack of imported avermectin.',
     fullDescription: 'Emamectin 1.9% EC imported in 400ml pack offers convenient size for field applications.'
   },
@@ -304,7 +304,7 @@ export const productsData = [
     slug: 'emamectin-5-wdg-150',
     packSize: '150 gm',
     price: 550,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/emamectinbenzoate.jpeg',
     description: 'Water-dispersible granule formulation.',
     fullDescription: 'Emamectin 5% WDG imported in water-dispersible granule format for convenient application.'
   },
@@ -315,7 +315,7 @@ export const productsData = [
     slug: 'emamectin-5-wdg-75',
     packSize: '75 gm',
     price: 330,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/emamectinbenzoate.jpeg',
     description: 'Small pack water-dispersible granule.',
     fullDescription: 'Emamectin 5% WDG in 75gm pack is ideal for small to medium field applications.'
   },
@@ -370,7 +370,7 @@ export const productsData = [
     slug: 'instant-super-50-sg',
     packSize: '50 gm',
     price: 0,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/instantsuper.jpeg',
     description: 'Soluble granule formulation.',
     fullDescription: 'Instant Super 50% SG is a soluble granule formulation for quick solution preparation and application.'
   },
@@ -425,7 +425,7 @@ export const productsData = [
     slug: 'lejing-60-wdg',
     packSize: '100 gm',
     price: 700,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/lejing.jpeg',
     description: 'Imported water-dispersible granule.',
     fullDescription: 'Lejing 60% WDG imported offers premium water-dispersible granule format for pest control.'
   },
@@ -436,7 +436,7 @@ export const productsData = [
     slug: 'leufenuron-5-ec',
     packSize: '400 ml',
     price: 500,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/lufenuron.jpeg',
     description: 'Chitin synthesis inhibitor concentrate.',
     fullDescription: 'Leufenuron 5% EC is a chitin synthesis inhibitor effective against lepidopteran pests.'
   },
@@ -458,7 +458,7 @@ export const productsData = [
     slug: 'niko-20-sg',
     packSize: '100 gm',
     price: 350,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/niko.jpeg',
     description: 'Imported soluble granule.',
     fullDescription: 'Niko 20% SG imported is a soluble granule formulation for convenient field application.'
   },
@@ -469,7 +469,7 @@ export const productsData = [
     slug: 'pyriprixifin-10-8-ec',
     packSize: '500 ml',
     price: 875,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/pyriprdxyfen.jpeg',
     description: 'Pyrethroid-based concentrate formulation.',
     fullDescription: 'Pyriprixifin 10.8% EC is a pyrethroid-based concentrate for effective pest control.'
   },
@@ -480,7 +480,7 @@ export const productsData = [
     slug: 'sadi-25-zc',
     packSize: '200 ml',
     price: 650,
-     image: '/images/SADI.jpeg',
+     image: '/images/lambda.jpeg',
     description: 'Combined pyrethroid and neonicotinoid.',
     fullDescription: 'Sadi 25% ZC imported contains Lambda-cyhalothrin and Clothianidin for broad-spectrum pest control.'
   },
@@ -491,7 +491,7 @@ export const productsData = [
     slug: 'sega-pest-clear-3-400',
     packSize: '400 ml',
     price: 475,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/segapest.jpeg',
     description: 'Suspension concentrate formulation.',
     fullDescription: 'Sega Pest Clear 3% SC is a suspension concentrate for effective pest management.'
   },
@@ -502,7 +502,7 @@ export const productsData = [
     slug: 'sega-pest-clear-3-1000',
     packSize: '1000 ml',
     price: 960,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/segapest.jpeg',
     description: 'Large pack suspension concentrate.',
     fullDescription: 'Sega Pest Clear 3% SC in 1L pack is economical for larger field applications.'
   },
@@ -513,7 +513,7 @@ export const productsData = [
     slug: 'shiding-21-ec',
     packSize: '800 ml',
     price: 1150,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/shiding.jpeg',
     description: 'Premium emulsifiable concentrate.',
     fullDescription: 'Shiding 21% EC is a premium emulsifiable concentrate for comprehensive pest control.'
   },
@@ -535,7 +535,7 @@ export const productsData = [
     slug: 'togo-30-sc',
     packSize: '50 ml',
     price: 720,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/togo.jpeg',
     description: 'Imported suspension concentrate.',
     fullDescription: 'Togo 30% SC imported is a suspension concentrate for effective pest management.'
   },
@@ -546,7 +546,7 @@ export const productsData = [
     slug: 'yupu-45-wdg',
     packSize: '40 gm',
     price: 475,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/yupu.jpeg',
     description: 'Combined formulation water-dispersible granule.',
     fullDescription: 'Yupu 45% WDG imported containing Emamectin and Lufenuron is a water-dispersible granule for broad pest control.'
   },
@@ -1408,7 +1408,7 @@ export const productsData = [
   {
     id: 128,
     name: 'Alcone 0.4G (CTPR)',
-    category: 'Granious',
+    category: 'Granules',
     slug: 'alcone-0-4g-ctpr-4kg',
     packSize: '4 kg',
     price: 0,
@@ -1419,7 +1419,7 @@ export const productsData = [
   {
     id: 129,
     name: 'Alcone 0.4G (CTPR) (8kg)',
-    category: 'Granious',
+    category: 'Granules',
     slug: 'alcone-0-4g-ctpr-8kg',
     packSize: '8 kg',
     price: 1050,
@@ -1447,7 +1447,7 @@ export const productsData = [
     slug: 'lambda-25-wp-sachet',
     packSize: '62.5 gm',
     price: 195,
-    image: 'https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=900&q=80',
+    image: '/images/lambdacythorine.jpeg',
     description: 'Household insecticide sachet.',
     fullDescription: 'Lambda 25% WP in convenient sachet form is ideal for household pest management.'
   }

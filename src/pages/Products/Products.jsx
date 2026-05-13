@@ -12,7 +12,7 @@ const categoryIcons = {
   Fertilizer: FaLeaf,
   'Special Nutrients': FaCubes,
   'Soil Reclamation': FaSeedling,
-  Granious: FaSeedling,
+  Granules: FaSeedling,
   Household: FaHome
 };
 

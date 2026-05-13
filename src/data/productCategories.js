@@ -39,14 +39,14 @@ export const productCategories = [
     label: 'Soil Reclamation',
     description: 'Products that help restore and improve soil health.',
     slug: 'soil-reclamation',
-    accent: 'granious'
+    accent: 'granules'
   },
   {
-    name: 'Granious',
+    name: 'Granules',
     label: 'Granules',
     description: 'Granular medicine for even application.',
-    slug: 'granious',
-    accent: 'granious'
+    slug: 'granules',
+    accent: 'granules'
   },
   {
     name: 'Household',
