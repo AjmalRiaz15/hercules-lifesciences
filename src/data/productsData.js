@@ -205,7 +205,7 @@ export const productsData = [
     slug: 'dumei-50-120',
     packSize: '120 gm',
     price: 1525,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/DUMEI.jpeg',
     description: 'Premium imported flonicamid formulation.',
     fullDescription: 'Dumei 50% containing Flonicamid is a premium imported product for sucking insect control.'
   },
@@ -216,7 +216,7 @@ export const productsData = [
     slug: 'dumei-50-wg-60',
     packSize: '60 gm',
     price: 825,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/DUMEI.jpeg',
     description: 'Water-dispersible granule formulation.',
     fullDescription: 'Dumei 50% WG with Flonicamid offers convenient water-dispersible granule format for pest management.'
   },
@@ -227,7 +227,7 @@ export const productsData = [
     slug: 'dursban-40-ec-250',
     packSize: '250 ml',
     price: 440,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/dursban-40-ec-imported.jpeg',
     description: 'Organophosphate insecticide concentrate.',
     fullDescription: 'Dursban 40% EC containing Chlorpyrifos is an effective organophosphate for broad pest control.'
   },
@@ -326,7 +326,7 @@ export const productsData = [
     slug: 'fentrol-fipronil-5-480',
     packSize: '480 ml',
     price: 795,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/FENTROL.jpeg',
     description: 'Premium fipronil suspension concentrate.',
     fullDescription: 'Fentrol (Fipronil) 5% SC is a premium suspension concentrate for broad-spectrum pest control.'
   },
@@ -337,7 +337,7 @@ export const productsData = [
     slug: 'fentrol-fipronil-5-1000',
     packSize: '1000 ml',
     price: 1495,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/FENTROL.jpeg',
     description: 'Large pack premium fipronil.',
     fullDescription: 'Fentrol (Fipronil) 5% SC in 1L pack provides economical option for extensive applications.'
   },
@@ -348,7 +348,7 @@ export const productsData = [
     slug: 'freedom-11-6-100',
     packSize: '100 ml',
     price: 530,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/FREEDOM.jpeg',
     description: 'Combined formulation imported.',
     fullDescription: 'Freedom 11.6% imported containing Chlorantraniliprole and Emamectin offers dual-action pest control.'
   },
@@ -359,7 +359,7 @@ export const productsData = [
     slug: 'freedom-11-6-150',
     packSize: '150 ml',
     price: 720,
-    image: 'https://images.unsplash.com/photo-1592982537447-3d80ef4d6d75?auto=format&fit=crop&w=900&q=80',
+    image: '/images/FREEDOM.jpeg',
     description: 'Medium pack dual-action formulation.',
     fullDescription: 'Freedom 11.6% in 150ml pack provides convenient size for field applications.'
   },
@@ -480,7 +480,7 @@ export const productsData = [
     slug: 'sadi-25-zc',
     packSize: '200 ml',
     price: 650,
-     image: '/images/sadi-25-zc.jpeg',
+     image: '/images/SADI.jpeg',
     description: 'Combined pyrethroid and neonicotinoid.',
     fullDescription: 'Sadi 25% ZC imported contains Lambda-cyhalothrin and Clothianidin for broad-spectrum pest control.'
   },
@@ -658,7 +658,7 @@ export const productsData = [
     slug: 'oxyrich-40-wp',
     packSize: '600 gm',
     price: 1250,
-    image: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/Oxyrich.jpeg',
     description: 'Combined copper and cymoxanil.',
     fullDescription: 'Oxyrich 40% WP imported contains Copper and Cymoxanil for broad-spectrum disease control.'
   },
@@ -669,7 +669,7 @@ export const productsData = [
     slug: 'profile-47-250',
     packSize: '250 gm',
     price: 800,
-    image: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/Profile.jpeg',
     description: 'Medium pack copper combination.',
     fullDescription: 'Profile 47% imported containing Copper and Kasuga-Mycin is effective against fungal diseases.'
   },
@@ -680,7 +680,7 @@ export const productsData = [
     slug: 'profile-47-400',
     packSize: '400 gm',
     price: 1300,
-    image: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/Profile.jpeg',
     description: 'Large pack copper combination.',
     fullDescription: 'Profile 47% imported in larger pack provides economical solution for disease management.'
   },
@@ -713,7 +713,7 @@ export const productsData = [
     slug: 'sulphur-80-wg-1kg',
     packSize: '1 kg',
     price: 675,
-    image: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/Sulphur.jpeg',
     description: 'Imported sulphur fungicide granules.',
     fullDescription: 'Sulphur 80% WG imported is a classic fungicide for powdery mildew and other fungal disease control.'
   },
@@ -724,7 +724,7 @@ export const productsData = [
     slug: 'sulphur-80-wg-2kg',
     packSize: '2 kg',
     price: 1250,
-    image: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/Sulphur.jpeg',
     description: 'Medium pack sulphur fungicide.',
     fullDescription: 'Sulphur 80% WG imported in 2kg pack provides economical option for larger applications.'
   },
@@ -735,7 +735,7 @@ export const productsData = [
     slug: 'sulphur-80-wg-10kg',
     packSize: '10 kg',
     price: 6000,
-    image: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/Sulphur.jpeg',
     description: 'Large pack sulphur fungicide.',
     fullDescription: 'Sulphur 80% WG imported in 10kg pack is economical for large-scale disease management.'
   },
@@ -746,7 +746,7 @@ export const productsData = [
     slug: 'sulphur-80-wg-25kg',
     packSize: '25 kg',
     price: 14500,
-    image: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/Sulphur.jpeg',
     description: 'Bulk pack sulphur fungicide.',
     fullDescription: 'Sulphur 80% WG imported in bulk 25kg pack is ideal for commercial farming operations.'
   },
@@ -801,7 +801,7 @@ export const productsData = [
     slug: 'vito-50-wp',
     packSize: '700 gm',
     price: 2100,
-    image: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/Vito.jpeg',
     description: 'Combined dithiocarbamate and acylalanine.',
     fullDescription: 'Vito 50% WP imported containing Propineb and Metalaxyl is effective against late blight and downy mildew.'
   },
@@ -814,7 +814,7 @@ export const productsData = [
     slug: 'atrazin-38-sc-500',
     packSize: '500 ml',
     price: 590,
-    image: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=900&q=80',
+    image: '/images/Atrazine.jpeg',
     description: 'Imported selective herbicide concentrate.',
     fullDescription: 'Atrazin 38% SC imported is a selective triazine herbicide for weed control in corn and cereals.'
   },
@@ -836,7 +836,7 @@ export const productsData = [
     slug: 'blade-30-sc',
     packSize: '35 ml',
     price: 725,
-    image: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=900&q=80',
+    image: '/images/BLADE.jpeg',
     description: 'Imported selective herbicide.',
     fullDescription: 'Blade 30% SC imported containing Topramezone is selective for post-emergence weed control in corn.'
   },
@@ -847,7 +847,7 @@ export const productsData = [
     slug: 'butachlor-60-ec',
     packSize: '800 ml',
     price: 800,
-    image: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=900&q=80',
+    image: '/images/Butachlor.jpeg',
     description: 'Imported pre-emergence herbicide.',
     fullDescription: 'Butachlor 60% EC imported is a selective chloroacetamide herbicide for rice and other crops.'
   },
@@ -869,7 +869,7 @@ export const productsData = [
     slug: 'g-fast-glyphosate-88-8-100',
     packSize: '100 gm',
     price: 230,
-    image: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=900&q=80',
+    image: '/images/G-fast.jpeg',
     description: 'Small pack non-selective herbicide.',
     fullDescription: 'G-Fast Glyphosate 88.8% WSG imported is a non-selective systemic herbicide for general weed control.'
   },
@@ -880,7 +880,7 @@ export const productsData = [
     slug: 'g-fast-glyphosate-88-8-400',
     packSize: '400 gm',
     price: 900,
-    image: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=900&q=80',
+    image: '/images/G-fast.jpeg',
     description: 'Large pack non-selective herbicide.',
     fullDescription: 'G-Fast Glyphosate 88.8% WSG imported in larger pack is economical for extensive weed management.'
   },
@@ -891,7 +891,7 @@ export const productsData = [
     slug: 'gazoner-15-ec-250',
     packSize: '250 ml',
     price: 650,
-    image: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=900&q=80',
+    image: '/images/Gazoner.jpeg',
     description: 'Selective grass herbicide concentrate.',
     fullDescription: 'Gazoner 15% EC is a selective post-emergence herbicide for grass weed control.'
   },
@@ -902,7 +902,7 @@ export const productsData = [
     slug: 'gazoner-15-ec-500',
     packSize: '500 ml',
     price: 1080,
-    image: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=900&q=80',
+    image: '/images/Gazoner.jpeg',
     description: 'Large pack grass herbicide.',
     fullDescription: 'Gazoner 15% EC in 500ml pack provides economical option for grass weed management.'
   },
@@ -913,7 +913,7 @@ export const productsData = [
     slug: 'gengwei-55-sc-1000-imported',
     packSize: '1000 ml',
     price: 1450,
-    image: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=900&q=80',
+    image: '/images/GENGWI.jpeg',
     description: 'Imported herbicide concentrate.',
     fullDescription: 'Gengwei 55% SC imported is an effective herbicide for weed control.'
   },
@@ -1036,7 +1036,7 @@ export const productsData = [
     slug: 'bogata-40-7-special',
     packSize: '8 kg',
     price: 4750,
-    image: 'https://images.unsplash.com/photo-1589923188938-c8b3f7f7cdd3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/BOGATA.jpeg',
     description: 'Premium imported special formula.',
     fullDescription: 'Bogata (40+7) Special Imported Recipe is a premium formulation with special composition for enhanced crop nutrition.'
   },
@@ -1047,7 +1047,7 @@ export const productsData = [
     slug: 'bogata-40-7-solid-humate',
     packSize: '8 kg',
     price: 1750,
-    image: 'https://images.unsplash.com/photo-1589923188938-c8b3f7f7cdd3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/Bogata.jpeg',
     description: 'Potassium humate solid fertilizer.',
     fullDescription: 'Bogata (40+7) with solid potassium humate improves soil structure and nutrient availability.'
   },
@@ -1069,7 +1069,7 @@ export const productsData = [
     slug: 'bogata-plus-p2o5-special',
     packSize: '20 ltr',
     price: 11550,
-    image: 'https://images.unsplash.com/photo-1589923188938-c8b3f7f7cdd3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/bogataPlus.jpeg',
     description: 'Premium phosphorus fertilizer.',
     fullDescription: 'Bogata Plus (P2O5) Special is a premium phosphorus formulation for critical growth stages.'
   },
@@ -1080,7 +1080,7 @@ export const productsData = [
     slug: 'bokash-25-organic',
     packSize: '25 kg',
     price: 2550,
-    image: 'https://images.unsplash.com/photo-1589923188938-c8b3f7f7cdd3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/BOKASH.jpeg',
     description: 'Organic matter soil conditioner.',
     fullDescription: 'Bokash 25% Organic Matter improves soil health and water retention for sustainable farming.'
   },
@@ -1091,7 +1091,7 @@ export const productsData = [
     slug: 'client-5-boron-imported',
     packSize: '500 ml',
     price: 875,
-    image: 'https://images.unsplash.com/photo-1589923188938-c8b3f7f7cdd3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/CLIENT.jpeg',
     description: 'Imported micronutrient boron.',
     fullDescription: 'Client 5% Boron imported provides essential boron for flower and fruit development.'
   },
@@ -1102,7 +1102,7 @@ export const productsData = [
     slug: 'client-5-boron',
     packSize: '500 ml',
     price: 575,
-    image: 'https://images.unsplash.com/photo-1589923188938-c8b3f7f7cdd3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/CLIENT.jpeg',
     description: 'Micronutrient boron solution.',
     fullDescription: 'Client 5% Boron is an affordable micronutrient for addressing boron deficiency.'
   },
@@ -1146,7 +1146,7 @@ export const productsData = [
     slug: 'joba-plus-npk-8-8-6',
     packSize: '1000 ml',
     price: 675,
-    image: 'https://images.unsplash.com/photo-1589923188938-c8b3f7f7cdd3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/JOBA.jpeg',
     description: 'Balanced NPK liquid fertilizer.',
     fullDescription: 'Joba Plus NPK 8:8:6 provides balanced nutrition for overall plant development.'
   },
@@ -1344,7 +1344,7 @@ export const productsData = [
     slug: 'zelura-zn-chelated-zinc-5-powder',
     packSize: '500 gm',
     price: 1125,
-    image: 'https://images.unsplash.com/photo-1589923188938-c8b3f7f7cdd3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/ZeluraPlus.jpeg',
     description: 'Chelated zinc micronutrient powder.',
     fullDescription: 'Zelura-ZN Chelated Zinc 5% Powder addresses zinc deficiency in crops.'
   },
@@ -1355,7 +1355,7 @@ export const productsData = [
     slug: 'zelura-zn-chelated-zinc-5-solid',
     packSize: '2 kg',
     price: 1225,
-    image: 'https://images.unsplash.com/photo-1589923188938-c8b3f7f7cdd3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/ZeluraPlus.jpeg',
     description: 'Chelated zinc solid formulation.',
     fullDescription: 'Zelura-ZN Chelated Zinc 5% Solid provides readily available zinc for crop nutrition.'
   },
@@ -1366,7 +1366,7 @@ export const productsData = [
     slug: 'gagi-7-2-1',
     packSize: '5 kg',
     price: 950,
-    image: 'https://images.unsplash.com/photo-1589923188938-c8b3f7f7cdd3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/ZeluraPlus.jpeg',
     description: 'Nitrogen-rich NPK fertilizer.',
     fullDescription: 'Gagi 7:2:1 with high nitrogen supports vegetative growth.'
   },
@@ -1377,7 +1377,7 @@ export const productsData = [
     slug: 'zelura-plus-zinc-10-200ltr',
     packSize: '200 ltr',
     price: 39000,
-    image: 'https://images.unsplash.com/photo-1589923188938-c8b3f7f7cdd3?auto=format&fit=crop&w=900&q=80',
+    image: '?images/zeluraPlus.jpeg',
     description: 'Industrial zinc micronutrient.',
     fullDescription: 'Zelura Plus Zinc 10% in 200L drum provides concentrated zinc for large operations.'
   },
@@ -1388,7 +1388,7 @@ export const productsData = [
     slug: 'zelura-plus-zinc-10-3ltr',
     packSize: '3 ltr',
     price: 900,
-    image: 'https://images.unsplash.com/photo-1589923188938-c8b3f7f7cdd3?auto=format&fit=crop&w=900&q=80',
+    image: '?images/zeluraPlus.jpeg',
     description: 'Medium pack zinc fertilizer.',
     fullDescription: 'Zelura Plus Zinc 10% in 3L pack is practical for field applications.'
   },
@@ -1399,7 +1399,7 @@ export const productsData = [
     slug: 'zelura-plus-zinc-10-20ltr',
     packSize: '20 ltr',
     price: 4300,
-    image: 'https://images.unsplash.com/photo-1589923188938-c8b3f7f7cdd3?auto=format&fit=crop&w=900&q=80',
+    image: '?images/zeluraPlus.jpeg',
     description: 'Large pack zinc fertilizer.',
     fullDescription: 'Zelura Plus Zinc 10% in 20L pack is economical for larger field coverage.'
   },

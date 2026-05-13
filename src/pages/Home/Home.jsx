@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { FaChevronLeft, FaChevronRight, FaArrowRight } from 'react-icons/fa';
 import { productsData } from '../../data/productsData';
 import { productCategories } from '../../data/productCategories';
-import { imageAssets } from '../../assets/images';
 import styles from './Home.module.css';
 
 function Home() {
@@ -16,7 +15,7 @@ function Home() {
     return {
       ...category,
       count: productsData.filter((product) => product.category === category.name).length,
-      image: representativeProduct?.image || imageAssets.homeBannerPrimary,
+      image: representativeProduct?.image || '/images/home-banner-primary.jpeg',
       productName: representativeProduct?.name || category.label,
       productPackSize: representativeProduct?.packSize || 'Premium field solution'
     };
@@ -24,7 +23,7 @@ function Home() {
 
   const slides = [
     {
-      image: imageAssets.homeBannerPrimary,
+      image: '/images/home-banner-primary.jpeg',
       position: 'left center'
       // heading: 'Hercules Life Sciences',
       // subheading: 'Behtareen quality products for better and safer crop yield.',
@@ -32,7 +31,7 @@ function Home() {
       // buttonTo: '/products'
     },
     {
-      image: imageAssets.homeBannerSecondary,
+      image: '/images/home-banner-secondary.jpeg',
       position: 'left center'
       // heading: 'Barhayein Pedawar, Mehfooz Bunyaad',
       // subheading: 'Advanced crop protection and nutrition solutions for every season.',
