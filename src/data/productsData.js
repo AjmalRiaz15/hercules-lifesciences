@@ -524,7 +524,7 @@ export const productsData = [
     slug: 'thiamethaxim-25-wg',
     packSize: '48 gm',
     price: 180,
-    image: '/images/BogataPlus.jpeg',
+    image: '/images/thiamethoxam.jpeg',
     description: 'Imported neonicotinoid wettable granule.',
     fullDescription: 'Thiamethaxim 25% WG imported is a neonicotinoid for sucking insect control.'
   },
@@ -570,7 +570,7 @@ export const productsData = [
     slug: 'cyclone-72',
     packSize: '600 gm',
     price: 1150,
-    image: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/Cyclone.jpeg',
     description: 'Combined fungicide powder formulation.',
     fullDescription: 'Cyclone 72% imported containing Cymoxanil and Mancozeb is effective against late blight and other fungal diseases.'
   },
@@ -581,7 +581,7 @@ export const productsData = [
     slug: 'copperoxychloride-50-wp',
     packSize: '1000 gm',
     price: 2100,
-    image: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/copper.jpeg',
     description: 'Copper-based fungicide wettable powder.',
     fullDescription: 'Copperoxychloride 50% WP is a copper-based fungicide for bacterial and fungal disease management.'
   },
@@ -592,7 +592,7 @@ export const productsData = [
     slug: 'finer-50-sc',
     packSize: '120 ml',
     price: 725,
-    image: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/finer.jpeg',
     description: 'Combined triazole and strobilurin.',
     fullDescription: 'Finer 50% SC imported containing Tubaconazole and Azoxystrobin provides dual-action fungal disease control.'
   },
@@ -603,7 +603,7 @@ export const productsData = [
     slug: 'kanglezine-18-7',
     packSize: '250 gm',
     price: 650,
-    image: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/kanglixin.jpeg',
     description: 'Combined strobilurin and morpholine.',
     fullDescription: 'Kanglezine 18.7% WG imported contains Pyraclostrobin and Dimethomorph for comprehensive disease management.'
   },
@@ -691,7 +691,7 @@ export const productsData = [
     slug: 'pyrazole-50',
     packSize: '100 gm',
     price: 500,
-    image: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/Pyrazole.jpeg',
     description: 'Premium dual-action fungicide.',
     fullDescription: 'Pyrazole 50% imported combines Tubaconazole and Pyraclostrobin for comprehensive fungal disease control.'
   },
@@ -702,7 +702,7 @@ export const productsData = [
     slug: 'recado-super-32',
     packSize: '200 ml',
     price: 790,
-    image: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/Recado.jpeg',
     description: 'Combined triazole and strobilurin.',
     fullDescription: 'Recado Super 32% imported contains Propiconazole and Azoxystrobin for effective disease prevention.'
   },
@@ -724,7 +724,7 @@ export const productsData = [
     slug: 'sulphur-80-wg-2kg',
     packSize: '2 kg',
     price: 1250,
-    image: '/images/Sulphur.jpeg',
+    image: '/images/Sulphur80.jpeg',
     description: 'Medium pack sulphur fungicide.',
     fullDescription: 'Sulphur 80% WG imported in 2kg pack provides economical option for larger applications.'
   },
@@ -757,7 +757,7 @@ export const productsData = [
     slug: 'thiophenatemethyl-70-wp-100',
     packSize: '100 gm',
     price: 260,
-    image: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/Thiophenate.jpeg',
     description: 'Small pack benzimidazole fungicide.',
     fullDescription: 'Thiophenatemethyl 70% WP imported is a benzimidazole fungicide for various fungal diseases.'
   },
@@ -768,7 +768,7 @@ export const productsData = [
     slug: 'thiophenatemethyl-70-wp-400',
     packSize: '400 gm',
     price: 740,
-    image: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/Thiophenate.jpeg',
     description: 'Large pack benzimidazole fungicide.',
     fullDescription: 'Thiophenatemethyl 70% WP imported in larger pack is economical for field applications.'
   },
@@ -779,7 +779,7 @@ export const productsData = [
     slug: 'trifloxystrobin-tubaconazole-75',
     packSize: '65 gm',
     price: 700,
-    image: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/Trifloxy.jpeg',
     description: 'Premium combination fungicide.',
     fullDescription: 'Trifloxystrobin+Tubaconazole 75% imported combines strobilurin and triazole for comprehensive disease control.'
   },
@@ -946,7 +946,7 @@ export const productsData = [
     slug: 'glyphosate-48-sl',
     packSize: '1000 ml',
     price: 980,
-    image: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=900&q=80',
+    image: '/images/Glyphosate.jpeg',
     description: 'Imported non-selective herbicide.',
     fullDescription: 'Glyphosate 48% SL imported is a non-selective systemic herbicide for broad weed management.'
   },
@@ -968,7 +968,7 @@ export const productsData = [
     slug: 'paraquat-20-sl',
     packSize: '1000 ml',
     price: 980,
-    image: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=900&q=80',
+    image: '/images/paraquat.jpeg',
     description: 'Imported contact herbicide.',
     fullDescription: 'Paraquat 20% SL imported is a non-selective contact herbicide for rapid weed control.'
   },
@@ -979,7 +979,7 @@ export const productsData = [
     slug: 'peek-40-ec-400',
     packSize: '400 ml',
     price: 825,
-    image: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=900&q=80',
+    image: '/images/Peek.jpeg',
     description: 'Combined selective herbicide.',
     fullDescription: 'Peek 40% EC containing Bromoxynyl and MCPA is selective for broad-leaved weed control.'
   },
@@ -990,7 +990,7 @@ export const productsData = [
     slug: 'peek-40-ec-800',
     packSize: '800 ml',
     price: 1495,
-    image: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=900&q=80',
+    image: 'images/Peek.jpeg',
     description: 'Large pack selective herbicide.',
     fullDescription: 'Peek 40% EC in larger 800ml pack provides economical option for comprehensive weed management.'
   },
@@ -1157,7 +1157,7 @@ export const productsData = [
     slug: 'kastu-k-30-potash-1000',
     packSize: '1000 ml',
     price: 980,
-    image: 'https://images.unsplash.com/photo-1589923188938-c8b3f7f7cdd3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/Kastusup.jpeg',
     description: 'Potash-rich liquid fertilizer.',
     fullDescription: 'Kastu-K 30% Potash provides high potassium for improved plant quality and stress tolerance.'
   },
@@ -1168,7 +1168,7 @@ export const productsData = [
     slug: 'kastu-k-30-potash-3ltr',
     packSize: '3 ltr',
     price: 1600,
-    image: 'https://images.unsplash.com/photo-1589923188938-c8b3f7f7cdd3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/Kastu30%.jpeg',
     description: 'Medium pack potash fertilizer.',
     fullDescription: 'Kastu-K 30% Potash in 3L pack is economical for larger field areas.'
   },
@@ -1179,7 +1179,7 @@ export const productsData = [
     slug: 'kastu-k-30-potash-10ltr',
     packSize: '10 ltr',
     price: 4100,
-    image: 'https://images.unsplash.com/photo-1589923188938-c8b3f7f7cdd3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/Kastu-k.jpeg',
     description: 'Large pack potash fertilizer.',
     fullDescription: 'Kastu-K 30% Potash in 10L pack provides economical option for extensive applications.'
   },
@@ -1212,7 +1212,7 @@ export const productsData = [
     slug: 'lagao-12-61-0-5kg',
     packSize: '5 kg',
     price: 3300,
-    image: 'https://images.unsplash.com/photo-1589923188938-c8b3f7f7cdd3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/Lagao.jpeg',
     description: 'Phosphorus-rich NPK powder.',
     fullDescription: 'Lagao 12:61:0 with high phosphorus content supports root and flower development.'
   },
@@ -1223,7 +1223,7 @@ export const productsData = [
     slug: 'lagao-12-61-0-10kg',
     packSize: '10 kg',
     price: 6600,
-    image: 'https://images.unsplash.com/photo-1589923188938-c8b3f7f7cdd3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/Lagao.jpeg',
     description: 'Large pack phosphorus NPK.',
     fullDescription: 'Lagao 12:61:0 in 10kg pack provides economical option for field applications.'
   },
@@ -1234,7 +1234,7 @@ export const productsData = [
     slug: 'lali-npk-15-17-17',
     packSize: '100 gm',
     price: 130,
-    image: 'https://images.unsplash.com/photo-1589923188938-c8b3f7f7cdd3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/Lali.jpeg',
     description: 'Balanced NPK powder fertilizer.',
     fullDescription: 'Lali NPK 15:17:17 provides balanced nutrition for all-round crop development.'
   },
@@ -1311,7 +1311,7 @@ export const productsData = [
     slug: 'sop-0-0-51-18s-egypt-10kg',
     packSize: '10 kg',
     price: 4350,
-    image: 'https://images.unsplash.com/photo-1589923188938-c8b3f7f7cdd3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/SOP.jpeg',
     description: 'Egyptian potassium sulfate.',
     fullDescription: 'SOP (0:0:51) 18S from Egypt provides pure potassium without chloride.'
   },
@@ -1322,7 +1322,7 @@ export const productsData = [
     slug: 'sop-0-0-51-17s-egypt-25kg',
     packSize: '25 kg',
     price: 10300,
-    image: 'https://images.unsplash.com/photo-1589923188938-c8b3f7f7cdd3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/SOP.jpeg',
     description: 'Large pack Egyptian potassium.',
     fullDescription: 'SOP (0:0:51) 17S from Egypt in 25kg bag is economical for field applications.'
   },
@@ -1333,7 +1333,7 @@ export const productsData = [
     slug: 'urea-phosphate',
     packSize: '10 kg',
     price: 5000,
-    image: 'https://images.unsplash.com/photo-1589923188938-c8b3f7f7cdd3?auto=format&fit=crop&w=900&q=80',
+    image: '/images/UREA-PHOS.jpeg',
     description: 'Nitrogen-phosphorus combination.',
     fullDescription: 'Urea Phosphate combines nitrogen and phosphorus for balanced plant nutrition.'
   },
@@ -1377,7 +1377,7 @@ export const productsData = [
     slug: 'zelura-plus-zinc-10-200ltr',
     packSize: '200 ltr',
     price: 39000,
-    image: '?images/zeluraPlus.jpeg',
+    image: '/images/ZeluraPlus.jpeg',
     description: 'Industrial zinc micronutrient.',
     fullDescription: 'Zelura Plus Zinc 10% in 200L drum provides concentrated zinc for large operations.'
   },
@@ -1388,7 +1388,7 @@ export const productsData = [
     slug: 'zelura-plus-zinc-10-3ltr',
     packSize: '3 ltr',
     price: 900,
-    image: '?images/zeluraPlus.jpeg',
+    image: '/images/ZeluraPlus.jpeg',
     description: 'Medium pack zinc fertilizer.',
     fullDescription: 'Zelura Plus Zinc 10% in 3L pack is practical for field applications.'
   },
@@ -1399,7 +1399,7 @@ export const productsData = [
     slug: 'zelura-plus-zinc-10-20ltr',
     packSize: '20 ltr',
     price: 4300,
-    image: '?images/zeluraPlus.jpeg',
+    image: '/images/ZeluraPlus.jpeg',
     description: 'Large pack zinc fertilizer.',
     fullDescription: 'Zelura Plus Zinc 10% in 20L pack is economical for larger field coverage.'
   },
