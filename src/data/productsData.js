@@ -957,7 +957,7 @@ export const productsData = [
     slug: 'metafin-super-28-5',
     packSize: '14 gm',
     price: 125,
-    image: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=900&q=80',
+    image: '/images/metaphin.jpeg',
     description: 'Selective herbicide granule.',
     fullDescription: 'Metafin Super 28.5% is a selective herbicide for rice weed management.'
   },
@@ -1001,7 +1001,7 @@ export const productsData = [
     slug: 'pendi-acetachlor-42-ec',
     packSize: '800 ml',
     price: 1200,
-    image: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=900&q=80',
+    image: '/images/pendimethalinace.jpeg',
     description: 'Combined pre-emergence herbicide.',
     fullDescription: 'Pendi+Acetachlor 42% EC combines Pendimethalin and Acetachlor for broad weed spectrum control.'
   },
@@ -1012,7 +1012,7 @@ export const productsData = [
     slug: 'pendimethalin-33-ec',
     packSize: '1000 ml',
     price: 1325,
-    image: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=900&q=80',
+    image: '/images/pendimethalin.jpeg',
     description: 'Pre-emergence herbicide concentrate.',
     fullDescription: 'Pendimethalin 33% EC is a selective pre-emergence herbicide for various crops.'
   },
@@ -1023,7 +1023,7 @@ export const productsData = [
     slug: 'walter-super-48-sc',
     packSize: '350 ml',
     price: 715,
-    image: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=900&q=80',
+    image: '/images/waltersuper.jpeg',
     description: 'Premium herbicide suspension.',
     fullDescription: 'Walter Super 48% SC is a suspension concentrate for effective weed control.'
   },
@@ -1460,7 +1460,7 @@ export const productsData = [
     slug: 'rada',
     packSize: '200 ml',
     price: 550,
-    image: 'https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=900&q=80',
+    image: '/images/Rada.jpeg',
     description: 'Household pest control product.',
     fullDescription: 'Rada is an everyday household product for practical pest protection around the home.'
   },
