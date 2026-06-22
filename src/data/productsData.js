@@ -134,7 +134,7 @@ export const productsData = [
   },
   {
     id: 13,
-    name: 'Clada 25% WP (Imidacloprid 200gm)',
+    name: 'Clada 25%  Imported (Imidacloprid 200gm)',
     category: 'Insecticide',
     slug: 'clada-25-wp-200',
     packSize: '200 gm',
@@ -343,25 +343,25 @@ export const productsData = [
   },
   {
     id: 32,
-    name: 'Freedom 11.6% (CTRPR+EMA 100ml)',
+    name: 'Freedom 11.6% SC (CTRPR+EMA 100ml)',
     category: 'Insecticide',
     slug: 'freedom-11-6-100',
     packSize: '100 ml',
     price: 530,
     image: '/images/FREEDOM.jpeg',
     description: 'Combined formulation imported.',
-    fullDescription: 'Freedom 11.6% imported containing Chlorantraniliprole and Emamectin offers dual-action pest control.'
+    fullDescription: 'Freedom 11.6% SC imported containing Chlorantraniliprole and Emamectin offers dual-action pest control.'
   },
   {
     id: 33,
-    name: 'Freedom 11.6% (CTRPR+EMA 150ml)',
+    name: 'Freedom 11.6% SC (CTRPR+EMA 150ml)',
     category: 'Insecticide',
     slug: 'freedom-11-6-150',
     packSize: '150 ml',
     price: 720,
     image: '/images/FREEDOM.jpeg',
     description: 'Medium pack dual-action formulation.',
-    fullDescription: 'Freedom 11.6% in 150ml pack provides convenient size for field applications.'
+    fullDescription: 'Freedom 11.6% SC in 150ml pack provides convenient size for field applications.'
   },
   {
     id: 34,

@@ -174,6 +174,29 @@
   gap: 1rem;
 }
 
+.sectionActions {
+  align-items: center;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.clearSelection {
+  background: transparent;
+  border: 1px solid rgba(31, 75, 50, 0.18);
+  border-radius: 999px;
+  color: #1f4b32;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.65rem 0.95rem;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.clearSelection:hover {
+  background: #edf7e0;
+  border-color: #4d7f3a;
+}
+
 .sectionLabel {
   color: #4d7f3a;
   font-size: 0.8rem;

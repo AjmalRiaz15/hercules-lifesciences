@@ -59,7 +59,7 @@ function Footer() {
         {/* Logo & About Section */}
         <div className={styles.column}>
           <div className={styles.logoSection}>
-            <img className={styles.logoImage} src="/images/hercules-logo.jpeg" alt="Hercules Life Sciences" />
+            <img className={styles.logoImage} src="/images/main-logo.png" alt="Hercules Life Sciences" />
             <h3 className={styles.logoText}>Hercules Life Sciences</h3>
             <p className={styles.tagline}>Cultivating Excellence in Agriculture</p>
           </div>

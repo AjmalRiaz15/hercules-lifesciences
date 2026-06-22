@@ -127,7 +127,7 @@ function Header() {
 
       <div className={styles.header}>
         <div className={styles.brandBlock}>
-          <img className={styles.brandLogo} src="/images/hercules-logo.jpeg" alt="Hercules Life Sciences" />
+          <img className={styles.brandLogo} src="/images/main-logo.png" alt="Hercules Life Sciences" />
           <div className={styles.brandTextGroup}>
             <span className={styles.brand}>Hercules Life Sciences</span>
             <span className={styles.tagline}>Growing Better Every Season</span>

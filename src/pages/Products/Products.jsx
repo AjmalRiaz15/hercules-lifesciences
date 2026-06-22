@@ -31,16 +31,21 @@ const formatProductName = (name) =>
 
 function Products() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const activeCategorySlug = searchParams.get('type') || productCategories[0].slug;
+  const activeCategorySlug = searchParams.get('type');
 
   const activeCategoryMeta = useMemo(
-    () => getCategoryBySlug(activeCategorySlug) || productCategories[0],
+    () => (activeCategorySlug ? getCategoryBySlug(activeCategorySlug) : null),
     [activeCategorySlug]
   );
 
+  const hasActiveType = Boolean(activeCategoryMeta);
+
   const filteredProducts = useMemo(
-    () => productsData.filter((product) => product.category === activeCategoryMeta.name),
-    [activeCategoryMeta.name]
+    () =>
+      activeCategoryMeta
+        ? productsData.filter((product) => product.category === activeCategoryMeta.name)
+        : [],
+    [activeCategoryMeta]
   );
 
   const uniqueProducts = useMemo(() => {
@@ -102,68 +107,77 @@ function Products() {
         </div>
       </header>
 
-      <div className={styles.filterRow}>
-        {productCategories.map((category) => {
-          const Icon = categoryIcons[category.name] || FaLeaf;
-          const isActive = activeCategorySlug === category.slug;
-          const count = categoryCounts[category.name] || 0;
+      {!hasActiveType && (
+        <div className={styles.filterRow}>
+          {productCategories.map((category) => {
+            const Icon = categoryIcons[category.name] || FaLeaf;
+            const isActive = activeCategorySlug === category.slug;
+            const count = categoryCounts[category.name] || 0;
 
-          return (
-            <button
-              key={category.name}
-              type="button"
-              onClick={() => handleCategorySelect(category.slug)}
-              className={`${styles.categoryCard} ${styles[category.accent]} ${isActive ? styles.activeCategoryCard : ''}`}
-            >
-              <div className={styles.categoryHeader}>
-                <span className={styles.iconWrap}>
-                  <Icon />
-                </span>
-                <div>
-                  <h2>{category.name}</h2>
-                  <p>{count} products</p>
+            return (
+              <button
+                key={category.name}
+                type="button"
+                onClick={() => handleCategorySelect(category.slug)}
+                className={`${styles.categoryCard} ${styles[category.accent]} ${isActive ? styles.activeCategoryCard : ''}`}
+              >
+                <div className={styles.categoryHeader}>
+                  <span className={styles.iconWrap}>
+                    <Icon />
+                  </span>
+                  <div>
+                    <h2>{category.name}</h2>
+                    <p>{count} products</p>
+                  </div>
                 </div>
-              </div>
 
-              <p className={styles.categoryText}>{category.description}</p>
+                <p className={styles.categoryText}>{category.description}</p>
 
-              <span className={styles.categoryLink}>View products</span>
-            </button>
-          );
-        })}
-      </div>
+                <span className={styles.categoryLink}>View products</span>
+              </button>
+            );
+          })}
+        </div>
+      )}
 
-      <section className={styles.catalog}>
-        <div className={styles.sectionHeader}>
-          <div>
-            <p className={styles.sectionLabel}>Selected Type</p>
-            <h2>{activeCategoryMeta.name}</h2>
-            <p className={styles.sectionDescription}>{activeCategoryMeta.description}</p>
+      {hasActiveType && (
+        <section className={styles.catalog}>
+          <div className={styles.sectionHeader}>
+            <div>
+              <p className={styles.sectionLabel}>Selected Type</p>
+              <h2>{activeCategoryMeta?.name}</h2>
+              <p className={styles.sectionDescription}>{activeCategoryMeta?.description}</p>
+            </div>
+            <div className={styles.sectionActions}>
+              <button type="button" className={styles.clearSelection} onClick={() => setSearchParams({})}>
+                Browse all categories
+              </button>
+              <span className={styles.sectionCount}>{selectedCount} items</span>
+            </div>
           </div>
-          <span className={styles.sectionCount}>{selectedCount} items</span>
-        </div>
 
-        <div className={styles.grid}>
-          {uniqueProducts.map((product) => (
-            <article key={product.id} className={styles.card}>
-              <div className={styles.cardImageWrap}>
-                <img className={styles.cardImage} src={product.image} alt={product.name} />
-              </div>
-              <div className={styles.cardBody}>
-                <div className={styles.cardTop}>
-                  <span className={styles.cardBadge}>{product.category}</span>
-                  <span className={styles.cardType}>{product.category}</span>
+          <div className={styles.grid}>
+            {uniqueProducts.map((product) => (
+              <article key={product.id} className={styles.card}>
+                <div className={styles.cardImageWrap}>
+                  <img className={styles.cardImage} src={product.image} alt={product.name} />
                 </div>
-                <h3>{product.displayName || product.name}</h3>
-                <p className={styles.cardDescription}>{product.description}</p>
-                <Link className={styles.readMoreButton} to={`/products/${product.slug}`}>
-                  Read more
-                </Link>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
+                <div className={styles.cardBody}>
+                  <div className={styles.cardTop}>
+                    <span className={styles.cardBadge}>{product.category}</span>
+                    <span className={styles.cardType}>{product.category}</span>
+                  </div>
+                  <h3>{product.displayName || product.name}</h3>
+                  <p className={styles.cardDescription}>{product.description}</p>
+                  <Link className={styles.readMoreButton} to={`/products/${product.slug}`}>
+                    Read more
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
     </section>
   );
 }
