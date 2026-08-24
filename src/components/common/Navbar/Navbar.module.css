@@ -137,7 +137,8 @@
   border-radius: 16px;
   box-shadow: 0 18px 40px rgba(22, 48, 31, 0.14);
   display: none;
-  left: calc(100% + 0.35rem);
+  right: calc(100% + 0.35rem);
+  left: auto;
   min-width: 200px;
   padding: 0.5rem;
   position: absolute;

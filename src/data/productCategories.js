@@ -2,60 +2,56 @@ export const productCategories = [
   {
     name: 'Insecticide',
     label: 'Insecticides',
-    description: 'Medicine for fast control of harmful insects.',
     slug: 'insecticide',
-    accent: 'insecticide'
+    accent: 'insecticide',
+    image: '/images/Insecticide.jpg'
   },
   {
     name: 'Fungicide',
     label: 'Fungicides',
-    description: 'Medicine for protection against fungal pressure.',
     slug: 'fungicide',
-    accent: 'fungicide'
+    accent: 'fungicide',
+    image: '/images/Fungicide.jpg'
   },
   {
     name: 'Herbicide',
     label: 'Herbicides',
-    description: 'Medicine for selective weed control.',
     slug: 'herbicide',
-    accent: 'herbicide'
+    accent: 'herbicide',
+    image: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80'
   },
   {
     name: 'Fertilizer',
     label: 'Fertilizers',
-    description: 'Nutrition medicine for balanced plant growth.',
     slug: 'fertilizer',
     accent: 'fertilizer',
+    image: '/fertilizer.jpg',
     subcategories: [
       {
         name: 'Special Nutrients',
         label: 'Special Nutrients',
-        description: 'Special nutrient products for targeted crop support.',
         slug: 'special-nutrients',
         accent: 'fertilizer'
       },
       {
         name: 'Soil Reclamation',
         label: 'Soil Reclamation',
-        description: 'Products that help restore and improve soil health.',
         slug: 'soil-reclamation',
+        accent: 'fertilizer'
+      },
+      {
+        name: 'Granules',
+        label: 'Granules',
+        slug: 'granules',
         accent: 'granules'
+      },
+      {
+        name: 'Household',
+        label: 'Household',
+        slug: 'household',
+        accent: 'household'
       }
     ]
-  },
-  {
-    name: 'Granules',
-    label: 'Granules',
-    description: 'Granular medicine for even application.',
-    slug: 'granules',
-    accent: 'granules'
-  },
-  {
-    name: 'Household',
-    label: 'Household',
-    description: 'Household-use medicine products for everyday care.',
-    slug: 'household',
-    accent: 'household'
   }
 ];
 

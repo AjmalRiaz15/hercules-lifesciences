@@ -10,14 +10,26 @@ function Home() {
   const [isAutoPlay, setIsAutoPlay] = useState(true);
 
   const groupedCategories = productCategories.map((category) => {
-    const representativeProduct = productsData.find((product) => product.category === category.name);
+    const count = productsData.filter((product) => {
+      if (category.name === 'Fertilizer') {
+        return (
+          product.category === 'Fertilizer' ||
+          product.category === 'Special Nutrients' ||
+          product.category === 'Soil Reclamation' ||
+          product.category === 'Granules' ||
+          product.category === 'Household' ||
+          product.subCategory === 'Special Nutrients' ||
+          product.subCategory === 'Soil Reclamation' ||
+          product.subCategory === 'Granules' ||
+          product.subCategory === 'Household'
+        );
+      }
+      return product.category === category.name;
+    }).length;
 
     return {
       ...category,
-      count: productsData.filter((product) => product.category === category.name).length,
-      image: representativeProduct?.image || '/images/home-banner-primary.jpeg',
-      productName: representativeProduct?.name || category.label,
-      productPackSize: representativeProduct?.packSize || 'Premium field solution'
+      count
     };
   });
 
@@ -25,18 +37,10 @@ function Home() {
     {
       image: '/images/home-banner-primary.jpeg',
       position: 'left center'
-      // heading: 'Hercules Life Sciences',
-      // subheading: 'Behtareen quality products for better and safer crop yield.',
-      // button: 'Explore Products',
-      // buttonTo: '/products'
     },
     {
       image: '/images/home-banner-secondary.jpeg',
       position: 'left center'
-      // heading: 'Barhayein Pedawar, Mehfooz Bunyaad',
-      // subheading: 'Advanced crop protection and nutrition solutions for every season.',
-      // button: 'View Catalog',
-      // buttonTo: '/products'
     }
   ];
 
@@ -66,58 +70,55 @@ function Home() {
 
   return (
     <div className={styles.homePage}>
-      <section
-        className={styles.slider}
-        onMouseEnter={() => setIsAutoPlay(false)}
-        onMouseLeave={() => setIsAutoPlay(true)}
-      >
-        {slides.map((slide, index) => (
-          <div
-            key={index}
-            className={`${styles.slide} ${index === currentSlide ? styles.active : ''}`}
-            style={{
-              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.38)), url(${slide.image})`,
-              backgroundPosition: slide.position || 'left center'
-            }}
-          />
-        ))}
-
-        <button
-          onClick={prevSlide}
-          className={styles.navButton}
-          aria-label="Previous slide"
+      <div className={styles.sliderWrap}>
+        <section
+          className={styles.slider}
+          onMouseEnter={() => setIsAutoPlay(false)}
+          onMouseLeave={() => setIsAutoPlay(true)}
         >
-          <FaChevronLeft size={24} />
-        </button>
-        <button
-          onClick={nextSlide}
-          className={`${styles.navButton} ${styles.rightArrow}`}
-          aria-label="Next slide"
-        >
-          <FaChevronRight size={24} />
-        </button>
-
-        <div className={styles.dotsContainer}>
-          {slides.map((_, index) => (
-            <button
+          {slides.map((slide, index) => (
+            <div
               key={index}
-              onClick={() => goToSlide(index)}
-              className={`${styles.dot} ${index === currentSlide ? styles.activeDot : ''}`}
-              aria-label={`Go to slide ${index + 1}`}
+              className={`${styles.slide} ${index === currentSlide ? styles.active : ''}`}
+              style={{
+                backgroundImage: `url(${slide.image})`,
+                backgroundPosition: slide.position || 'center center'
+              }}
             />
           ))}
-        </div>
-      </section>
+
+          <button
+            onClick={prevSlide}
+            className={styles.navButton}
+            aria-label="Previous slide"
+          >
+            <FaChevronLeft size={20} />
+          </button>
+          <button
+            onClick={nextSlide}
+            className={`${styles.navButton} ${styles.rightArrow}`}
+            aria-label="Next slide"
+          >
+            <FaChevronRight size={20} />
+          </button>
+
+          <div className={styles.dotsContainer}>
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`${styles.dot} ${index === currentSlide ? styles.activeDot : ''}`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </section>
+      </div>
 
       <section className={styles.productsSection} id="products">
         <div className={styles.sectionHeader}>
-          <div>
-            <p className={styles.sectionKicker}>Product Categories</p>
-            <h2>Scroll down to explore products</h2>
-          </div>
-          <Link className={styles.sectionLink} to="/products">
-            View full catalog
-          </Link>
+          <p className={styles.sectionKicker}>Recently added our store</p>
+          <h2 className={styles.sectionHeading}>Product Categories</h2>
         </div>
 
         <div className={styles.categoryGrid}>
@@ -128,19 +129,22 @@ function Home() {
               to={`/products?type=${category.slug}`}
             >
               <div className={styles.categoryImageWrap}>
-                <img className={styles.categoryImage} src={category.image} alt={category.productName} />
-                <span className={styles.categoryCount}>{category.count} items</span>
+                <img
+                  className={styles.categoryImage}
+                  src={category.image}
+                  alt={category.label}
+                  loading="lazy"
+                />
               </div>
 
-              <div className={styles.categoryBody}>
-                <p className={styles.categoryType}>{category.label}</p>
-                <h3>{category.name}</h3>
-                <p className={styles.categoryDescription}>{category.description}</p>
-                <p className={styles.categoryMeta}>{category.productName} and more field-ready options.</p>
-
-                <span className={styles.categoryMoreButton}>
-                  More <FaArrowRight size={13} />
-                </span>
+              <div className={styles.categoryFooter}>
+                <div className={styles.categoryInfo}>
+                  <h3 className={styles.categoryName}>{category.label}</h3>
+                  <p className={styles.categoryCount}>{category.count} Items</p>
+                </div>
+                <div className={styles.categoryArrowCircle}>
+                  <FaArrowRight className={styles.categoryArrowIcon} />
+                </div>
               </div>
             </Link>
           ))}

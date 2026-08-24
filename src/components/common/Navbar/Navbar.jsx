@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { FaChevronDown, FaChevronRight } from 'react-icons/fa';
+import { FaChevronDown, FaChevronLeft } from 'react-icons/fa';
 import { navItems } from '../../../data/navigationData';
 import { productCategories } from '../../../data/productCategories';
 import styles from './Navbar.module.css';
@@ -119,7 +119,7 @@ function Navbar() {
                                 aria-label="Toggle fertilizer subcategories"
                                 aria-expanded={isFertilizerOpen}
                               >
-                                <FaChevronRight className={styles.desktopChevron} aria-hidden="true" />
+                                <FaChevronLeft className={styles.desktopChevron} aria-hidden="true" />
                                 <FaChevronDown className={styles.mobileChevron} aria-hidden="true" />
                               </button>
                             </div>

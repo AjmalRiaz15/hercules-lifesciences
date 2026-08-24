@@ -1423,7 +1423,8 @@ export const productsData = [
   {
     id: 128,
     name: 'Alcone 0.4G (CTPR)',
-    category: 'Granules',
+    category: 'Fertilizer',
+    subCategory: 'Granules',
     slug: 'alcone-0-4g-ctpr-4kg',
     packSize: '4 kg',
     price: 0,
@@ -1434,7 +1435,8 @@ export const productsData = [
   {
     id: 129,
     name: 'Alcone 0.4G (CTPR) (8kg)',
-    category: 'Granules',
+    category: 'Fertilizer',
+    subCategory: 'Granules',
     slug: 'alcone-0-4g-ctpr-8kg',
     packSize: '8 kg',
     price: 1050,
@@ -1447,7 +1449,8 @@ export const productsData = [
   {
     id: 130,
     name: 'Spectral 0.69G (CTPR+Thiamethaxim)',
-    category: 'Granules',
+    category: 'Fertilizer',
+    subCategory: 'Granules',
     slug: 'spectral-0-69g-ctpr-thiamethaxim',
     packSize: '7 kg',
     price: 0,
@@ -1458,7 +1461,8 @@ export const productsData = [
   {
     id: 131,
     name: 'Monomehypo 5G',
-    category: 'Granules',
+    category: 'Fertilizer',
+    subCategory: 'Granules',
     slug: 'monomehypo-5g',
     packSize: '7 kg',
     price: 0,
@@ -1471,7 +1475,8 @@ export const productsData = [
   {
     id: 132,
     name: 'Rada',
-    category: 'Household',
+    category: 'Fertilizer',
+    subCategory: 'Household',
     slug: 'rada',
     packSize: '200 ml',
     price: 550,
@@ -1482,7 +1487,8 @@ export const productsData = [
   {
     id: 133,
     name: 'Lambda 25% WP Sachet',
-    category: 'Household',
+    category: 'Fertilizer',
+    subCategory: 'Household',
     slug: 'lambda-25-wp-sachet',
     packSize: '62.5 gm',
     price: 195,
