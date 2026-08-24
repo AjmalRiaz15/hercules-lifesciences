@@ -3,19 +3,22 @@ import Footer from './components/Footer/Footer';
 import WhatsAppFab from './components/common/WhatsAppFab/WhatsAppFab';
 import AppRoutes from './routes/AppRoutes';
 import { AppProvider } from './context/AppContext';
+import { JobProvider } from './context/JobContext';
 import './App.css';
 
 function App() {
   return (
     <AppProvider>
-      <div className="appShell">
-        <Header />
-        <main className="mainContent">
-          <AppRoutes />
-        </main>
-        <Footer />
-        <WhatsAppFab />
-      </div>
+      <JobProvider>
+        <div className="appShell">
+          <Header />
+          <main className="mainContent">
+            <AppRoutes />
+          </main>
+          <Footer />
+          <WhatsAppFab />
+        </div>
+      </JobProvider>
     </AppProvider>
   );
 }

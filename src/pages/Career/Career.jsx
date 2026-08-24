@@ -1,45 +1,22 @@
-import { FaBriefcase, FaGraduationCap, FaHandshake, FaSeedling, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import { useState } from 'react';
+import {
+  FaBriefcase,
+  FaGraduationCap,
+  FaHandshake,
+  FaSeedling,
+  FaEnvelope,
+  FaPhoneAlt,
+  FaMapMarkerAlt,
+  FaCalendarAlt,
+  FaFilter,
+  FaSearch,
+  FaCopy,
+  FaCheck,
+  FaExternalLinkAlt
+} from 'react-icons/fa';
+import { useJobs } from '../../context/JobContext';
 import { contactInfo } from '../../data/contactData';
 import styles from './Career.module.css';
-
-const jobOpenings = [
-  {
-    id: 1,
-    title: 'Field Agronomist / Technical Officer',
-    department: 'Agronomy & Field Services',
-    location: 'Multan / South Punjab',
-    type: 'Full Time',
-    experience: '1-3 Years in Crop Advisory',
-    description: 'Provide technical agronomic guidance to farmers, conduct field demonstrations, and assist with product trials for wheat, cotton, and sugarcane crops.'
-  },
-  {
-    id: 2,
-    title: 'Area Sales Manager',
-    department: 'Sales & Commercial',
-    location: 'Punjab / Sindh Regions',
-    type: 'Full Time',
-    experience: '3-5 Years in Agro-Chemical Sales',
-    description: 'Lead sales distribution networks, manage dealer relationships, and drive regional sales growth for pesticides, fertilizers, and micronutrients.'
-  },
-  {
-    id: 3,
-    title: 'Quality Assurance & Regulatory Specialist',
-    department: 'Quality & Compliance',
-    location: 'Multan Office',
-    type: 'Full Time',
-    experience: '2+ Years in QA / Chemistry',
-    description: 'Ensure formulation quality standards, oversee packaging compliance, and manage product registration documentation in accordance with agricultural regulations.'
-  },
-  {
-    id: 4,
-    title: 'Logistics & Supply Chain Coordinator',
-    department: 'Operations',
-    location: 'Multan Depot',
-    type: 'Full Time',
-    experience: '2+ Years in Warehouse / Logistics',
-    description: 'Coordinate timely dispatch of agricultural products to distribution centers and dealers across Pakistan during critical farming seasons.'
-  }
-];
 
 const benefits = [
   {
@@ -65,6 +42,66 @@ const benefits = [
 ];
 
 function Career() {
+  const { jobs } = useJobs();
+  const [selectedDept, setSelectedDept] = useState('All');
+  const [searchTerm, setSearchTerm] = useState('');
+
+  // Apply Modal state
+  const [activeApplicationJob, setActiveApplicationJob] = useState(null);
+  const [copiedEmail, setCopiedEmail] = useState(false);
+
+  const departments = ['All', ...Array.from(new Set(jobs.map((job) => job.department)))];
+
+  const filteredJobs = jobs.filter((job) => {
+    const matchesDept = selectedDept === 'All' || job.department === selectedDept;
+    const matchesSearch =
+      job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job.description.toLowerCase().includes(searchTerm.toLowerCase());
+    return matchesDept && matchesSearch;
+  });
+
+  const getSubject = (job) => {
+    return job
+      ? `Job Application: ${job.title} - Hercules Life Sciences`
+      : 'General Job Application - Hercules Life Sciences';
+  };
+
+  const getBody = (job) => {
+    if (job) {
+      return `Dear Hercules Life Sciences HR Team,\n\nI am applying for the position of "${job.title}" (Department: ${job.department}, Location: ${job.location}).\n\nPlease find my candidate details below:\n\n• Full Name: \n• Contact Number / WhatsApp: \n• Current City: \n• Total Experience: \n• Highest Qualification: \n\n[Please attach your updated CV / Resume to this email]\n\nThank you,\n`;
+    }
+    return `Dear Hercules Life Sciences HR Team,\n\nI would like to submit my resume for career opportunities at Hercules Life Sciences.\n\nMy Details:\n• Full Name: \n• Contact Number / WhatsApp: \n• Desired Department / Role: \n• Current City: \n• Total Experience: \n• Highest Qualification: \n\n[Please attach your updated CV / Resume to this email]\n\nThank you,\n`;
+  };
+
+  const getMailtoUrl = (job) => {
+    const subject = encodeURIComponent(getSubject(job));
+    const body = encodeURIComponent(getBody(job));
+    return `mailto:${contactInfo.email}?subject=${subject}&body=${body}`;
+  };
+
+  const getGmailWebUrl = (job) => {
+    const subject = encodeURIComponent(getSubject(job));
+    const body = encodeURIComponent(getBody(job));
+    return `https://mail.google.com/mail/?view=cm&fs=1&to=${contactInfo.email}&su=${subject}&body=${body}`;
+  };
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(contactInfo.email);
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2500);
+  };
+
+  const openApplyModal = (job) => {
+    setActiveApplicationJob(job || { title: 'General Career Application', department: 'General', location: 'Pakistan' });
+    setCopiedEmail(false);
+  };
+
+  const closeApplyModal = () => {
+    setActiveApplicationJob(null);
+    setCopiedEmail(false);
+  };
+
   return (
     <section className={styles.page}>
       {/* Hero Section */}
@@ -84,16 +121,20 @@ function Career() {
             <a href="#openings" className={styles.primaryBtn}>
               View Open Positions <FaBriefcase />
             </a>
-            <a href={contactInfo.emailHref} className={styles.secondaryBtn}>
+            <button
+              type="button"
+              onClick={() => openApplyModal(null)}
+              className={styles.secondaryBtn}
+            >
               Send Your CV Directly
-            </a>
+            </button>
           </div>
         </div>
 
         <div className={styles.heroRight}>
           <div className={styles.heroStat}>
-            <div className={styles.heroStatNum}>130+</div>
-            <div className={styles.heroStatLabel}>Quality Products</div>
+            <div className={styles.heroStatNum}>{jobs.length}</div>
+            <div className={styles.heroStatLabel}>Open Positions</div>
           </div>
           <div className={styles.heroStat}>
             <div className={styles.heroStatNum}>Punjab & KPK</div>
@@ -139,34 +180,118 @@ function Career() {
             Find your next <span>opportunity</span>
           </h2>
           <p className={styles.sectionDesc}>
-            Explore our open roles below. If you do not find a matching opening, you can still send us your resume for future opportunities.
+            Browse through our current vacancies below. Click apply to submit your profile directly to our hiring team.
           </p>
         </div>
 
-        <div className={styles.openingsGrid}>
-          {jobOpenings.map((job) => (
-            <article key={job.id} className={styles.jobCard}>
-              <div className={styles.jobTop}>
-                <span className={styles.jobDept}>{job.department}</span>
-                <span className={styles.jobType}>{job.type}</span>
-              </div>
-              <h3 className={styles.jobTitle}>{job.title}</h3>
-              <p className={styles.jobMeta}>
-                <span><FaMapMarkerAlt /> {job.location}</span>
-                <span><FaBriefcase /> {job.experience}</span>
-              </p>
-              <p className={styles.jobDesc}>{job.description}</p>
-              <div className={styles.jobFooter}>
-                <a
-                  href={`mailto:herculeslifesciences@gmail.com?subject=Job Application: ${encodeURIComponent(job.title)}`}
-                  className={styles.applyBtn}
+        {/* Filter / Search Bar (only if there are jobs) */}
+        {jobs.length > 0 && (
+          <div className={styles.filterBar}>
+            <div className={styles.searchBox}>
+              <FaSearch className={styles.searchIcon} />
+              <input
+                type="text"
+                placeholder="Search jobs by title, location or keyword..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+            </div>
+
+            {departments.length > 2 && (
+              <div className={styles.deptFilter}>
+                <FaFilter className={styles.filterIcon} />
+                <select
+                  value={selectedDept}
+                  onChange={(e) => setSelectedDept(e.target.value)}
+                  aria-label="Filter by department"
                 >
-                  Apply Now ↗
-                </a>
+                  {departments.map((dept) => (
+                    <option key={dept} value={dept}>
+                      {dept === 'All' ? 'All Departments' : dept}
+                    </option>
+                  ))}
+                </select>
               </div>
-            </article>
-          ))}
-        </div>
+            )}
+          </div>
+        )}
+
+        {/* JOB LISTINGS OR EMPTY STATE */}
+        {jobs.length === 0 ? (
+          /* When NO jobs are posted */
+          <div className={styles.emptyStateCard}>
+            <div className={styles.emptyIconCircle}>
+              <FaBriefcase />
+            </div>
+            <h3>Currently No Active Job Openings</h3>
+            <p className={styles.emptySubtitle}>
+              Filhal koi nayi vacancy available nahi hai, lekin hum hamesha behtareen aur mehnati talent ki talash mein rehte hain.
+            </p>
+            <p className={styles.emptyNote}>
+              Agar aap Agronomy, Sales, Quality Control, ya Supply Chain mein hamari team ka hissa banna chahte hain, to apna resume neeche diye gaye button se bhejiye. Hamari HR team nayi position aane par aapse rabta karegi.
+            </p>
+            <div className={styles.emptyActions}>
+              <button
+                type="button"
+                onClick={() => openApplyModal(null)}
+                className={styles.primaryBtn}
+              >
+                <FaEnvelope /> Drop Your CV / Resume
+              </button>
+              <a href={contactInfo.phoneHref} className={styles.secondaryEmptyBtn}>
+                <FaPhoneAlt /> Contact HR: {contactInfo.phone}
+              </a>
+            </div>
+          </div>
+        ) : filteredJobs.length === 0 ? (
+          /* When filters yield no match */
+          <div className={styles.noMatchCard}>
+            <p>No jobs found matching your search criteria.</p>
+            <button
+              type="button"
+              onClick={() => {
+                setSearchTerm('');
+                setSelectedDept('All');
+              }}
+              className={styles.resetFilterBtn}
+            >
+              Reset Filters
+            </button>
+          </div>
+        ) : (
+          /* Normal Job Listings Grid */
+          <div className={styles.openingsGrid}>
+            {filteredJobs.map((job) => (
+              <article key={job.id} className={styles.jobCard}>
+                <div className={styles.jobTop}>
+                  <span className={styles.jobDept}>{job.department}</span>
+                  <span className={styles.jobType}>{job.type}</span>
+                </div>
+                <h3 className={styles.jobTitle}>{job.title}</h3>
+                <div className={styles.jobMeta}>
+                  <span><FaMapMarkerAlt /> {job.location}</span>
+                  {job.experience && <span><FaBriefcase /> {job.experience}</span>}
+                  {job.qualification && <span>🎓 {job.qualification}</span>}
+                  {job.deadline && (
+                    <span className={styles.jobDeadline}>
+                      <FaCalendarAlt /> Deadline: {job.deadline}
+                    </span>
+                  )}
+                </div>
+                <p className={styles.jobDesc}>{job.description}</p>
+                <div className={styles.jobFooter}>
+                  <button
+                    type="button"
+                    onClick={() => openApplyModal(job)}
+                    className={styles.applyBtn}
+                  >
+                    Apply Now ↗
+                  </button>
+                </div>
+              </article>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* How to Apply Banner */}
@@ -178,15 +303,98 @@ function Career() {
             Email your resume to <strong>{contactInfo.email}</strong> or contact our team directly.
           </p>
           <div className={styles.applyContacts}>
-            <a href={contactInfo.emailHref} className={styles.applyContactLink}>
+            <button
+              type="button"
+              onClick={() => openApplyModal(null)}
+              className={styles.applyContactLink}
+            >
               <FaEnvelope /> {contactInfo.email}
-            </a>
+            </button>
             <a href={contactInfo.phoneHref} className={styles.applyContactLink}>
               <FaPhoneAlt /> {contactInfo.phone}
             </a>
           </div>
         </div>
       </div>
+
+      {/* APPLY VIA EMAIL MODAL */}
+      {activeApplicationJob && (
+        <div className={styles.modalOverlay} onClick={closeApplyModal}>
+          <div className={styles.modalCard} onClick={(e) => e.stopPropagation()}>
+            <div className={styles.modalHeader}>
+              <div>
+                <span className={styles.modalKicker}>Job Application</span>
+                <h2>{activeApplicationJob.title}</h2>
+              </div>
+              <button
+                type="button"
+                onClick={closeApplyModal}
+                className={styles.modalCloseBtn}
+                aria-label="Close dialog"
+              >
+                &times;
+              </button>
+            </div>
+
+            <div className={styles.modalBody}>
+              <div className={styles.receiverBox}>
+                <div className={styles.receiverLabel}>
+                  <span>Receiver (Company Email)</span>
+                  <button
+                    type="button"
+                    onClick={handleCopyEmail}
+                    className={styles.copyBtn}
+                    title="Copy email address"
+                  >
+                    {copiedEmail ? (
+                      <>
+                        <FaCheck /> Copied!
+                      </>
+                    ) : (
+                      <>
+                        <FaCopy /> Copy Email
+                      </>
+                    )}
+                  </button>
+                </div>
+                <div className={styles.receiverEmail}>{contactInfo.email}</div>
+              </div>
+
+              <div className={styles.subjectBox}>
+                <span className={styles.boxLabel}>Email Subject</span>
+                <p className={styles.subjectText}>{getSubject(activeApplicationJob)}</p>
+              </div>
+
+              <div className={styles.instructionsBox}>
+                <p className={styles.instructionHeading}>📎 What to include in your email:</p>
+                <ul>
+                  <li>Your updated <strong>CV / Resume</strong> attached as a PDF or Word document.</li>
+                  <li>Your <strong>Full Name</strong>, <strong>Contact Number / WhatsApp</strong>, and <strong>City</strong>.</li>
+                  <li>Brief note on your relevant experience & qualifications.</li>
+                </ul>
+              </div>
+
+              <div className={styles.sendActionButtons}>
+                <a
+                  href={getGmailWebUrl(activeApplicationJob)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.gmailBtn}
+                >
+                  <FaEnvelope /> Send via Gmail (Browser) <FaExternalLinkAlt size={12} />
+                </a>
+
+                <a
+                  href={getMailtoUrl(activeApplicationJob)}
+                  className={styles.defaultMailBtn}
+                >
+                  <FaBriefcase /> Open Default Mail App (Outlook / Phone)
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

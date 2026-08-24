@@ -6,6 +6,7 @@ import Crops from '../pages/Crops/Crops';
 import Sustainability from '../pages/Sustainability/Sustainability';
 import AboutUs from '../pages/AboutUs/AboutUs';
 import Career from '../pages/Career/Career';
+import JobAdmin from '../pages/Admin/JobAdmin';
 import ContactUs from '../pages/ContactUs/ContactUs';
 import useScrollTop from '../hooks/useScrollTop';
 
@@ -26,6 +27,8 @@ function AppRoutes() {
         <Route path="/crops" element={<Crops />} />
         <Route path="/seeds" element={<Navigate to="/crops" replace />} />
         <Route path="/career" element={<Career />} />
+        <Route path="/admin" element={<JobAdmin />} />
+        <Route path="/admin/jobs" element={<Navigate to="/admin" replace />} />
         <Route path="/sustainability" element={<Sustainability />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/our-mission" element={<Navigate to="/about-us" replace />} />
