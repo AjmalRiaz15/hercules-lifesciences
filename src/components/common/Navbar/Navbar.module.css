@@ -78,9 +78,90 @@
   display: block;
   padding: 0.8rem 0.95rem;
   text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .dropdownItem:hover {
+  background: #f3f7f0;
+  color: #1f4b32;
+}
+
+.nestedDropdown {
+  position: relative;
+}
+
+.nestedHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 12px;
+  transition: background-color 0.15s ease;
+}
+
+.nestedHeader:hover {
+  background: #f3f7f0;
+}
+
+.nestedHeader .dropdownItem {
+  flex: 1;
+}
+
+.nestedChevronBtn {
+  background: transparent;
+  border: none;
+  color: #6a7b6c;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem;
+  font-size: 0.75rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.nestedHeader:hover .nestedChevronBtn {
+  color: #1f4b32;
+}
+
+.desktopChevron {
+  display: block;
+}
+
+.mobileChevron {
+  display: none;
+}
+
+.nestedMenu {
+  background: #ffffff;
+  border: 1px solid #e8ede6;
+  border-radius: 16px;
+  box-shadow: 0 18px 40px rgba(22, 48, 31, 0.14);
+  display: none;
+  left: calc(100% + 0.35rem);
+  min-width: 200px;
+  padding: 0.5rem;
+  position: absolute;
+  top: 0;
+  z-index: 45;
+}
+
+.nestedDropdown:hover .nestedMenu,
+.nestedMenuOpen {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.nestedDropdownItem {
+  color: #1e2a1f;
+  border-radius: 10px;
+  display: block;
+  padding: 0.7rem 0.9rem;
+  text-decoration: none;
+  font-size: 0.92rem;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.nestedDropdownItem:hover {
   background: #f3f7f0;
   color: #1f4b32;
 }
@@ -161,5 +242,45 @@
     position: static;
     min-width: 100%;
     box-shadow: none;
+  }
+
+  .desktopChevron {
+    display: none;
+  }
+
+  .mobileChevron {
+    display: block;
+    transition: transform 0.2s ease;
+  }
+
+  .nestedChevronOpen .mobileChevron {
+    transform: rotate(180deg);
+  }
+
+  .nestedMenu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    background: #f7faf5;
+    border-radius: 10px;
+    margin-left: 0.75rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    padding: 0.35rem 0.5rem;
+    display: none;
+  }
+
+  .nestedDropdown:hover .nestedMenu {
+    display: none;
+  }
+
+  .nestedMenu.nestedMenuOpen {
+    display: grid;
+    gap: 0.2rem;
+  }
+
+  .nestedDropdownItem {
+    padding: 0.55rem 0.75rem;
+    font-size: 0.9rem;
   }
 }

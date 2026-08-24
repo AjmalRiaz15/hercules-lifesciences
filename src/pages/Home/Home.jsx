@@ -122,7 +122,11 @@ function Home() {
 
         <div className={styles.categoryGrid}>
           {groupedCategories.map((category) => (
-            <article key={category.name} className={styles.categoryCard}>
+            <Link
+              key={category.name}
+              className={styles.categoryCard}
+              to={`/products?type=${category.slug}`}
+            >
               <div className={styles.categoryImageWrap}>
                 <img className={styles.categoryImage} src={category.image} alt={category.productName} />
                 <span className={styles.categoryCount}>{category.count} items</span>
@@ -134,11 +138,11 @@ function Home() {
                 <p className={styles.categoryDescription}>{category.description}</p>
                 <p className={styles.categoryMeta}>{category.productName} and more field-ready options.</p>
 
-                <Link className={styles.categoryMoreButton} to={`/products?type=${category.slug}`}>
+                <span className={styles.categoryMoreButton}>
                   More <FaArrowRight size={13} />
-                </Link>
+                </span>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </section>

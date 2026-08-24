@@ -43,7 +43,11 @@ function Products() {
   const filteredProducts = useMemo(
     () =>
       activeCategoryMeta
-        ? productsData.filter((product) => product.category === activeCategoryMeta.name)
+        ? productsData.filter(
+            (product) =>
+              product.category === activeCategoryMeta.name ||
+              product.subCategory === activeCategoryMeta.name
+          )
         : [],
     [activeCategoryMeta]
   );
@@ -68,7 +72,11 @@ function Products() {
     return productCategories.reduce((accumulator, category) => {
       const uniqueNames = new Set(
         productsData
-          .filter((product) => product.category === category.name)
+          .filter(
+            (product) =>
+              product.category === category.name ||
+              product.subCategory === category.name
+          )
           .map((product) => normalizeProductName(product.name))
       );
 
@@ -158,7 +166,11 @@ function Products() {
 
           <div className={styles.grid}>
             {uniqueProducts.map((product) => (
-              <article key={product.id} className={styles.card}>
+              <Link
+                key={product.id}
+                className={styles.card}
+                to={`/products/${product.slug}`}
+              >
                 <div className={styles.cardImageWrap}>
                   <img className={styles.cardImage} src={product.image} alt={product.name} />
                 </div>
@@ -169,11 +181,11 @@ function Products() {
                   </div>
                   <h3>{product.displayName || product.name}</h3>
                   <p className={styles.cardDescription}>{product.description}</p>
-                  <Link className={styles.readMoreButton} to={`/products/${product.slug}`}>
+                  <span className={styles.readMoreButton}>
                     Read more
-                  </Link>
+                  </span>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </section>

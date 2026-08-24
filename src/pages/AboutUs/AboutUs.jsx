@@ -65,6 +65,42 @@ function AboutUs() {
         </div>
       </div>
 
+      {/* Our Mission Section */}
+      <div className={styles.missionSection}>
+        <div className={styles.missionHeader}>
+          <span className={styles.badge}>Our Mission</span>
+          <h2 className={styles.missionTitle}>
+            Growing Better Every Season — <span>Our Mission & Core Purpose</span>
+          </h2>
+          <p className={styles.missionStatement}>
+            Our mission is to deliver science-led farming solutions that protect crops, improve yields, and support a more prosperous, sustainable agricultural ecosystem across Pakistan.
+          </p>
+        </div>
+
+        <div className={styles.missionGrid}>
+          <div className={styles.missionCard}>
+            <div className={styles.pillarIcon}>🛡️</div>
+            <h3>Crop Protection</h3>
+            <p>Safeguarding harvests from pests, disease, and environmental stress with proven crop protection products.</p>
+          </div>
+          <div className={styles.missionCard}>
+            <div className={styles.pillarIcon}>📈</div>
+            <h3>Improved Yields</h3>
+            <p>Data-driven agronomic guidance and high-efficacy inputs that maximize farm output season after season.</p>
+          </div>
+          <div className={styles.missionCard}>
+            <div className={styles.pillarIcon}>🌱</div>
+            <h3>Sustainability</h3>
+            <p>Responsible agricultural practices that preserve soil health and protect Pakistan's natural resources.</p>
+          </div>
+          <div className={styles.missionCard}>
+            <div className={styles.pillarIcon}>🤝</div>
+            <h3>Farmer Support</h3>
+            <p>Direct field advisory and accessible agronomy expertise for every farmer, regardless of scale.</p>
+          </div>
+        </div>
+      </div>
+
       <div className={styles.timelineSection}>
         <h2 className={styles.sectionHeading}>
           Our <span>journey</span>

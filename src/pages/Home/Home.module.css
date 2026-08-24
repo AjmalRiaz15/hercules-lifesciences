@@ -234,6 +234,9 @@
   overflow: hidden;
   display: grid;
   grid-template-rows: auto 1fr;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
@@ -241,6 +244,13 @@
   border-color: #c7d7c3;
   box-shadow: 0 16px 30px rgba(22, 48, 31, 0.1);
   transform: translateY(-3px);
+}
+
+.categoryCard:hover .categoryMoreButton {
+  background: #1f4b32;
+  border-color: #1f4b32;
+  color: #ffffff;
+  transform: translateY(-1px);
 }
 
 .categoryImageWrap {

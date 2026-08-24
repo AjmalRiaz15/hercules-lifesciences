@@ -39,10 +39,10 @@ function Footer() {
 
   const quickLinks = [
     { label: 'Home', to: '/' },
+    { label: 'About Us', to: '/about-us' },
     { label: 'Products', to: '/products' },
     { label: 'Crops', to: '/crops' },
-    { label: 'About Us', to: '/about-us' },
-    { label: 'Our Mission', to: '/our-mission' },
+    { label: 'Career', to: '/career' },
     { label: 'Contact Us', to: '/contact-us' }
   ];
 
