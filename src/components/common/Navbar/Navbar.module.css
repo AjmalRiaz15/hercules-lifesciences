@@ -20,10 +20,15 @@
   color: #1e2a1f;
   cursor: pointer;
   display: inline-flex;
-  font-size: 0.95rem;
-  font-weight: 500;
+  font-size: 0.91rem;
+  font-weight: 600;
   gap: 0.35rem;
   text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.link:hover {
+  color: #1f4b32;
 }
 
 .active {
@@ -172,16 +177,16 @@
     align-items: center;
     background: #ffffff;
     border: 1px solid #dce6dd;
-    border-radius: 10px;
+    border-radius: 8px;
     cursor: pointer;
     display: inline-flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 3px;
     justify-content: center;
     margin-left: auto;
-    min-height: 42px;
-    min-width: 44px;
-    padding: 0.45rem;
+    min-height: 32px;
+    min-width: 34px;
+    padding: 0.3rem 0.4rem;
   }
 
   .menuLine {
@@ -189,7 +194,7 @@
     border-radius: 999px;
     display: block;
     height: 2px;
-    width: 18px;
+    width: 16px;
   }
 
   .backdrop {

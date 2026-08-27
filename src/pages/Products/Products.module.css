@@ -349,11 +349,14 @@
 @media (max-width: 640px) {
   .page {
     gap: 1.25rem;
+    padding: 0;
+    width: 100%;
   }
 
   .hero {
-    border-radius: 22px;
-    padding: 1.35rem;
+    border-radius: 16px;
+    padding: 1.35rem 1rem;
+    width: 100%;
   }
 
   .heroStats {
@@ -367,9 +370,12 @@
 
   .grid {
     grid-template-columns: 1fr;
+    width: 100%;
   }
 
   .card {
+    border-radius: 16px;
     min-height: unset;
+    width: 100%;
   }
 }

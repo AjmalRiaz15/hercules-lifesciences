@@ -9,12 +9,13 @@
   display: grid;
   font-family: 'Inter', sans-serif;
   min-height: 100vh;
-  padding: clamp(0.55rem, 2vw, 0.95rem);
+  padding: 0;
+  width: 100%;
 }
 
 .container {
-  margin: auto;
-  max-width: 72rem;
+  margin: 0 auto;
+  max-width: 100%;
   position: relative;
   width: 100%;
 }
@@ -346,7 +347,9 @@
 
 @media (max-width: 768px) {
   .card {
-    padding: 1.45rem;
+    border-radius: 16px;
+    padding: 1.25rem 0.95rem;
+    width: 100%;
   }
   
   .contentWrapper {
@@ -365,7 +368,7 @@
   
   .successCard {
     padding: 1.8rem;
-    margin: 1rem;
+    margin: 0.5rem;
   }
   
   .successIcon {
@@ -378,7 +381,9 @@
 
 @media (max-width: 480px) {
   .card {
-    padding: 1.15rem;
+    border-radius: 14px;
+    padding: 1rem 0.75rem;
+    width: 100%;
   }
   
   .heading {
