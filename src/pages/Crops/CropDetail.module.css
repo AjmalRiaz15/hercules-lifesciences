@@ -1,0 +1,599 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1rem, 3vw, 2rem) 0 3rem;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 100%;
+}
+
+.breadcrumbs {
+  color: #64748b;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  font-size: 0.92rem;
+}
+
+.breadcrumbs a {
+  color: #d32f2f;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.breadcrumbs a:hover {
+  color: #b71c1c;
+  text-decoration: underline;
+}
+
+.header {
+  align-items: flex-start;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.04);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  background: linear-gradient(90deg, #e53935 0%, #b71c1c 100%);
+  content: '';
+  height: 4px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  max-width: 780px;
+}
+
+.badgeWrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.seasonBadge {
+  align-items: center;
+  background: #fee2e2;
+  border-radius: 999px;
+  color: #b91c1c;
+  display: inline-flex;
+  font-size: 0.76rem;
+  font-weight: 700;
+  gap: 0.35rem;
+  letter-spacing: 0.06em;
+  padding: 0.35rem 0.85rem;
+  text-transform: uppercase;
+}
+
+.sciBadge {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  color: #475569;
+  font-size: 0.76rem;
+  font-style: italic;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+}
+
+.cropTitle {
+  color: #0f172a;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.85rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.urduTitle {
+  color: #d32f2f;
+  font-family: serif;
+  font-size: 0.85em;
+}
+
+.cropDesc {
+  color: #475569;
+  font-size: 0.96rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.backBtn {
+  align-items: center;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  color: #1e293b;
+  display: inline-flex;
+  font-size: 0.9rem;
+  font-weight: 600;
+  gap: 0.45rem;
+  padding: 0.7rem 1.35rem;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.backBtn:hover {
+  background: #0f172a;
+  border-color: #0f172a;
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.15);
+  transform: translateX(-3px);
+}
+
+/* Quick Navigation Chips */
+.quickNav {
+  align-items: center;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  padding: 0.85rem 1.25rem;
+}
+
+.quickNavLabel {
+  color: #64748b;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.navChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.navChip {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  color: #334155;
+  display: inline-flex;
+  font-size: 0.88rem;
+  font-weight: 600;
+  gap: 0.45rem;
+  padding: 0.35rem 0.85rem 0.35rem 0.45rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.chipAvatar {
+  border-radius: 50%;
+  height: 24px;
+  object-fit: cover;
+  width: 24px;
+}
+
+.navChip:hover {
+  border-color: #d32f2f;
+  color: #d32f2f;
+  transform: translateY(-1px);
+}
+
+.navChipActive {
+  background: #0f172a;
+  border-color: #0f172a;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+}
+
+.navChipActive:hover {
+  background: #1e293b;
+  color: #ffffff;
+}
+
+/* Flyer Card */
+.flyerCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 28px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  transition: box-shadow 0.3s ease;
+}
+
+.flyerCard:hover {
+  box-shadow: 0 24px 55px rgba(15, 23, 42, 0.1);
+}
+
+.flyerHeader {
+  align-items: center;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1.5rem clamp(1.25rem, 3vw, 2rem);
+}
+
+.flyerKicker {
+  color: #d32f2f;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.25rem;
+  text-transform: uppercase;
+}
+
+.flyerHeading {
+  color: #0f172a;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.25rem, 2.5vw, 1.7rem);
+  font-weight: 700;
+  margin: 0;
+}
+
+.clickHintBadge {
+  align-items: center;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  color: #334155;
+  display: inline-flex;
+  font-size: 0.82rem;
+  font-weight: 600;
+  gap: 0.4rem;
+  padding: 0.45rem 1rem;
+}
+
+.flyerImageWrap {
+  background: #f8fafc;
+  cursor: zoom-in;
+  display: flex;
+  justify-content: center;
+  padding: clamp(1rem, 2.5vw, 2rem);
+  position: relative;
+  width: 100%;
+}
+
+.imageOverlayHint {
+  align-items: center;
+  background: rgba(15, 23, 42, 0.35);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  display: flex;
+  height: 100%;
+  inset: 0;
+  justify-content: center;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 0.3s ease;
+  width: 100%;
+  z-index: 5;
+}
+
+.hintPill {
+  align-items: center;
+  background: #ffffff;
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.25);
+  color: #0f172a;
+  display: inline-flex;
+  font-size: 0.95rem;
+  font-weight: 700;
+  gap: 0.5rem;
+  padding: 0.75rem 1.6rem;
+  transform: translateY(8px);
+  transition: transform 0.3s ease;
+}
+
+.flyerImageWrap:hover .imageOverlayHint {
+  opacity: 1;
+}
+
+.flyerImageWrap:hover .hintPill {
+  transform: translateY(0);
+}
+
+.flyerImage {
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  display: block;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  width: auto;
+}
+
+.flyerImageWrap:hover .flyerImage {
+  transform: scale(1.01);
+}
+
+/* Recommended Products Grid */
+.recommendSection {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid #e2e8f0;
+  border-radius: 28px;
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  padding: clamp(1.75rem, 3.5vw, 2.5rem);
+}
+
+.recommendHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.recKicker {
+  color: #d32f2f;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.recTitle {
+  color: #0f172a;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+  font-weight: 700;
+  margin: 0;
+}
+
+.recSub {
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 720px;
+}
+
+.productGrid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+.productCard {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 22px;
+  box-shadow: 0 10px 25px -4px rgba(15, 23, 42, 0.08), 0 4px 10px -2px rgba(15, 23, 42, 0.04);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease;
+}
+
+.productCard:hover {
+  border-color: #d32f2f;
+  box-shadow: 0 20px 38px -8px rgba(15, 23, 42, 0.14), 0 0 22px rgba(229, 57, 53, 0.1);
+  transform: translateY(-5px);
+}
+
+.productImgWrap {
+  align-items: center;
+  background: linear-gradient(180deg, #f1f5f9 0%, #e2e8f0 100%);
+  border-bottom: 1px solid #cbd5e1;
+  display: flex;
+  height: 190px;
+  justify-content: center;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.productImg {
+  display: block;
+  height: 100%;
+  max-height: 170px;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+  width: auto;
+}
+
+.productCard:hover .productImg {
+  transform: scale(1.06);
+}
+
+.productBody {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.2rem;
+}
+
+.productMeta {
+  display: flex;
+  align-items: center;
+}
+
+.productCategory {
+  background: #fee2e2;
+  border-radius: 999px;
+  color: #b91c1c;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.65rem;
+  text-transform: uppercase;
+}
+
+.productName {
+  color: #0f172a;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.productCard:hover .productName {
+  color: #d32f2f;
+}
+
+.productDesc {
+  color: #64748b;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0;
+  overflow: hidden;
+}
+
+.viewDetailBtn {
+  align-items: center;
+  color: #d32f2f;
+  display: inline-flex;
+  font-size: 0.86rem;
+  font-weight: 700;
+  gap: 0.3rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.productCard:hover .viewDetailBtn {
+  transform: translateX(4px);
+}
+
+/* In-Page Lightbox Overlay Modal */
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomInContent {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.lightboxOverlay {
+  align-items: center;
+  animation: fadeInOverlay 0.25s ease-out both;
+  background: rgba(7, 12, 24, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  height: 100vh;
+  inset: 0;
+  justify-content: center;
+  padding: clamp(1rem, 3vw, 2rem);
+  position: fixed;
+  width: 100vw;
+  z-index: 99999;
+}
+
+.lightboxContent {
+  align-items: center;
+  animation: zoomInContent 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+  display: flex;
+  justify-content: center;
+  max-height: 92vh;
+  max-width: 95vw;
+  position: relative;
+}
+
+.closeBtn {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+  color: #0f172a;
+  cursor: pointer;
+  display: flex;
+  font-size: 1.2rem;
+  height: 46px;
+  justify-content: center;
+  position: absolute;
+  right: -16px;
+  top: -16px;
+  transition: all 0.2s ease;
+  width: 46px;
+  z-index: 10;
+}
+
+.closeBtn:hover {
+  background: #d32f2f;
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.lightboxImage {
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  display: block;
+  max-height: 88vh;
+  max-width: 92vw;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .backBtn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .flyerHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .closeBtn {
+    right: 8px;
+    top: 8px;
+    height: 40px;
+    width: 40px;
+  }
+
+  .lightboxImage {
+    max-height: 80vh;
+    max-width: 95vw;
+  }
+}

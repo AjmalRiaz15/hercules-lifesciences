@@ -1,0 +1,72 @@
+export const cropsData = [
+  {
+    id: 'wheat',
+    slug: 'wheat',
+    name: 'Wheat',
+    urduName: 'گندم',
+    image: '/images/wheat.jpg',
+    flyerImage: '/images/wheat.jpg',
+    season: 'Rabi Season',
+    scientificName: 'Triticum aestivum',
+    description: "Pakistan's most important staple crop. Hercules provides premium wheat seeds with high germination rates, paired with targeted fertilizers and pesticide programs to maximize yield per acre.",
+    urduDescription: 'پاکستان کی سب سے اہم فصل۔ ہرکولیس اعلیٰ معیار کے گندم کے بیج، کھاد اور کیڑے مار ادویات فراہم کرتا ہے تاکہ فی ایکڑ پیداوار زیادہ سے زیادہ ہو۔',
+    recommendedProducts: ['Urea Phos', 'SOP', 'Sulphur', 'Dursban', 'Blade'],
+    sowingPeriod: 'Oct → Apr'
+  },
+  {
+    id: 'cotton',
+    slug: 'cotton',
+    name: 'Cotton',
+    urduName: 'کپاس',
+    image: '/images/cotton (1).jpg',
+    flyerImage: '/images/cotton (1).jpg',
+    season: 'Kharif Season',
+    scientificName: 'Gossypium hirsutum',
+    description: "The backbone of Pakistan's textile industry and economy. Hercules offers high-purity cotton seeds with resistance to major pests and specialized boll-development nutrition.",
+    urduDescription: 'پاکستان کی ٹیکسٹائل انڈسٹری کی ریڑھ کی ہڈی۔ ہرکولیس کیڑوں کے خلاف مزاحمت رکھنے والے اعلیٰ معیار کے کپاس کے بیج اور خصوصی کھاد فراہم کرتا ہے۔',
+    recommendedProducts: ['Acephate', 'Bifenthrin', 'Emamectin', 'Kastu-K', 'Meedan'],
+    sowingPeriod: 'Apr → Nov'
+  },
+  {
+    id: 'sugarcane',
+    slug: 'sugarcane',
+    name: 'Sugarcane',
+    urduName: 'گنا',
+    image: '/images/sugercane.jpg',
+    flyerImage: '/images/sugercane.jpg',
+    season: 'Year-Round / Kharif',
+    scientificName: 'Saccharum officinarum',
+    description: 'A heavy-feeding, high-sugar cash crop. Hercules provides intensive soil nutrition packages, systemic insecticides, and growth promoters for thick, juicy canes.',
+    urduDescription: 'ایک اہم نقد آور فصل۔ ہرکولیس گنے کی فصل کے لیے مکمل غذائی پلان، کیڑے مار ادویات اور پیداوار بڑھانے والے حل فراہم کرتا ہے۔',
+    recommendedProducts: ['Fentrol', 'Bogata', 'Urea Phos', 'Chlorfenapyr'],
+    sowingPeriod: 'Feb → Jan'
+  },
+  {
+    id: 'maize',
+    slug: 'maize',
+    name: 'Corn / Maize',
+    urduName: 'مکئی',
+    image: '/images/maize (1).jpg',
+    flyerImage: '/images/Maize Table Flyer Hercules_page-0001.jpg',
+    season: 'Spring & Kharif',
+    scientificName: 'Zea mays',
+    description: 'Fast-growing, versatile crop for grain and fodder. Hercules delivers early-season protection, weed-free management, and balanced NPK inputs for uniform cob development.',
+    urduDescription: 'اناج اور چارے کے لیے تیزی سے بڑھنے والی فصل۔ ہرکولیس مکئی کے لیے جڑی بوٹی مار ادویات اور متوازن کھادیں فراہم کرتا ہے۔',
+    recommendedProducts: ['Atrazine', 'Gengwei', 'Lagao', 'Zelura'],
+    sowingPeriod: 'Feb → Aug'
+  },
+  {
+    id: 'rice',
+    slug: 'rice',
+    name: 'Rice',
+    urduName: 'چاول',
+    image: '/images/rice (1) (1).jpg',
+    flyerImage: '/images/Rice Leaflet_page-0001.jpg',
+    season: 'Kharif Season',
+    scientificName: 'Oryza sativa',
+    description: "Pakistan's world-renowned Basmati and coarse rice varieties require careful water, pest, and disease management. Hercules supports rice growers from nursery to grain filling.",
+    urduDescription: 'پاکستان کا مشہور باسمتی چاول۔ ہرکولیس پنیری سے لے کر فصل پکنے تک بیماریوں اور کیڑوں سے تحفظ کے بہترین حل فراہم کرتا ہے۔',
+    recommendedProducts: ['Butachlor', 'Metalaxyl', 'Cyclone', 'Joba'],
+    sowingPeriod: 'May → Nov'
+  }
+];

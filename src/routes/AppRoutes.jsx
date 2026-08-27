@@ -3,6 +3,7 @@ import Home from '../pages/Home/Home';
 import Products from '../pages/Products/Products';
 import ProductDetail from '../pages/Products/ProductDetail';
 import Crops from '../pages/Crops/Crops';
+import CropDetail from '../pages/Crops/CropDetail';
 import Sustainability from '../pages/Sustainability/Sustainability';
 import AboutUs from '../pages/AboutUs/AboutUs';
 import Career from '../pages/Career/Career';
@@ -25,6 +26,7 @@ function AppRoutes() {
         <Route path="/products" element={<Products />} />
         <Route path="/products/:productSlug" element={<ProductDetail />} />
         <Route path="/crops" element={<Crops />} />
+        <Route path="/crops/:cropSlug" element={<CropDetail />} />
         <Route path="/seeds" element={<Navigate to="/crops" replace />} />
         <Route path="/career" element={<Career />} />
         <Route path="/admin" element={<JobAdmin />} />
