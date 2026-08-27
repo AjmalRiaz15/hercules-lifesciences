@@ -17,7 +17,7 @@
   align-items: center;
   background: transparent;
   border: none;
-  color: #1e2a1f;
+  color: #1e293b;
   cursor: pointer;
   display: inline-flex;
   font-size: 0.91rem;
@@ -28,11 +28,11 @@
 }
 
 .link:hover {
-  color: #1f4b32;
+  color: #d32f2f;
 }
 
 .active {
-  color: #f47b20;
+  color: #d32f2f;
 }
 
 .dropdown {
@@ -45,9 +45,9 @@
 
 .chevron {
   align-items: center;
-  background: #f0f5ef;
+  background: #f1f5f9;
   border-radius: 999px;
-  color: #2e6a42;
+  color: #64748b;
   display: inline-flex;
   font-size: 0.68rem;
   height: 20px;
@@ -58,16 +58,16 @@
 }
 
 .chevronOpen {
-  background: #1f4b32;
+  background: #d32f2f;
   color: #ffffff;
   transform: rotate(180deg);
 }
 
 .dropdownMenu {
   background: #ffffff;
-  border: 1px solid #e8ede6;
+  border: 1px solid #e2e8f0;
   border-radius: 18px;
-  box-shadow: 0 18px 40px rgba(22, 48, 31, 0.14);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
   display: grid;
   left: 0;
   min-width: 220px;
@@ -78,7 +78,7 @@
 }
 
 .dropdownItem {
-  color: #1e2a1f;
+  color: #1e293b;
   border-radius: 12px;
   display: block;
   padding: 0.8rem 0.95rem;
@@ -87,8 +87,8 @@
 }
 
 .dropdownItem:hover {
-  background: #f3f7f0;
-  color: #1f4b32;
+  background: #f8fafc;
+  color: #d32f2f;
 }
 
 .nestedDropdown {
@@ -104,7 +104,7 @@
 }
 
 .nestedHeader:hover {
-  background: #f3f7f0;
+  background: #f8fafc;
 }
 
 .nestedHeader .dropdownItem {
@@ -114,7 +114,7 @@
 .nestedChevronBtn {
   background: transparent;
   border: none;
-  color: #6a7b6c;
+  color: #64748b;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -125,7 +125,7 @@
 }
 
 .nestedHeader:hover .nestedChevronBtn {
-  color: #1f4b32;
+  color: #d32f2f;
 }
 
 .desktopChevron {
@@ -138,9 +138,9 @@
 
 .nestedMenu {
   background: #ffffff;
-  border: 1px solid #e8ede6;
+  border: 1px solid #e2e8f0;
   border-radius: 16px;
-  box-shadow: 0 18px 40px rgba(22, 48, 31, 0.14);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
   display: none;
   right: calc(100% + 0.35rem);
   left: auto;
@@ -158,7 +158,7 @@
 }
 
 .nestedDropdownItem {
-  color: #1e2a1f;
+  color: #1e293b;
   border-radius: 10px;
   display: block;
   padding: 0.7rem 0.9rem;
@@ -168,15 +168,15 @@
 }
 
 .nestedDropdownItem:hover {
-  background: #f3f7f0;
-  color: #1f4b32;
+  background: #f8fafc;
+  color: #d32f2f;
 }
 
 @media (max-width: 900px) {
   .menuButton {
     align-items: center;
     background: #ffffff;
-    border: 1px solid #dce6dd;
+    border: 1px solid #e2e8f0;
     border-radius: 8px;
     cursor: pointer;
     display: inline-flex;
@@ -190,7 +190,7 @@
   }
 
   .menuLine {
-    background: #1f4b32;
+    background: #0f172a;
     border-radius: 999px;
     display: block;
     height: 2px;
@@ -198,7 +198,7 @@
   }
 
   .backdrop {
-    background: rgba(0, 0, 0, 0.45);
+    background: rgba(15, 23, 42, 0.6);
     border: none;
     display: block;
     inset: 0;
@@ -209,7 +209,7 @@
   .nav {
     background: #ffffff;
     border-radius: 0 0 18px 0;
-    box-shadow: 8px 0 32px rgba(22, 48, 31, 0.2);
+    box-shadow: 8px 0 32px rgba(15, 23, 42, 0.2);
     flex-direction: column;
     gap: 0.5rem;
     height: 100vh;
@@ -267,7 +267,7 @@
     position: static;
     box-shadow: none;
     border: none;
-    background: #f7faf5;
+    background: #f8fafc;
     border-radius: 10px;
     margin-left: 0.75rem;
     margin-top: 0.25rem;

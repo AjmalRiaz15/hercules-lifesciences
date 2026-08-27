@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   FaBriefcase,
   FaGraduationCap,
@@ -17,6 +17,39 @@ import {
 import { useJobs } from '../../context/JobContext';
 import { contactInfo } from '../../data/contactData';
 import styles from './Career.module.css';
+
+function useCountUp(target, duration = 1400) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const end = parseInt(target, 10);
+    if (isNaN(end) || end === 0) {
+      setCount(end || 0);
+      return;
+    }
+
+    let startTime = null;
+    let frameId;
+
+    const step = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(easeOut * end));
+
+      if (progress < 1) {
+        frameId = requestAnimationFrame(step);
+      } else {
+        setCount(end);
+      }
+    };
+
+    frameId = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(frameId);
+  }, [target, duration]);
+
+  return count;
+}
 
 const benefits = [
   {
@@ -102,6 +135,9 @@ function Career() {
     setCopiedEmail(false);
   };
 
+  const animatedJobsCount = useCountUp(jobs.length, 1200);
+  const animatedFocusCount = useCountUp(100, 1600);
+
   return (
     <section className={styles.page}>
       {/* Hero Section */}
@@ -133,7 +169,10 @@ function Career() {
 
         <div className={styles.heroRight}>
           <div className={styles.heroStat}>
-            <div className={styles.heroStatNum}>{jobs.length}</div>
+            <div className={styles.heroStatHeader}>
+              <div className={styles.heroStatNum}>{animatedJobsCount}</div>
+              <span className={styles.statPulseDot} />
+            </div>
             <div className={styles.heroStatLabel}>Open Positions</div>
           </div>
           <div className={styles.heroStat}>
@@ -141,7 +180,7 @@ function Career() {
             <div className={styles.heroStatLabel}>Operational Footprint</div>
           </div>
           <div className={styles.heroStat}>
-            <div className={styles.heroStatNum}>100%</div>
+            <div className={styles.heroStatNum}>{animatedFocusCount}%</div>
             <div className={styles.heroStatLabel}>Farmer Focused</div>
           </div>
         </div>

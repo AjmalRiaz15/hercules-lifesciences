@@ -4,8 +4,8 @@
   cursor: pointer;
   font-size: 0.95rem;
   font-weight: 600;
-  padding: 0.65rem 1.25rem;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  padding: 0.65rem 1.35rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
 .button:hover {
@@ -17,11 +17,22 @@
 }
 
 .primary {
-  background: #f47b20;
+  background: linear-gradient(135deg, #e53935 0%, #c62828 100%);
   color: #ffffff;
+  box-shadow: 0 4px 14px rgba(229, 57, 53, 0.3);
+}
+
+.primary:hover {
+  background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+  box-shadow: 0 6px 18px rgba(229, 57, 53, 0.4);
 }
 
 .secondary {
-  background: #1f5a2f;
+  background: #1e293b;
   color: #ffffff;
+  border: 1px solid #334155;
+}
+
+.secondary:hover {
+  background: #0f172a;
 }

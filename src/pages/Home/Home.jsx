@@ -10,26 +10,30 @@ function Home() {
   const [isAutoPlay, setIsAutoPlay] = useState(true);
 
   const groupedCategories = productCategories.map((category) => {
-    const count = productsData.filter((product) => {
-      if (category.name === 'Fertilizer') {
-        return (
-          product.category === 'Fertilizer' ||
-          product.category === 'Special Nutrients' ||
-          product.category === 'Soil Reclamation' ||
-          product.category === 'Granules' ||
-          product.category === 'Household' ||
-          product.subCategory === 'Special Nutrients' ||
-          product.subCategory === 'Soil Reclamation' ||
-          product.subCategory === 'Granules' ||
-          product.subCategory === 'Household'
-        );
-      }
-      return product.category === category.name;
-    }).length;
+    const uniqueKeys = new Set(
+      productsData
+        .filter((product) => {
+          if (category.name === 'Fertilizer') {
+            return (
+              product.category === 'Fertilizer' ||
+              product.category === 'Special Nutrients' ||
+              product.category === 'Soil Reclamation' ||
+              product.category === 'Granules' ||
+              product.category === 'Household' ||
+              product.subCategory === 'Special Nutrients' ||
+              product.subCategory === 'Soil Reclamation' ||
+              product.subCategory === 'Granules' ||
+              product.subCategory === 'Household'
+            );
+          }
+          return product.category === category.name;
+        })
+        .map((p) => p.groupKey || p.slug)
+    );
 
     return {
       ...category,
-      count
+      count: uniqueKeys.size
     };
   });
 

@@ -1,20 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;700&display=swap');
 
 .page {
-  color: #17301f;
+  color: #0f172a;
   display: grid;
   gap: 2rem;
   font-family: 'DM Sans', sans-serif;
-  min-height: 100vh;
   padding: 0;
   width: 100%;
 }
 
 .hero {
   align-items: center;
-  background: linear-gradient(135deg, #123024 0%, #1f4b32 50%, #4d7f3a 100%);
+  background: linear-gradient(135deg, #070c18 0%, #0f172a 50%, #1e293b 100%);
   border-radius: 24px;
-  box-shadow: 0 24px 50px rgba(18, 48, 36, 0.18);
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.2);
   display: flex;
   flex-wrap: wrap;
   gap: 2rem 3.5rem;
@@ -53,10 +52,10 @@
 }
 
 .badge {
-  background: rgba(255, 255, 255, 0.14);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(229, 57, 53, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.35);
   border-radius: 999px;
-  color: #d6f2c7;
+  color: #fca5a5;
   display: inline-block;
   font-size: 0.75rem;
   font-weight: 700;
@@ -76,11 +75,11 @@
 }
 
 .heroTitle span {
-  color: #a8d5a2;
+  color: #ef4444;
 }
 
 .heroSub {
-  color: rgba(255, 255, 255, 0.82);
+  color: #cbd5e1;
   font-size: 1rem;
   font-weight: 300;
   line-height: 1.75;
@@ -96,7 +95,7 @@
 
 .primaryBtn {
   align-items: center;
-  background: #f47b20;
+  background: linear-gradient(135deg, #e53935 0%, #c62828 100%);
   border-radius: 999px;
   color: #ffffff;
   display: inline-flex;
@@ -105,19 +104,20 @@
   gap: 0.5rem;
   padding: 0.85rem 1.65rem;
   text-decoration: none;
+  box-shadow: 0 4px 14px rgba(229, 57, 53, 0.35);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
 .primaryBtn:hover {
-  background: #e06d15;
-  box-shadow: 0 8px 20px rgba(244, 123, 32, 0.35);
+  background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+  box-shadow: 0 8px 24px rgba(229, 57, 53, 0.45);
   transform: translateY(-2px);
 }
 
 .secondaryBtn {
   align-items: center;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 999px;
   color: #ffffff;
   display: inline-flex;
@@ -129,8 +129,32 @@
 }
 
 .secondaryBtn:hover {
-  background: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
+}
+
+@keyframes heroStatEnter {
+  0% {
+    opacity: 0;
+    transform: translateX(25px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes pulseDot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.85;
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.55);
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 1;
+    box-shadow: 0 0 10px 3px rgba(239, 68, 68, 0.85);
+  }
 }
 
 .heroRight {
@@ -143,26 +167,83 @@
 }
 
 .heroStat {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 16px;
   padding: 1rem 1.25rem;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  animation: heroStatEnter 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease,
+              background-color 0.3s ease;
+}
+
+.heroStat:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.heroStat:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.heroStat:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.heroStat:hover {
+  background: rgba(255, 255, 255, 0.13);
+  border-color: rgba(239, 68, 68, 0.5);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.3), 0 0 20px rgba(229, 57, 53, 0.2);
+  transform: translateY(-4px) scale(1.02);
+}
+
+.heroStatHeader {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
 }
 
 .heroStatNum {
-  color: #a8d5a2;
+  color: #ef4444;
   font-family: 'Playfair Display', serif;
   font-size: 1.55rem;
   font-weight: 700;
   margin-bottom: 0.2rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.heroStat:hover .heroStatNum {
+  color: #f87171;
+  transform: scale(1.06);
+}
+
+.statPulseDot {
+  background: #ef4444;
+  border-radius: 50%;
+  height: 7px;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  width: 7px;
+  animation: pulseDot 2s infinite ease-in-out;
 }
 
 .heroStatLabel {
-  color: rgba(255, 255, 255, 0.7);
+  color: #cbd5e1;
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.heroStat:hover .heroStatLabel {
+  color: #ffffff;
 }
 
 /* Benefits Section */
@@ -176,7 +257,7 @@
 }
 
 .sectionKicker {
-  color: #4d7f3a;
+  color: #d32f2f;
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.18em;
@@ -185,7 +266,7 @@
 }
 
 .sectionHeading {
-  color: #16301f;
+  color: #0f172a;
   font-family: 'Playfair Display', serif;
   font-size: clamp(1.6rem, 3vw, 2.3rem);
   font-weight: 700;
@@ -193,11 +274,11 @@
 }
 
 .sectionHeading span {
-  color: #2d6a3f;
+  color: #d32f2f;
 }
 
 .sectionDesc {
-  color: #516152;
+  color: #475569;
   font-size: 0.98rem;
   line-height: 1.6;
   margin: 0.5rem 0 0;
@@ -212,25 +293,26 @@
 
 .benefitCard {
   background: #ffffff;
-  border: 1px solid #dfe8de;
+  border: 1px solid #e2e8f0;
   border-radius: 20px;
-  box-shadow: 0 8px 24px rgba(22, 48, 31, 0.05);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
   display: grid;
   gap: 0.75rem;
   padding: 1.5rem;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .benefitCard:hover {
-  box-shadow: 0 14px 30px rgba(22, 48, 31, 0.1);
+  border-color: #cbd5e1;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
   transform: translateY(-3px);
 }
 
 .benefitIconWrap {
   align-items: center;
-  background: #edf7e8;
+  background: #fee2e2;
   border-radius: 14px;
-  color: #2d6a3f;
+  color: #d32f2f;
   display: inline-flex;
   font-size: 1.35rem;
   height: 48px;
@@ -239,13 +321,13 @@
 }
 
 .benefitCard h3 {
-  color: #16301f;
+  color: #0f172a;
   font-size: 1.1rem;
   margin: 0;
 }
 
 .benefitCard p {
-  color: #516152;
+  color: #475569;
   font-size: 0.92rem;
   line-height: 1.6;
   margin: 0;
@@ -267,10 +349,10 @@
 
 .adminPortalLink {
   align-items: center;
-  background: #edf7e8;
-  border: 1px solid #c9e2c4;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
   border-radius: 999px;
-  color: #1f4b32;
+  color: #334155;
   display: inline-flex;
   font-size: 0.82rem;
   font-weight: 700;
@@ -281,8 +363,8 @@
 }
 
 .adminPortalLink:hover {
-  background: #1f4b32;
-  border-color: #1f4b32;
+  background: #0f172a;
+  border-color: #0f172a;
   color: #ffffff;
   transform: translateY(-1px);
 }
@@ -291,9 +373,9 @@
 .filterBar {
   align-items: center;
   background: #ffffff;
-  border: 1px solid #dfe8de;
+  border: 1px solid #e2e8f0;
   border-radius: 18px;
-  box-shadow: 0 6px 20px rgba(22, 48, 31, 0.04);
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.03);
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -308,14 +390,14 @@
 }
 
 .searchIcon {
-  color: #8a9a87;
+  color: #94a3b8;
   font-size: 0.95rem;
 }
 
 .searchBox input {
   background: transparent;
   border: none;
-  color: #16301f;
+  color: #0f172a;
   font-family: inherit;
   font-size: 0.95rem;
   outline: none;
@@ -324,8 +406,8 @@
 
 .deptFilter {
   align-items: center;
-  background: #f4f9f2;
-  border: 1px solid #d2e4d0;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
   border-radius: 999px;
   display: flex;
   gap: 0.45rem;
@@ -333,14 +415,14 @@
 }
 
 .filterIcon {
-  color: #2d6a3f;
+  color: #d32f2f;
   font-size: 0.85rem;
 }
 
 .deptFilter select {
   background: transparent;
   border: none;
-  color: #1f4b32;
+  color: #0f172a;
   cursor: pointer;
   font-family: inherit;
   font-size: 0.88rem;
@@ -350,10 +432,10 @@
 
 /* Empty State Card (When no jobs are posted) */
 .emptyStateCard {
-  background: linear-gradient(180deg, #ffffff 0%, #f7fbf5 100%);
-  border: 2px dashed #b8ddb8;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  border: 2px dashed #cbd5e1;
   border-radius: 28px;
-  box-shadow: 0 12px 32px rgba(22, 48, 31, 0.05);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.04);
   display: grid;
   justify-items: center;
   padding: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 3vw, 2.5rem);
@@ -362,10 +444,10 @@
 
 .emptyIconCircle {
   align-items: center;
-  background: #edf7e8;
-  border: 1px solid #d4ebd0;
+  background: #fee2e2;
+  border: 1px solid #fecaca;
   border-radius: 50%;
-  color: #2d6a3f;
+  color: #d32f2f;
   display: inline-flex;
   font-size: 2.25rem;
   height: 76px;
@@ -375,14 +457,14 @@
 }
 
 .emptyStateCard h3 {
-  color: #16301f;
+  color: #0f172a;
   font-family: 'Playfair Display', serif;
   font-size: clamp(1.4rem, 2.5vw, 1.85rem);
   margin: 0 0 0.5rem;
 }
 
 .emptySubtitle {
-  color: #2d6a3f;
+  color: #d32f2f;
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.6;
@@ -391,7 +473,7 @@
 }
 
 .emptyNote {
-  color: #516152;
+  color: #475569;
   font-size: 0.95rem;
   line-height: 1.7;
   margin: 0 0 2rem;
@@ -407,10 +489,10 @@
 
 .secondaryEmptyBtn {
   align-items: center;
-  background: #edf5ea;
-  border: 1px solid #c9e2c4;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
   border-radius: 999px;
-  color: #1f4b32;
+  color: #0f172a;
   display: inline-flex;
   font-size: 0.92rem;
   font-weight: 600;
@@ -421,26 +503,26 @@
 }
 
 .secondaryEmptyBtn:hover {
-  background: #dfeee7;
+  background: #e2e8f0;
 }
 
 /* No Match Found */
 .noMatchCard {
-  background: #fdfefe;
-  border: 1px solid #e2ece0;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 20px;
   padding: 3rem 1.5rem;
   text-align: center;
 }
 
 .noMatchCard p {
-  color: #516152;
+  color: #475569;
   font-size: 1rem;
   margin: 0 0 1rem;
 }
 
 .resetFilterBtn {
-  background: #1f4b32;
+  background: #0f172a;
   border: none;
   border-radius: 999px;
   color: #ffffff;
@@ -452,7 +534,7 @@
 }
 
 .resetFilterBtn:hover {
-  background: #f47b20;
+  background: #d32f2f;
 }
 
 .openingsGrid {
@@ -463,9 +545,9 @@
 
 .jobCard {
   background: #ffffff;
-  border: 1px solid #dfe8de;
+  border: 1px solid #e2e8f0;
   border-radius: 22px;
-  box-shadow: 0 10px 26px rgba(22, 48, 31, 0.06);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.04);
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
@@ -474,8 +556,8 @@
 }
 
 .jobCard:hover {
-  border-color: #b6cfaf;
-  box-shadow: 0 16px 36px rgba(22, 48, 31, 0.12);
+  border-color: #cbd5e1;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
   transform: translateY(-3px);
 }
 
@@ -487,9 +569,9 @@
 }
 
 .jobDept {
-  background: #edf5ea;
+  background: #fee2e2;
   border-radius: 999px;
-  color: #2d6a3f;
+  color: #b91c1c;
   font-size: 0.72rem;
   font-weight: 700;
   padding: 0.3rem 0.7rem;
@@ -497,20 +579,20 @@
 }
 
 .jobType {
-  color: #8a9a87;
+  color: #94a3b8;
   font-size: 0.75rem;
   font-weight: 600;
 }
 
 .jobTitle {
-  color: #16301f;
+  color: #0f172a;
   font-size: 1.22rem;
   margin: 0;
 }
 
 .jobMeta {
   align-items: center;
-  color: #6a7b6c;
+  color: #64748b;
   display: flex;
   flex-wrap: wrap;
   font-size: 0.85rem;
@@ -525,12 +607,12 @@
 }
 
 .jobDeadline {
-  color: #c05621;
+  color: #d32f2f;
   font-weight: 600;
 }
 
 .jobDesc {
-  color: #516152;
+  color: #475569;
   font-size: 0.92rem;
   line-height: 1.65;
   margin: 0;
@@ -543,7 +625,7 @@
 
 .applyBtn {
   align-items: center;
-  background: #1f4b32;
+  background: linear-gradient(135deg, #e53935 0%, #c62828 100%);
   border-radius: 999px;
   color: #ffffff;
   display: inline-flex;
@@ -552,31 +634,33 @@
   gap: 0.4rem;
   padding: 0.65rem 1.2rem;
   text-decoration: none;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(229, 57, 53, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .applyBtn:hover {
-  background: #f47b20;
+  background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+  box-shadow: 0 6px 16px rgba(229, 57, 53, 0.4);
   transform: translateY(-1px);
 }
 
 /* Apply Banner */
 .applyBanner {
-  background: linear-gradient(135deg, #f0f7ec 0%, #e8f4e4 100%);
-  border: 1px solid #cce0c6;
+  background: linear-gradient(135deg, #070c18 0%, #0f172a 50%, #1e293b 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 24px;
   padding: clamp(1.75rem, 3.5vw, 2.5rem);
 }
 
 .applyContent h2 {
-  color: #16301f;
+  color: #ffffff;
   font-family: 'Playfair Display', serif;
   font-size: clamp(1.35rem, 2.5vw, 1.8rem);
   margin: 0 0 0.5rem;
 }
 
 .applyContent p {
-  color: #516152;
+  color: #cbd5e1;
   font-size: 0.95rem;
   line-height: 1.7;
   margin: 0 0 1.25rem;
@@ -591,10 +675,10 @@
 
 .applyContactLink {
   align-items: center;
-  background: #ffffff;
-  border: 1px solid #d0e2cb;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 999px;
-  color: #1f4b32;
+  color: #ffffff;
   display: inline-flex;
   font-size: 0.9rem;
   font-weight: 700;
@@ -605,8 +689,8 @@
 }
 
 .applyContactLink:hover {
-  background: #1f4b32;
-  border-color: #1f4b32;
+  background: #d32f2f;
+  border-color: #d32f2f;
   color: #ffffff;
   transform: translateY(-1px);
 }
@@ -614,7 +698,7 @@
 /* Apply Modal Styles */
 .modalOverlay {
   align-items: center;
-  background: rgba(11, 24, 16, 0.75);
+  background: rgba(11, 17, 32, 0.78);
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
   display: flex;
@@ -642,12 +726,12 @@
   align-items: flex-start;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #edf3eb;
+  border-bottom: 1px solid #e2e8f0;
   padding-bottom: 0.85rem;
 }
 
 .modalKicker {
-  color: #4d7f3a;
+  color: #d32f2f;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -655,7 +739,7 @@
 }
 
 .modalHeader h2 {
-  color: #16301f;
+  color: #0f172a;
   font-family: 'Playfair Display', serif;
   font-size: 1.45rem;
   margin: 0.25rem 0 0;
@@ -664,7 +748,7 @@
 .modalCloseBtn {
   background: transparent;
   border: none;
-  color: #8a9a87;
+  color: #94a3b8;
   cursor: pointer;
   font-size: 1.75rem;
   line-height: 1;
@@ -673,7 +757,7 @@
 }
 
 .modalCloseBtn:hover {
-  color: #16301f;
+  color: #0f172a;
 }
 
 .modalBody {
@@ -682,8 +766,8 @@
 }
 
 .receiverBox {
-  background: #f4f9f2;
-  border: 1px solid #cce2ca;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
   border-radius: 16px;
   display: grid;
   gap: 0.35rem;
@@ -694,7 +778,7 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
-  color: #2d6a3f;
+  color: #d32f2f;
   font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -704,9 +788,9 @@
 .copyBtn {
   align-items: center;
   background: #ffffff;
-  border: 1px solid #b8ddb8;
+  border: 1px solid #cbd5e1;
   border-radius: 999px;
-  color: #1f4b32;
+  color: #0f172a;
   cursor: pointer;
   display: inline-flex;
   font-size: 0.78rem;
@@ -717,12 +801,12 @@
 }
 
 .copyBtn:hover {
-  background: #1f4b32;
+  background: #0f172a;
   color: #ffffff;
 }
 
 .receiverEmail {
-  color: #16301f;
+  color: #0f172a;
   font-family: monospace;
   font-size: 1.1rem;
   font-weight: 700;
@@ -731,8 +815,8 @@
 }
 
 .subjectBox {
-  background: #fbfdfa;
-  border: 1px solid #e2ece0;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 14px;
   display: grid;
   gap: 0.25rem;
@@ -740,7 +824,7 @@
 }
 
 .boxLabel {
-  color: #6a7b6c;
+  color: #64748b;
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -748,28 +832,28 @@
 }
 
 .subjectText {
-  color: #16301f;
+  color: #0f172a;
   font-size: 0.95rem;
   font-weight: 600;
   margin: 0;
 }
 
 .instructionsBox {
-  background: #fef9f3;
-  border: 1px solid #f9e2cc;
+  background: #fff5f5;
+  border: 1px solid #fecaca;
   border-radius: 14px;
   padding: 0.9rem 1.15rem;
 }
 
 .instructionHeading {
-  color: #9c4221;
+  color: #991b1b;
   font-size: 0.88rem;
   font-weight: 700;
   margin: 0 0 0.4rem;
 }
 
 .instructionsBox ul {
-  color: #516152;
+  color: #475569;
   font-size: 0.88rem;
   line-height: 1.6;
   margin: 0;
@@ -794,18 +878,19 @@
   justify-content: center;
   padding: 0.85rem 1.5rem;
   text-decoration: none;
+  box-shadow: 0 4px 14px rgba(234, 67, 53, 0.3);
   transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .gmailBtn:hover {
   background: #d33828;
-  box-shadow: 0 8px 20px rgba(234, 67, 53, 0.3);
+  box-shadow: 0 8px 20px rgba(234, 67, 53, 0.4);
   transform: translateY(-1px);
 }
 
 .defaultMailBtn {
   align-items: center;
-  background: #1f4b32;
+  background: #0f172a;
   border-radius: 999px;
   color: #ffffff;
   display: inline-flex;
@@ -819,7 +904,7 @@
 }
 
 .defaultMailBtn:hover {
-  background: #16301f;
+  background: #1e293b;
   transform: translateY(-1px);
 }
 

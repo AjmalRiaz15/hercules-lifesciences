@@ -61,7 +61,7 @@ function Footer() {
           <div className={styles.logoSection}>
             <img className={styles.logoImage} src="/images/main-logo.png" alt="Hercules Life Sciences" />
             <h3 className={styles.logoText}>Hercules Life Sciences</h3>
-            <p className={styles.tagline}>Cultivating Excellence in Agriculture</p>
+            <p className={styles.tagline}>Growing Better Every Season</p>
           </div>
           <p className={styles.aboutText}>
             Hercules is committed to providing premium agricultural products and solutions 

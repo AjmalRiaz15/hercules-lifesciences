@@ -8,5 +8,9 @@ export const contactInfo = {
   address: {
     city: 'Multan',
     country: 'Pakistan'
+  },
+  businessHours: {
+    days: 'Mon – Sat',
+    hours: '9:00 AM – 6:00 PM'
   }
 };

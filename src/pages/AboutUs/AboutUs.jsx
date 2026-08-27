@@ -1,12 +1,60 @@
+import { useState, useEffect, useMemo } from 'react';
+import {
+  FaPhoneAlt,
+  FaEnvelope,
+  FaClock,
+  FaMapMarkerAlt,
+  FaBuilding,
+  FaExternalLinkAlt
+} from 'react-icons/fa';
 import { contactInfo } from '../../data/contactData';
 import { productsData } from '../../data/productsData';
 import styles from './AboutUs.module.css';
 
+function useCountUp(target, duration = 1400) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const end = parseInt(target, 10);
+    if (isNaN(end) || end === 0) {
+      setCount(end || 0);
+      return;
+    }
+
+    let startTime = null;
+    let frameId;
+
+    const step = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(easeOut * end));
+
+      if (progress < 1) {
+        frameId = requestAnimationFrame(step);
+      } else {
+        setCount(end);
+      }
+    };
+
+    frameId = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(frameId);
+  }, [target, duration]);
+
+  return count;
+}
+
 function AboutUs() {
-  const totalProducts = productsData.length;
+  const totalDistinctProducts = useMemo(() => {
+    const set = new Set(productsData.map((p) => p.groupKey || p.slug));
+    return set.size;
+  }, []);
+
+  const animatedProductsCount = useCountUp(totalDistinctProducts, 1400);
 
   return (
     <section className={styles.page}>
+      {/* Hero Section */}
       <div className={styles.hero}>
         <div className={styles.heroLeft}>
           <div className={styles.badge}>About Us</div>
@@ -24,11 +72,14 @@ function AboutUs() {
 
         <div className={styles.heroRight}>
           <div className={styles.heroStat}>
-            <div className={styles.heroStatNum}>Multan</div>
+            <div className={styles.heroStatHeader}>
+              <div className={styles.heroStatNum}>Multan</div>
+              <span className={styles.statPulseDot} />
+            </div>
             <div className={styles.heroStatLabel}>Headquarters, Punjab</div>
           </div>
           <div className={styles.heroStat}>
-            <div className={styles.heroStatNum}>{totalProducts}</div>
+            <div className={styles.heroStatNum}>{animatedProductsCount}+</div>
             <div className={styles.heroStatLabel}>Products in Catalog</div>
           </div>
           <div className={styles.heroStat}>
@@ -42,6 +93,7 @@ function AboutUs() {
         </div>
       </div>
 
+      {/* Story Cards */}
       <div className={styles.storySection}>
         <div className={`${styles.storyCard} ${styles.accent}`}>
           <p className={styles.cardLabel}>Who We Are</p>
@@ -101,123 +153,80 @@ function AboutUs() {
         </div>
       </div>
 
-      <div className={styles.timelineSection}>
-        <h2 className={styles.sectionHeading}>
-          Our <span>journey</span>
-        </h2>
+      {/* Head Office & Map Location Section */}
+      <div className={styles.locationSection}>
+        <div className={styles.locationCard}>
+          <div className={styles.locationHeader}>
+            <span className={styles.locationBadge}>
+              <FaBuilding /> Corporate Headquarters
+            </span>
+            <h2 className={styles.locationTitle}>Hercules Life Sciences</h2>
+            <p className={styles.locationSubtitle}>
+              <FaMapMarkerAlt className={styles.pinIcon} /> {contactInfo.address.city}, Punjab, {contactInfo.address.country}
+            </p>
+          </div>
 
-        <div className={styles.timeline}>
-          <div className={styles.tlItem}>
-            <div className={styles.tlLeft}>
-              <div className={styles.tlDot} />
-              <div className={styles.tlLine} />
+          <div className={styles.contactList}>
+            <div className={styles.contactItem}>
+              <span className={styles.contactIconWrap}>
+                <FaPhoneAlt />
+              </span>
+              <div className={styles.contactItemContent}>
+                <span className={styles.contactItemLabel}>Direct Phone</span>
+                <a href={contactInfo.phoneHref} className={styles.contactItemLink}>
+                  {contactInfo.phone}
+                </a>
+              </div>
             </div>
-            <div className={styles.tlYear}>Founded</div>
-            <div className={styles.tlContent}>
-              <h4>Hercules Life Sciences established</h4>
-              <p>
-                Company founded in Multan, Punjab with a mission to serve Pakistan's
-                farming community with science-backed solutions.
-              </p>
+
+            <div className={styles.contactItem}>
+              <span className={styles.contactIconWrap}>
+                <FaEnvelope />
+              </span>
+              <div className={styles.contactItemContent}>
+                <span className={styles.contactItemLabel}>Official Email</span>
+                <a href={contactInfo.emailHref} className={styles.contactItemLink}>
+                  {contactInfo.email}
+                </a>
+              </div>
+            </div>
+
+            <div className={styles.contactItem}>
+              <span className={styles.contactIconWrap}>
+                <FaClock />
+              </span>
+              <div className={styles.contactItemContent}>
+                <span className={styles.contactItemLabel}>Business Hours</span>
+                <span className={styles.contactItemValue}>
+                  {contactInfo.businessHours?.days || 'Mon – Sat'}: {contactInfo.businessHours?.hours || '9:00 AM – 6:00 PM'}
+                </span>
+              </div>
             </div>
           </div>
 
-          <div className={styles.tlItem}>
-            <div className={styles.tlLeft}>
-              <div className={styles.tlDot} />
-              <div className={styles.tlLine} />
-            </div>
-            <div className={styles.tlYear}>Growth</div>
-            <div className={styles.tlContent}>
-              <h4>Product line expanded</h4>
-              <p>
-                Launched wheat seeds, cotton seeds, fertilizers, and pesticides to
-                become a one-stop agricultural solution provider.
-              </p>
-            </div>
-          </div>
-
-          <div className={styles.tlItem}>
-            <div className={styles.tlLeft}>
-              <div className={styles.tlDot} />
-              <div className={styles.tlLine} />
-            </div>
-            <div className={styles.tlYear}>Today</div>
-            <div className={styles.tlContent}>
-              <h4>Serving farmers across Punjab</h4>
-              <p>
-                Continuing to grow our reach and impact, supporting farmers with
-                premium products and practical guidance every season.
-              </p>
-            </div>
-          </div>
-
-          <div className={styles.tlItem}>
-            <div className={styles.tlLeft}>
-              <div className={styles.tlDot} />
-              <div className={styles.tlLine} />
-            </div>
-            <div className={styles.tlYear}>Vision</div>
-            <div className={styles.tlContent}>
-              <h4>A sustainable food ecosystem for Pakistan</h4>
-              <p>
-                Working toward a future where every farmer has the tools, knowledge,
-                and support to feed the nation and protect the land.
-              </p>
-            </div>
+          <div className={styles.actionWrap}>
+            <a
+              href={`https://maps.google.com/?q=Hercules+Life+Sciences+Multan+Pakistan`}
+              target="_blank"
+              rel="noreferrer"
+              className={styles.directionsBtn}
+            >
+              Get Directions <FaExternalLinkAlt />
+            </a>
           </div>
         </div>
-      </div>
 
-      <div className={styles.teamSection}>
-        <h2 className={styles.sectionHeading}>
-          Our <span>team</span>
-        </h2>
-
-        <div className={styles.teamGrid}>
-          <div className={styles.teamCard}>
-            <div className={styles.teamAvatar}>H</div>
-            <p className={styles.teamName}>Leadership Team</p>
-            <p className={styles.teamRole}>Management & Strategy</p>
-            <span className={styles.teamTag}>Executive</span>
-          </div>
-          <div className={styles.teamCard}>
-            <div className={styles.teamAvatar}>A</div>
-            <p className={styles.teamName}>Agronomy Experts</p>
-            <p className={styles.teamRole}>Crop Science & Research</p>
-            <span className={styles.teamTag}>Science</span>
-          </div>
-          <div className={styles.teamCard}>
-            <div className={styles.teamAvatar}>S</div>
-            <p className={styles.teamName}>Sales & Support</p>
-            <p className={styles.teamRole}>Farmer Relations</p>
-            <span className={styles.teamTag}>Field Team</span>
-          </div>
-          <div className={styles.teamCard}>
-            <div className={styles.teamAvatar}>L</div>
-            <p className={styles.teamName}>Logistics Team</p>
-            <p className={styles.teamRole}>Supply & Distribution</p>
-            <span className={styles.teamTag}>Operations</span>
-          </div>
-        </div>
-      </div>
-
-      <div className={styles.locationBar}>
-        <div className={styles.locIcon} aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#a8d5a2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
-            <circle cx="12" cy="10" r="3" />
-          </svg>
-        </div>
-
-        <div className={styles.locInfo}>
-          <h3>Headquartered in {contactInfo.address.city}, {contactInfo.address.country}</h3>
-          <p>Serving farmers across Pakistan with premium agricultural products and expert guidance</p>
-        </div>
-
-        <div className={styles.locContacts}>
-          <div className={styles.locContactItem}>{contactInfo.phone}</div>
-          <div className={styles.locContactItem}>{contactInfo.email}</div>
+        <div className={styles.mapContainer}>
+          <iframe
+            title="Hercules Life Sciences Multan Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13796.84279144414!2d71.4362!3d30.1956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b339a00000001%3A0x0!2sMultan%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
       </div>
     </section>

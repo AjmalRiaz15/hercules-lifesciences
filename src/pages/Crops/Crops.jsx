@@ -1,7 +1,50 @@
-import React from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
+import { productsData } from '../../data/productsData';
 import styles from './Crops.module.css';
 
+function useCountUp(target, duration = 1400) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const end = parseInt(target, 10);
+    if (isNaN(end) || end === 0) {
+      setCount(end || 0);
+      return;
+    }
+
+    let startTime = null;
+    let frameId;
+
+    const step = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(easeOut * end));
+
+      if (progress < 1) {
+        frameId = requestAnimationFrame(step);
+      } else {
+        setCount(end);
+      }
+    };
+
+    frameId = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(frameId);
+  }, [target, duration]);
+
+  return count;
+}
+
 export default function Crops() {
+  const totalDistinctProducts = useMemo(() => {
+    const set = new Set(productsData.map((p) => p.groupKey || p.slug));
+    return set.size;
+  }, []);
+
+  const animatedCrops = useCountUp(5, 1000);
+  const animatedProducts = useCountUp(totalDistinctProducts, 1400);
+  const animatedSeasons = useCountUp(2, 800);
+
   return (
     <div>
       {/* HERO */}
@@ -27,11 +70,11 @@ export default function Crops() {
         {/* STATS */}
         <div className={styles.introStrip}>
           <div className={styles.isCard}>
-            <div className={styles.isNum}>5</div>
+            <div className={styles.isNum}>{animatedCrops}</div>
             <div className={styles.isLbl}>Crops Covered</div>
           </div>
           <div className={styles.isCard}>
-            <div className={styles.isNum}>131+</div>
+            <div className={styles.isNum}>{animatedProducts}+</div>
             <div className={styles.isLbl}>Products Available</div>
           </div>
           <div className={styles.isCard}>
@@ -39,7 +82,7 @@ export default function Crops() {
             <div className={styles.isLbl}>Primary Region</div>
           </div>
           <div className={styles.isCard}>
-            <div className={styles.isNum}>2</div>
+            <div className={styles.isNum}>{animatedSeasons}</div>
             <div className={styles.isLbl}>Seasons Supported</div>
           </div>
         </div>
@@ -55,7 +98,7 @@ export default function Crops() {
         <div className={styles.cropCard}>
           <div className={styles.cropImg}>
             <img
-              src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=800&q=80"
+              src="/images/wheat.jpg"
               alt="Wheat field golden harvest"
               loading="lazy"
             />
@@ -104,34 +147,45 @@ export default function Crops() {
         </div>
 
         {/* ── CROP 2: COTTON ── */}
-        <div className={`${styles.cropCard} ${styles.reverse}`}>
+        <div className={styles.cropCard}>
+          <div className={styles.cropImg}>
+            <img
+              src="/images/cotton (1).jpg"
+              alt="Cotton field white harvest"
+              loading="lazy"
+            />
+            <div className={styles.cropImgOverlay}>
+              <span className={styles.cropEmoji}>🌿</span>
+              <div className={styles.cropUrduName}>کپاس</div>
+            </div>
+          </div>
           <div className={styles.cropBody}>
             <span className={styles.cropTag}>Kharif Season</span>
             <h2 className={styles.cropEnName}>Cotton</h2>
             <p className={styles.cropSci}>Gossypium hirsutum</p>
             <p className={styles.cropDescEn}>
-              Pakistan's white gold. Cotton demands intensive crop protection — from sucking pests to bollworms. Hercules offers a complete insecticide and fungicide program to protect every growth stage.
+              The backbone of Pakistan's textile industry and economy. Hercules offers high-purity cotton seeds with resistance to major pests and specialized boll-development nutrition.
             </p>
             <p className={styles.cropDescUr}>
-              پاکستان کا سفید سونا۔ کپاس کو چوسنے والے کیڑوں سے لے کر سنڈی تک مکمل تحفظ کی ضرورت ہے۔ ہرکولیس ہر مرحلے کے لیے مکمل حل فراہم کرتا ہے۔
+              پاکستان کی ٹیکسٹائل انڈسٹری کی ریڑھ کی ہڈی۔ ہرکولیس کیڑوں کے خلاف مزاحمت رکھنے والے اعلیٰ معیار کے کپاس کے بیج اور خصوصی کھاد فراہم کرتا ہے۔
             </p>
             <div className={styles.cropDivider}></div>
             <p className={styles.prodLabel}>Recommended Products</p>
             <div className={styles.prodTags}>
-              <span className={styles.prodTag}>Bogata</span>
-              <span className={styles.prodTag}>Bogata Plus</span>
-              <span className={styles.prodTag}>Midan</span>
-              <span className={styles.prodTag}>Midan Plus</span>
-              <span className={styles.prodTag}>GAGI</span>
+              <span className={styles.prodTag}>Acephate</span>
+              <span className={styles.prodTag}>Bifenthrin</span>
+              <span className={styles.prodTag}>Emamectin</span>
+              <span className={styles.prodTag}>Kastu-K</span>
+              <span className={styles.prodTag}>Meedan</span>
             </div>
             <div className={styles.seasonBar}>
-              <p className={styles.seasonLabel}>Sowing Season (May → Nov)</p>
+              <p className={styles.seasonLabel}>Sowing Season (Apr → Nov)</p>
               <div className={styles.seasonMonths}>
                 <div className={styles.sm}></div>
                 <div className={styles.sm}></div>
                 <div className={styles.sm}></div>
-                <div className={styles.sm}></div>
                 <div className={`${styles.sm} ${styles.partial}`}></div>
+                <div className={`${styles.sm} ${styles.active}`}></div>
                 <div className={`${styles.sm} ${styles.active}`}></div>
                 <div className={`${styles.sm} ${styles.active}`}></div>
                 <div className={`${styles.sm} ${styles.active}`}></div>
@@ -140,17 +194,6 @@ export default function Crops() {
                 <div className={`${styles.sm} ${styles.partial}`}></div>
                 <div className={styles.sm}></div>
               </div>
-            </div>
-          </div>
-          <div className={styles.cropImg}>
-            <img
-              src="https://images.unsplash.com/photo-1599940824399-b87987ceb72a?w=800&q=80"
-              alt="Cotton field white bolls"
-              loading="lazy"
-            />
-            <div className={styles.cropImgOverlay}>
-              <span className={styles.cropEmoji}>🌿</span>
-              <div className={styles.cropUrduName}>کپاس</div>
             </div>
           </div>
         </div>
@@ -159,8 +202,8 @@ export default function Crops() {
         <div className={styles.cropCard}>
           <div className={styles.cropImg}>
             <img
-              src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&q=80"
-              alt="Sugarcane field green"
+              src="/images/sugercane.jpg"
+              alt="Sugarcane farm"
               loading="lazy"
             />
             <div className={styles.cropImgOverlay}>
@@ -169,29 +212,26 @@ export default function Crops() {
             </div>
           </div>
           <div className={styles.cropBody}>
-            <span className={styles.cropTag}>Year-Round Crop</span>
+            <span className={styles.cropTag}>Year-Round / Kharif</span>
             <h2 className={styles.cropEnName}>Sugarcane</h2>
             <p className={styles.cropSci}>Saccharum officinarum</p>
             <p className={styles.cropDescEn}>
-              A high-value cash crop grown widely across Punjab and Sindh. Hercules supports sugarcane farmers with granular fertilizers, herbicides for weed control, and soil health programs for heavier cane and better juice quality.
+              A heavy-feeding, high-sugar cash crop. Hercules provides intensive soil nutrition packages, systemic insecticides, and growth promoters for thick, juicy canes.
             </p>
             <p className={styles.cropDescUr}>
-              پنجاب اور سندھ میں کاشت ہونے والی قیمتی نقد فصل۔ ہرکولیس گنے کے کاشتکاروں کو کھاد، جڑی بوٹی مار ادویات اور زمین کی صحت کے پروگرام فراہم کرتا ہے۔
+              ایک اہم نقد آور فصل۔ ہرکولیس گنے کی فصل کے لیے مکمل غذائی پلان، کیڑے مار ادویات اور پیداوار بڑھانے والے حل فراہم کرتا ہے۔
             </p>
             <div className={styles.cropDivider}></div>
             <p className={styles.prodLabel}>Recommended Products</p>
             <div className={styles.prodTags}>
-              <span className={styles.prodTag}>Bokash</span>
-              <span className={styles.prodTag}>Torban</span>
-              <span className={styles.prodTag}>Sulphur</span>
-              <span className={styles.prodTag}>Zelura Plus</span>
-              <span className={styles.prodTag}>Kastn K</span>
+              <span className={styles.prodTag}>Fentrol</span>
+              <span className={styles.prodTag}>Bogata</span>
+              <span className={styles.prodTag}>Urea Phos</span>
+              <span className={styles.prodTag}>Chlorfenapyr</span>
             </div>
             <div className={styles.seasonBar}>
-              <p className={styles.seasonLabel}>Sowing Season (Feb → Dec)</p>
+              <p className={styles.seasonLabel}>Growing Season (Feb → Jan)</p>
               <div className={styles.seasonMonths}>
-                <div className={styles.sm}></div>
-                <div className={`${styles.sm} ${styles.partial}`}></div>
                 <div className={`${styles.sm} ${styles.active}`}></div>
                 <div className={`${styles.sm} ${styles.active}`}></div>
                 <div className={`${styles.sm} ${styles.active}`}></div>
@@ -201,60 +241,61 @@ export default function Crops() {
                 <div className={`${styles.sm} ${styles.active}`}></div>
                 <div className={`${styles.sm} ${styles.active}`}></div>
                 <div className={`${styles.sm} ${styles.active}`}></div>
-                <div className={`${styles.sm} ${styles.partial}`}></div>
+                <div className={`${styles.sm} ${styles.active}`}></div>
+                <div className={`${styles.sm} ${styles.active}`}></div>
+                <div className={`${styles.sm} ${styles.active}`}></div>
               </div>
             </div>
           </div>
         </div>
 
         {/* ── CROP 4: MAIZE ── */}
-        <div className={`${styles.cropCard} ${styles.reverse}`}>
-          <div className={styles.cropBody}>
-            <span className={styles.cropTag}>Kharif Season</span>
-            <h2 className={styles.cropEnName}>Maize</h2>
-            <p className={styles.cropSci}>Zea mays</p>
-            <p className={styles.cropDescEn}>
-              A rapidly growing crop across Pakistan, used for food, feed, and industrial purposes. Hercules provides hybrid maize seeds and complete nutritional programs to support fast, uniform crop growth.
-            </p>
-            <p className={styles.cropDescUr}>
-              پاکستان بھر میں تیزی سے پھیلنے والی فصل جو خوراک اور صنعتی مقاصد کے لیے استعمال ہوتی ہے۔ ہرکولیس ہائبرڈ بیج اور مکمل غذائی پروگرام فراہم کرتا ہے۔
-            </p>
-            <div className={styles.cropDivider}></div>
-            <p className={styles.prodLabel}>Recommended Products</p>
-            <div className={styles.prodTags}>
-              <span className={styles.prodTag}>Urea Phos</span>
-              <span className={styles.prodTag}>Bokash</span>
-              <span className={styles.prodTag}>GAGI</span>
-              <span className={styles.prodTag}>Dursban</span>
-              <span className={styles.prodTag}>Sadi</span>
-            </div>
-            <div className={styles.seasonBar}>
-              <p className={styles.seasonLabel}>Sowing Season (Apr → Sep)</p>
-              <div className={styles.seasonMonths}>
-                <div className={styles.sm}></div>
-                <div className={styles.sm}></div>
-                <div className={styles.sm}></div>
-                <div className={`${styles.sm} ${styles.partial}`}></div>
-                <div className={`${styles.sm} ${styles.active}`}></div>
-                <div className={`${styles.sm} ${styles.active}`}></div>
-                <div className={`${styles.sm} ${styles.active}`}></div>
-                <div className={`${styles.sm} ${styles.active}`}></div>
-                <div className={`${styles.sm} ${styles.active}`}></div>
-                <div className={`${styles.sm} ${styles.partial}`}></div>
-                <div className={styles.sm}></div>
-                <div className={styles.sm}></div>
-              </div>
-            </div>
-          </div>
+        <div className={styles.cropCard}>
           <div className={styles.cropImg}>
             <img
-              src="https://images.unsplash.com/photo-1601593346740-925612772716?w=800&q=80"
-              alt="Maize corn field agriculture"
+              src="/images/maize (1).jpg"
+              alt="Maize corn field"
               loading="lazy"
             />
             <div className={styles.cropImgOverlay}>
               <span className={styles.cropEmoji}>🌽</span>
               <div className={styles.cropUrduName}>مکئی</div>
+            </div>
+          </div>
+          <div className={styles.cropBody}>
+            <span className={styles.cropTag}>Spring & Kharif</span>
+            <h2 className={styles.cropEnName}>Maize / Corn</h2>
+            <p className={styles.cropSci}>Zea mays</p>
+            <p className={styles.cropDescEn}>
+              Fast-growing, versatile crop for grain and fodder. Hercules delivers early-season protection, weed-free management, and balanced NPK inputs for uniform cob development.
+            </p>
+            <p className={styles.cropDescUr}>
+              اناج اور چارے کے لیے تیزی سے بڑھنے والی فصل۔ ہرکولیس مکئی کے لیے جڑی بوٹی مار ادویات اور متوازن کھادیں فراہم کرتا ہے۔
+            </p>
+            <div className={styles.cropDivider}></div>
+            <p className={styles.prodLabel}>Recommended Products</p>
+            <div className={styles.prodTags}>
+              <span className={styles.prodTag}>Atrazine</span>
+              <span className={styles.prodTag}>Gengwei</span>
+              <span className={styles.prodTag}>Lagao</span>
+              <span className={styles.prodTag}>Zelura</span>
+            </div>
+            <div className={styles.seasonBar}>
+              <p className={styles.seasonLabel}>Sowing Season (Feb → Aug)</p>
+              <div className={styles.seasonMonths}>
+                <div className={styles.sm}></div>
+                <div className={`${styles.sm} ${styles.active}`}></div>
+                <div className={`${styles.sm} ${styles.active}`}></div>
+                <div className={`${styles.sm} ${styles.active}`}></div>
+                <div className={`${styles.sm} ${styles.active}`}></div>
+                <div className={`${styles.sm} ${styles.active}`}></div>
+                <div className={`${styles.sm} ${styles.active}`}></div>
+                <div className={`${styles.sm} ${styles.active}`}></div>
+                <div className={styles.sm}></div>
+                <div className={styles.sm}></div>
+                <div className={styles.sm}></div>
+                <div className={styles.sm}></div>
+              </div>
             </div>
           </div>
         </div>
@@ -263,8 +304,8 @@ export default function Crops() {
         <div className={styles.cropCard}>
           <div className={styles.cropImg}>
             <img
-              src="https://images.unsplash.com/photo-1536054742370-9f5dae7e6edd?w=800&q=80"
-              alt="Rice paddy field green"
+              src="/images/rice (1) (1).jpg"
+              alt="Rice paddy fields"
               loading="lazy"
             />
             <div className={styles.cropImgOverlay}>
@@ -274,68 +315,42 @@ export default function Crops() {
           </div>
           <div className={styles.cropBody}>
             <span className={styles.cropTag}>Kharif Season</span>
-            <h2 className={styles.cropEnName}>Rice</h2>
+            <h2 className={styles.cropEnName}>Rice / Paddy</h2>
             <p className={styles.cropSci}>Oryza sativa</p>
             <p className={styles.cropDescEn}>
-              Pakistan is among the world's top rice exporters. Hercules supports basmati and IRRI rice farmers with precise herbicide programs for weed control, fungicides for blast disease, and fertilizers for optimum grain development.
+              Pakistan's world-renowned Basmati and coarse rice varieties require careful water, pest, and disease management. Hercules supports rice growers from nursery to grain filling.
             </p>
             <p className={styles.cropDescUr}>
-              پاکستان دنیا کے سرکردہ چاول برآمد کنندگان میں شامل ہے۔ ہرکولیس باسمتی اور آئی آر آر آئی چاول کے کاشتکاروں کو جڑی بوٹی مار، پھپھوندی کش اور کھاد فراہم کرتا ہے۔
+              پاکستان کا مشہور باسمتی چاول۔ ہرکولیس پنیری سے لے کر فصل پکنے تک بیماریوں اور کیڑوں سے تحفظ کے بہترین حل فراہم کرتا ہے۔
             </p>
             <div className={styles.cropDivider}></div>
             <p className={styles.prodLabel}>Recommended Products</p>
             <div className={styles.prodTags}>
-              <span className={styles.prodTag}>Zelura Plus</span>
-              <span className={styles.prodTag}>Torban</span>
-              <span className={styles.prodTag}>Midan</span>
-              <span className={styles.prodTag}>SOP</span>
-              <span className={styles.prodTag}>Blade</span>
+              <span className={styles.prodTag}>Butachlor</span>
+              <span className={styles.prodTag}>Metalaxyl</span>
+              <span className={styles.prodTag}>Cyclone</span>
+              <span className={styles.prodTag}>Joba</span>
             </div>
             <div className={styles.seasonBar}>
-              <p className={styles.seasonLabel}>Sowing Season (Jun → Nov)</p>
+              <p className={styles.seasonLabel}>Sowing Season (May → Nov)</p>
               <div className={styles.seasonMonths}>
                 <div className={styles.sm}></div>
                 <div className={styles.sm}></div>
                 <div className={styles.sm}></div>
                 <div className={styles.sm}></div>
+                <div className={`${styles.sm} ${styles.active}`}></div>
+                <div className={`${styles.sm} ${styles.active}`}></div>
+                <div className={`${styles.sm} ${styles.active}`}></div>
+                <div className={`${styles.sm} ${styles.active}`}></div>
+                <div className={`${styles.sm} ${styles.active}`}></div>
+                <div className={`${styles.sm} ${styles.active}`}></div>
+                <div className={`${styles.sm} ${styles.partial}`}></div>
                 <div className={styles.sm}></div>
-                <div className={`${styles.sm} ${styles.partial}`}></div>
-                <div className={`${styles.sm} ${styles.active}`}></div>
-                <div className={`${styles.sm} ${styles.active}`}></div>
-                <div className={`${styles.sm} ${styles.active}`}></div>
-                <div className={`${styles.sm} ${styles.active}`}></div>
-                <div className={`${styles.sm} ${styles.active}`}></div>
-                <div className={`${styles.sm} ${styles.partial}`}></div>
               </div>
             </div>
           </div>
         </div>
-
-        {/* CTA */}
-        <div className={styles.cta}>
-          <div>
-            <h2>
-              Need advice for <em>your crop?</em>
-            </h2>
-            <p className={styles.ctaUr}>اپنی فصل کے لیے مشورہ لیں — ہم حاضر ہیں</p>
-          </div>
-          <button
-            className={styles.ctaBtn}
-            onClick={() => (window.location.href = 'mailto:herculeslifesciences@gmail.com')}
-          >
-            Contact Our Experts ↗
-          </button>
-        </div>
       </div>
-
-      {/* FOOTER */}
-      <footer className={styles.footer}>
-        <p>
-          © 2026 Hercules Life Sciences. All rights reserved. &nbsp;|&nbsp;
-          <a href="/privacy-policy">Privacy Policy</a> &nbsp;|&nbsp;
-          <a href="/terms-of-service">Terms of Service</a>
-        </p>
-      </footer>
     </div>
   );
 }

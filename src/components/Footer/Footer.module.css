@@ -1,13 +1,38 @@
-/* Footer Container */
 .footer {
-  background: linear-gradient(135deg, #123024 0%, #1f4b32 50%, #4d7f3a 100%);
+  background: linear-gradient(135deg, #070c18 0%, #0f172a 50%, #1e293b 100%);
   color: #ffffff;
   margin-top: auto;
   padding-bottom: 0;
-  border-top: 4px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   opacity: 0;
+  position: relative;
+  overflow: hidden;
   transform: translateY(60px);
   transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.footer::before,
+.footer::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.footer::before {
+  background: rgba(255, 255, 255, 0.035);
+  height: 280px;
+  width: 280px;
+  left: -70px;
+  top: -40px;
+}
+
+.footer::after {
+  background: rgba(229, 57, 53, 0.045);
+  height: 360px;
+  width: 360px;
+  right: -90px;
+  bottom: -80px;
 }
 
 .footer.visible {
@@ -20,9 +45,11 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
-  padding: 3rem 2rem;
+  padding: 3.5rem 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .column {
@@ -37,38 +64,38 @@
 
 .logoImage {
   display: block;
-  height: 72px;
+  height: 64px;
   margin-bottom: 0.75rem;
   object-fit: contain;
-  width: 72px;
+  width: 64px;
 }
 
 .logoText {
-  font-size: 1.5rem;
+  font-size: 1.45rem;
   font-weight: 700;
   color: #ffffff;
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.4rem 0;
   letter-spacing: 0.5px;
 }
 
 .tagline {
   font-size: 0.85rem;
-  color: #c8e6c9;
+  color: #94a3b8;
   margin: 0;
   font-style: italic;
 }
 
 .aboutText {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #e8f5e9;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #cbd5e1;
   margin: 1rem 0 1.5rem 0;
 }
 
 /* Social Links */
 .socialLinks {
   display: flex;
-  gap: 1rem;
+  gap: 0.85rem;
   align-items: center;
   margin-top: auto;
 }
@@ -77,31 +104,35 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.1);
+  width: 38px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 50%;
-  color: #ffffff;
+  color: #e2e8f0;
   transition: all 0.3s ease;
   cursor: pointer;
   text-decoration: none;
 }
 
 .socialIcon:hover {
-  background: #4caf50;
+  background: #d32f2f;
+  border-color: #d32f2f;
+  color: #ffffff;
   transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 16px rgba(211, 47, 47, 0.35);
 }
 
 /* Column Title */
 .columnTitle {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: #ffffff;
   margin: 0 0 1.5rem 0;
-  padding-bottom: 0.75rem;
-  border-bottom: 2px solid #4caf50;
+  padding-bottom: 0.65rem;
+  border-bottom: 2px solid #d32f2f;
   display: inline-block;
+  letter-spacing: 0.02em;
 }
 
 /* Link Lists */
@@ -115,17 +146,17 @@
 }
 
 .link {
-  color: #e8f5e9;
+  color: #cbd5e1;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   transition: all 0.3s ease;
   display: inline-block;
   position: relative;
 }
 
 .link:hover {
-  color: #4caf50;
-  padding-left: 0.5rem;
+  color: #ef4444;
+  padding-left: 0.4rem;
 }
 
 .link::before {
@@ -135,7 +166,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: #4caf50;
+  background: #d32f2f;
   transition: width 0.3s ease;
 }
 
@@ -147,7 +178,7 @@
 .contactList {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .contactItem {
@@ -157,59 +188,58 @@
 }
 
 .contactIcon {
-  color: #4caf50;
-  font-size: 1.2rem;
+  color: #ef4444;
+  font-size: 1.1rem;
   flex-shrink: 0;
-  margin-top: 0.25rem;
+  margin-top: 0.2rem;
 }
 
 .contactLabel {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  color: #4caf50;
-  margin: 0 0 0.25rem 0;
+  color: #94a3b8;
+  margin: 0 0 0.2rem 0;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .contactLink {
-  color: #e8f5e9;
+  color: #f1f5f9;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   transition: color 0.3s ease;
   margin: 0;
 }
 
 .contactLink:hover {
-  color: #4caf50;
+  color: #ef4444;
   text-decoration: underline;
 }
 
 .contactText {
-  color: #e8f5e9;
-  font-size: 0.95rem;
+  color: #cbd5e1;
+  font-size: 0.92rem;
   margin: 0;
   line-height: 1.5;
 }
 
 /* Copyright Bar */
 .copyrightBar {
-  background: rgba(10, 28, 18, 0.45);
-  padding: 1.5rem 2rem;
+  background: #040810;
+  padding: 1.25rem 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .copyrightText {
-  color: #c8e6c9;
+  color: #94a3b8;
   text-align: center;
-  font-size: 0.9rem;
-  margin: 0;
-  max-width: 1200px;
+  font-size: 0.88rem;
   margin: 0 auto;
+  max-width: 1300px;
 }
 
 .copyrightLink {
-  color: #d6f2c7;
+  color: #cbd5e1;
   background: none;
   border: none;
   padding: 0;
@@ -230,7 +260,7 @@
 @media (max-width: 1024px) {
   .footerContent {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 2rem;
     padding: 2.5rem 1.5rem;
   }
 }
@@ -239,7 +269,7 @@
   .footerContent {
     grid-template-columns: 1fr;
     gap: 2rem;
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.25rem;
   }
 
   .columnTitle {
@@ -251,8 +281,8 @@
   }
 
   .logoImage {
-    height: 60px;
-    width: 60px;
+    height: 56px;
+    width: 56px;
   }
 
   .logoText {
@@ -274,14 +304,10 @@
 }
 
 @media (max-width: 480px) {
-  .footer {
-    padding-bottom: 0;
-  }
-
   .footerContent {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    padding: 1.5rem 1rem;
+    padding: 1.75rem 1rem;
   }
 
   .columnTitle {
@@ -294,8 +320,8 @@
   }
 
   .logoImage {
-    height: 52px;
-    width: 52px;
+    height: 48px;
+    width: 48px;
   }
 
   .tagline {
@@ -324,12 +350,12 @@
   }
 
   .contactLabel {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
   }
 
   .contactLink,
   .contactText {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
   }
 
   .socialLinks {
@@ -337,8 +363,8 @@
   }
 
   .socialIcon {
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
   }
 
   .copyrightBar {

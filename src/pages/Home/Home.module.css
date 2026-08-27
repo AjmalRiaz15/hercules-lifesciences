@@ -6,9 +6,9 @@
 }
 
 .sliderWrap {
-  background: linear-gradient(135deg, rgba(31, 75, 50, 0.12) 0%, rgba(244, 123, 32, 0.14) 50%, rgba(31, 75, 50, 0.08) 100%);
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.2) 0%, rgba(229, 57, 53, 0.18) 50%, rgba(15, 23, 42, 0.15) 100%);
   border-radius: 26px;
-  box-shadow: 0 20px 50px -10px rgba(18, 48, 36, 0.18), 0 0 0 1px rgba(22, 48, 31, 0.06);
+  box-shadow: 0 20px 50px -10px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(226, 232, 240, 0.8);
   padding: 3px;
   position: relative;
   transition: box-shadow 0.3s ease;
@@ -16,14 +16,14 @@
 }
 
 .sliderWrap:hover {
-  box-shadow: 0 26px 60px -10px rgba(18, 48, 36, 0.24), 0 0 0 1px rgba(22, 48, 31, 0.1);
+  box-shadow: 0 26px 60px -10px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(203, 213, 225, 0.9);
 }
 
 .slider {
   aspect-ratio: 21 / 8.5;
-  background: #0d1e14;
+  background: #0b1120;
   border-radius: 23px;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
   max-height: 640px;
   min-height: 350px;
   overflow: hidden;
@@ -56,13 +56,13 @@
 /* Navigation Arrows (Glassmorphic) */
 .navButton {
   align-items: center;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.88);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.95);
   border-radius: 50%;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
-  color: #1a3c27;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
+  color: #0f172a;
   cursor: pointer;
   display: flex;
   height: 48px;
@@ -76,9 +76,9 @@
 }
 
 .navButton:hover {
-  background: #f47b20;
-  border-color: #f47b20;
-  box-shadow: 0 10px 28px rgba(244, 123, 32, 0.45);
+  background: #d32f2f;
+  border-color: #d32f2f;
+  box-shadow: 0 10px 28px rgba(211, 47, 47, 0.4);
   color: #ffffff;
   transform: translateY(-50%) scale(1.1);
 }
@@ -99,13 +99,13 @@
 /* Modern Pill Dots Capsule */
 .dotsContainer {
   align-items: center;
-  background: rgba(14, 38, 26, 0.58);
+  background: rgba(11, 17, 32, 0.65);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 999px;
   bottom: 22px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
   display: flex;
   gap: 0.55rem;
   left: 50%;
@@ -131,9 +131,9 @@
 }
 
 .activeDot {
-  background: #a8d5a2;
+  background: #ef4444;
   border-radius: 999px;
-  box-shadow: 0 0 12px rgba(168, 213, 162, 0.9);
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.9);
   width: 24px;
 }
 
@@ -151,7 +151,7 @@
 }
 
 .sectionKicker {
-  color: #4a5568;
+  color: #64748b;
   font-size: 0.95rem;
   font-weight: 500;
   margin: 0;
@@ -159,7 +159,7 @@
 }
 
 .sectionHeading {
-  color: #16301f;
+  color: #0f172a;
   font-family: 'Playfair Display', serif;
   font-size: clamp(2rem, 3.5vw, 2.75rem);
   font-weight: 700;
@@ -175,8 +175,8 @@
 .categoryCard {
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
   color: inherit;
   cursor: pointer;
   display: flex;
@@ -188,12 +188,12 @@
 
 .categoryCard:hover {
   border-color: #cbd5e1;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.09);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
   transform: translateY(-4px);
 }
 
 .categoryImageWrap {
-  background: #f1f5f9;
+  background: #f8fafc;
   height: 240px;
   overflow: hidden;
   position: relative;
@@ -228,7 +228,7 @@
 }
 
 .categoryName {
-  color: #111827;
+  color: #0f172a;
   font-family: 'Playfair Display', serif;
   font-size: 1.28rem;
   font-weight: 700;
@@ -244,19 +244,20 @@
 
 .categoryArrowCircle {
   align-items: center;
-  background: #f47b20;
+  background: #d32f2f;
   border-radius: 50%;
   color: #ffffff;
   display: inline-flex;
   flex-shrink: 0;
   height: 38px;
   justify-content: center;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   width: 38px;
 }
 
 .categoryCard:hover .categoryArrowCircle {
-  background: #e06d15;
+  background: #b71c1c;
+  box-shadow: 0 4px 12px rgba(211, 47, 47, 0.35);
   transform: translateX(3px);
 }
 

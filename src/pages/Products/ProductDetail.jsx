@@ -3,38 +3,6 @@ import { productsData } from '../../data/productsData';
 import { productCategories } from '../../data/productCategories';
 import styles from './ProductDetail.module.css';
 
-const normalizeProductName = (name) =>
-  name
-    .replace(/\s*\([^)]*\)/g, '')
-    .replace(/\s+/g, ' ')
-    .trim()
-    .toLowerCase();
-
-const formatSizeLabel = (packSize) => {
-  const match = packSize.match(/^(\d+(?:\.\d+)?)\s*(ml|gm|g|kg)\b/i);
-
-  if (!match) {
-    return packSize;
-  }
-
-  const quantity = Number(match[1]);
-  const unit = match[2].toLowerCase();
-
-  if (unit === 'ml') {
-    if (quantity >= 1000 && quantity % 1000 === 0) {
-      return `${quantity / 1000} Ltr`;
-    }
-
-    return `${quantity} Mls`;
-  }
-
-  if (unit === 'kg') {
-    return `${quantity} Kg`;
-  }
-
-  return `${quantity} Gm`;
-};
-
 function ProductDetail() {
   const { productSlug } = useParams();
   const product = productsData.find((item) => item.slug === productSlug);
@@ -44,15 +12,11 @@ function ProductDetail() {
   }
 
   const category = productCategories.find((item) => item.name === product.category);
-  const relatedProducts = productsData.filter(
-    (item) =>
-      item.category === product.category &&
-      normalizeProductName(item.name) === normalizeProductName(product.name)
+  const relatedVariants = productsData.filter(
+    (item) => item.groupKey === product.groupKey
   );
 
-  const uniqueVariants = Array.from(
-    new Map(relatedProducts.map((item) => [item.packSize.toLowerCase(), item])).values()
-  );
+  const displayTitle = product.groupTitle || product.name;
 
   return (
     <section className={styles.page}>
@@ -62,41 +26,58 @@ function ProductDetail() {
           <span>/</span>
           <Link to={`/products?type=${category?.slug || ''}`}>Products</Link>
           <span>/</span>
-          <span>{product.name}</span>
+          <span>{displayTitle}</span>
         </div>
 
         <div className={styles.layout}>
           <div className={styles.imageWrap}>
-            <img className={styles.image} src={product.image} alt={product.name} />
+            <img className={styles.image} src={product.image} alt={displayTitle} />
           </div>
 
           <div className={styles.content}>
-            <p className={styles.category}>{product.category}</p>
-            <h1>{product.name}</h1>
-            <div className={styles.sizeBlock}>
-              <p className={styles.sizeLabel}>Size: {formatSizeLabel(product.packSize)}</p>
-              <div className={styles.sizeChips}>
-                {uniqueVariants.map((variant) => {
-                  const isActive = variant.slug === product.slug;
-
-                  return (
-                    <Link
-                      key={variant.slug}
-                      to={`/products/${variant.slug}`}
-                      className={`${styles.sizeChip} ${isActive ? styles.sizeChipActive : ''}`}
-                      aria-label={`${variant.name} size ${formatSizeLabel(variant.packSize)}`}
-                    >
-                      {formatSizeLabel(variant.packSize)}
-                    </Link>
-                  );
-                })}
-              </div>
+            <div className={styles.topMeta}>
+              <span className={styles.categoryBadge}>{product.category}</span>
+              {product.subCategory && product.subCategory !== product.category && (
+                <span className={styles.subCategoryBadge}>{product.subCategory}</span>
+              )}
             </div>
-            <p className={styles.description}>{product.fullDescription || product.description}</p>
+
+            <h1>{displayTitle}</h1>
+
+            <div className={styles.sizeBlock}>
+              <p className={styles.sizeLabel}>
+                {relatedVariants.length > 1 ? 'Available Sizes & Formulations:' : 'Pack Size:'}{' '}
+                <strong className={styles.activeSizeHighlight}>{product.variantLabel || product.packSize}</strong>
+              </p>
+
+              {relatedVariants.length > 1 && (
+                <div className={styles.sizeChips}>
+                  {relatedVariants.map((variant) => {
+                    const isActive = variant.slug === product.slug;
+
+                    return (
+                      <Link
+                        key={variant.id || variant.slug}
+                        to={`/products/${variant.slug}`}
+                        className={`${styles.sizeChip} ${isActive ? styles.sizeChipActive : ''}`}
+                        aria-label={`${displayTitle} - ${variant.variantLabel || variant.packSize}`}
+                      >
+                        {variant.variantLabel || variant.packSize}
+                      </Link>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+
+            <div className={styles.descBlock}>
+              <h3 className={styles.descHeading}>Product Description</h3>
+              <p className={styles.description}>{product.fullDescription || product.description}</p>
+            </div>
 
             <div className={styles.actions}>
               <Link className={styles.backButton} to={`/products?type=${category?.slug || ''}`}>
-                Back to products
+                Back to {product.category} Products
               </Link>
             </div>
           </div>

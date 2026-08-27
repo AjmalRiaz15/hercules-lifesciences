@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { productsData } from '../../data/productsData';
 import { productCategories, getCategoryBySlug } from '../../data/productCategories';
@@ -16,18 +16,39 @@ const categoryIcons = {
   Household: FaHome
 };
 
-const normalizeProductName = (name) =>
-  name
-    .replace(/\s*\([^)]*\)/g, '')
-    .replace(/\s+/g, ' ')
-    .trim()
-    .toLowerCase();
+function useCountUp(target, duration = 1400) {
+  const [count, setCount] = useState(0);
 
-const formatProductName = (name) =>
-  name
-    .replace(/\s*\([^)]*\)/g, '')
-    .replace(/\s+/g, ' ')
-    .trim();
+  useEffect(() => {
+    const end = parseInt(target, 10);
+    if (isNaN(end) || end === 0) {
+      setCount(end || 0);
+      return;
+    }
+
+    let startTime = null;
+    let frameId;
+
+    const step = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      // Ease out cubic
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(easeOut * end));
+
+      if (progress < 1) {
+        frameId = requestAnimationFrame(step);
+      } else {
+        setCount(end);
+      }
+    };
+
+    frameId = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(frameId);
+  }, [target, duration]);
+
+  return count;
+}
 
 function Products() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -56,11 +77,11 @@ function Products() {
     const uniqueMap = new Map();
 
     filteredProducts.forEach((product) => {
-      const normalizedName = normalizeProductName(product.name);
-      if (!uniqueMap.has(normalizedName)) {
-        uniqueMap.set(normalizedName, {
+      const key = product.groupKey || product.slug;
+      if (!uniqueMap.has(key)) {
+        uniqueMap.set(key, {
           ...product,
-          displayName: formatProductName(product.name)
+          displayName: product.groupTitle || product.name
         });
       }
     });
@@ -70,20 +91,28 @@ function Products() {
 
   const categoryCounts = useMemo(() => {
     return productCategories.reduce((accumulator, category) => {
-      const uniqueNames = new Set(
+      const uniqueKeys = new Set(
         productsData
           .filter(
             (product) =>
               product.category === category.name ||
               product.subCategory === category.name
           )
-          .map((product) => normalizeProductName(product.name))
+          .map((product) => product.groupKey || product.slug)
       );
 
-      accumulator[category.name] = uniqueNames.size;
+      accumulator[category.name] = uniqueKeys.size;
       return accumulator;
     }, {});
   }, []);
+
+  const totalDistinctProducts = useMemo(() => {
+    const totalSet = new Set(productsData.map((p) => p.groupKey || p.slug));
+    return totalSet.size;
+  }, []);
+
+  const animatedCategoriesCount = useCountUp(productCategories.length, 1000);
+  const animatedProductsCount = useCountUp(totalDistinctProducts, 1600);
 
   const selectedCount = uniqueProducts.length;
 
@@ -98,18 +127,24 @@ function Products() {
           <p className={styles.kicker}>Product Categories</p>
           <h1>Browse products by type</h1>
           <p className={styles.intro}>
-            Select a medicine type from the navbar or here to see matching compact cards with
-            image, short description, and a read more view for the full product detail.
+            Select a category from the navbar or here to see matching cards with
+            image, formulation description, and access to all sizes and variants in the product detail view.
           </p>
         </div>
 
         <div className={styles.heroStats}>
           <div className={styles.statCard}>
-            <span className={styles.statValue}>{productCategories.length}</span>
+            <div className={styles.statTop}>
+              <span className={styles.statValue}>{animatedCategoriesCount}</span>
+              <span className={styles.statGlowDot}></span>
+            </div>
             <span className={styles.statLabel}>Core types</span>
           </div>
           <div className={styles.statCard}>
-            <span className={styles.statValue}>{productsData.length}</span>
+            <div className={styles.statTop}>
+              <span className={styles.statValue}>{animatedProductsCount}</span>
+              <span className={styles.statGlowDot}></span>
+            </div>
             <span className={styles.statLabel}>Featured products</span>
           </div>
         </div>
@@ -167,12 +202,12 @@ function Products() {
           <div className={styles.grid}>
             {uniqueProducts.map((product) => (
               <Link
-                key={product.id}
+                key={product.groupKey || product.id}
                 className={styles.card}
                 to={`/products/${product.slug}`}
               >
                 <div className={styles.cardImageWrap}>
-                  <img className={styles.cardImage} src={product.image} alt={product.name} />
+                  <img className={styles.cardImage} src={product.image} alt={product.displayName || product.name} />
                 </div>
                 <div className={styles.cardBody}>
                   <div className={styles.cardTop}>
