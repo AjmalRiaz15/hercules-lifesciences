@@ -83,6 +83,13 @@
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
 }
 
+/* Left Gallery Column */
+.galleryColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
 /* Image Wrap Card */
 .imageWrap {
   animation: slideInLeft 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
@@ -90,6 +97,7 @@
   border: 1px solid #cbd5e1;
   border-radius: 26px;
   box-shadow: 0 14px 34px -4px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(15, 23, 42, 0.04);
+  cursor: zoom-in;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,6 +136,45 @@
   opacity: 1;
 }
 
+.imageOverlayHint {
+  align-items: center;
+  background: rgba(15, 23, 42, 0.35);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  display: flex;
+  height: 100%;
+  inset: 0;
+  justify-content: center;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 0.3s ease;
+  width: 100%;
+  z-index: 5;
+}
+
+.hintPill {
+  align-items: center;
+  background: #ffffff;
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.25);
+  color: #0f172a;
+  display: inline-flex;
+  font-size: 0.92rem;
+  font-weight: 700;
+  gap: 0.45rem;
+  padding: 0.65rem 1.4rem;
+  transform: translateY(8px);
+  transition: transform 0.3s ease;
+}
+
+.imageWrap:hover .imageOverlayHint {
+  opacity: 1;
+}
+
+.imageWrap:hover .hintPill {
+  transform: translateY(0);
+}
+
 .image {
   display: block;
   height: auto;
@@ -140,6 +187,52 @@
 .imageWrap:hover .image {
   filter: drop-shadow(0 14px 28px rgba(15, 23, 42, 0.16));
   transform: scale(1.04);
+}
+
+/* Gallery Thumbnails (Clean Square Images matching reference) */
+.thumbnailRow {
+  display: flex;
+  gap: 0.85rem;
+  justify-content: flex-start;
+  margin-top: 0.25rem;
+}
+
+.thumbnailBtn {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  cursor: pointer;
+  display: flex;
+  height: 75px;
+  justify-content: center;
+  overflow: hidden;
+  padding: 4px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 75px;
+  flex: none;
+}
+
+.thumbnailBtn:hover {
+  border-color: #0f172a;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
+  transform: translateY(-2px);
+}
+
+.thumbnailBtnActive {
+  border: 2px solid #0f172a;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.18);
+  transform: translateY(-2px);
+}
+
+.thumbImg {
+  display: block;
+  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  width: 100%;
 }
 
 /* Content Details Card */
@@ -361,6 +454,305 @@
   transform: translateY(0) scale(0.98);
 }
 
+/* In-Page Lightbox Overlay Modal */
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomInContent {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.lightboxOverlay {
+  align-items: center;
+  animation: fadeInOverlay 0.25s ease-out both;
+  background: rgba(7, 12, 24, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  height: 100vh;
+  inset: 0;
+  justify-content: center;
+  padding: clamp(1rem, 3vw, 2rem);
+  position: fixed;
+  width: 100vw;
+  z-index: 99999;
+}
+
+.lightboxContent {
+  align-items: center;
+  animation: zoomInContent 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+  display: flex;
+  justify-content: center;
+  max-height: 92vh;
+  max-width: 95vw;
+  position: relative;
+}
+
+.closeBtn {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+  color: #0f172a;
+  cursor: pointer;
+  display: flex;
+  font-size: 1.2rem;
+  height: 46px;
+  justify-content: center;
+  position: absolute;
+  right: -16px;
+  top: -16px;
+  transition: all 0.2s ease;
+  width: 46px;
+  z-index: 10;
+}
+
+.closeBtn:hover {
+  background: #d32f2f;
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.lightboxImage {
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  display: block;
+  max-height: 88vh;
+  max-width: 92vw;
+  object-fit: contain;
+}
+
+/* Detailed Agronomy Specifications Section (Matching Reference Design) */
+.specsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.specsMainHeader {
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 0.75rem;
+  text-align: center;
+}
+
+.specsMainTitle {
+  color: #0f172a;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3.2vw, 2.3rem);
+  font-weight: 700;
+  margin: 0;
+}
+
+.specCard {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 22px;
+  box-shadow: 0 10px 25px -4px rgba(15, 23, 42, 0.05), 0 4px 10px -2px rgba(15, 23, 42, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding: clamp(1.4rem, 2.8vw, 2rem);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.specCard:hover {
+  border-color: #94a3b8;
+  box-shadow: 0 14px 32px -4px rgba(15, 23, 42, 0.08);
+}
+
+.specSectionHd {
+  color: #0f172a;
+  font-size: 1.12rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.aboutBullets {
+  display: grid;
+  gap: 0.85rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.aboutBulletItem {
+  align-items: flex-start;
+  color: #334155;
+  display: flex;
+  font-size: 0.96rem;
+  gap: 0.65rem;
+  line-height: 1.65;
+}
+
+.bulletCheck {
+  color: #16a34a;
+  flex-shrink: 0;
+  font-size: 1.05rem;
+  margin-top: 3px;
+}
+
+.techContentBox {
+  background: #f8fafc;
+  border-left: 4px solid #d32f2f;
+  border-radius: 0 12px 12px 0;
+  padding: 1rem 1.25rem;
+}
+
+.techText {
+  color: #0f172a;
+  font-size: 1.02rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.modeText {
+  color: #475569;
+  font-size: 0.96rem;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Recommended Application & Dosage Table (Green Header Style) */
+.tableHeaderWrap {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+.urduTableHeading {
+  color: #d32f2f;
+  font-family: serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.tableResponsiveWrap {
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+  overflow-x: auto;
+  width: 100%;
+}
+
+.dosageTable {
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  text-align: left;
+  width: 100%;
+}
+
+.dosageTable th {
+  background: #15803d;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 0.9rem 1.15rem;
+  white-space: nowrap;
+}
+
+.dosageTable td {
+  border-bottom: 1px solid #e2e8f0;
+  color: #334155;
+  padding: 0.9rem 1.15rem;
+}
+
+.dosageTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.dosageTable tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.dosageTable tbody tr:hover {
+  background: #f1f5f9;
+}
+
+.cropCol {
+  color: #0f172a;
+  min-width: 140px;
+}
+
+.dosageCol {
+  color: #d32f2f;
+  font-weight: 700;
+  min-width: 130px;
+}
+
+.waterCol {
+  color: #0f172a;
+  font-weight: 600;
+  min-width: 110px;
+}
+
+/* Urdu Safety & Usage Advisory */
+.urduCard {
+  background: linear-gradient(180deg, #fef2f2 0%, #ffffff 100%);
+  border-color: #fca5a5;
+}
+
+.urduCardHeader {
+  align-items: center;
+  color: #b91c1c;
+  display: flex;
+  gap: 0.6rem;
+}
+
+.shieldIcon {
+  font-size: 1.35rem;
+}
+
+.urduCardTitle {
+  font-family: serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.urduList {
+  direction: rtl;
+  display: grid;
+  gap: 0.65rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
+.urduListItem {
+  align-items: flex-start;
+  color: #1e293b;
+  display: flex;
+  font-family: serif;
+  font-size: 1.05rem;
+  gap: 0.5rem;
+  line-height: 1.7;
+}
+
+.urduBulletDot {
+  color: #d32f2f;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
 @media (max-width: 900px) {
   .layout {
     grid-template-columns: 1fr;
@@ -377,7 +769,8 @@
   }
 
   .content,
-  .imageWrap {
+  .imageWrap,
+  .specCard {
     border-radius: 18px;
     padding: 1.25rem 1rem;
   }

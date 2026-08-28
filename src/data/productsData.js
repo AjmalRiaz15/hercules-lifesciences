@@ -11,7 +11,8 @@ export const productsData = [
     "fullDescription": " Abamectin is an insecticide and acaricide belonging to the avermectin family (a subset of macrocyclic lactones) and is classified under IRAC Group 6 (Glutamate-gated chloride channel activators). Derived from the soil bacterium Streptomyces avermitilis, it is a natural fermentation product used to control mites and insects, acting primarily through ingestion and contact to paralyze pests.",
     "groupKey": "abamectin-1-8-ec",
     "groupTitle": "Abamectin 1.8% EC",
-    "variantLabel": "400 ml"
+    "variantLabel": "400 ml",
+    "labelImage": "/images/ProductLable/Abamectin 400ml Label_page-0001.jpg"
   },
   {
     "id": 2,
@@ -53,7 +54,8 @@ export const productsData = [
     "fullDescription": "Acetamiprid 20% SP is an imported neonicotinoid insecticide effective against sucking insects like aphids, whiteflies and leafhoppers.",
     "groupKey": "acetamiprid-20-sp",
     "groupTitle": "Acetamiprid 20% SP",
-    "variantLabel": "250 gm"
+    "variantLabel": "250 gm",
+    "labelImage": "/images/ProductLable/Aceta SP 250gm Digita Printnig Pouch_page-0001.jpg"
   },
   {
     "id": 5,
@@ -95,7 +97,8 @@ export const productsData = [
     "fullDescription": "Bifenthrin 10% EC imported is a broad-spectrum synthetic pyrethroid for effective control of various crop pests.",
     "groupKey": "bifenthrin-10-ec",
     "groupTitle": "Bifenthrin 10% EC",
-    "variantLabel": "250 ml"
+    "variantLabel": "250 ml",
+    "labelImage": "/images/ProductLable/Bifenthrin 500ml Label (Pet Botal)_page-0001.jpg"
   },
   {
     "id": 8,
@@ -109,7 +112,8 @@ export const productsData = [
     "fullDescription": "Bifenthrin 10% EC in 500ml pack offers better value for medium to large field applications.",
     "groupKey": "bifenthrin-10-ec",
     "groupTitle": "Bifenthrin 10% EC",
-    "variantLabel": "500 ml"
+    "variantLabel": "500 ml",
+    "labelImage": "/images/ProductLable/Bifenthrin 500ml Label (Pet Botal)_page-0001.jpg"
   },
   {
     "id": 9,
@@ -123,7 +127,8 @@ export const productsData = [
     "fullDescription": "Bifenthrin 10% EC in 1L pack provides economical option for extensive pest management programs.",
     "groupKey": "bifenthrin-10-ec",
     "groupTitle": "Bifenthrin 10% EC",
-    "variantLabel": "1000 ml"
+    "variantLabel": "1000 ml",
+    "labelImage": "/images/ProductLable/Bifenthrin 500ml Label (Pet Botal)_page-0001.jpg"
   },
   {
     "id": 10,
@@ -137,7 +142,8 @@ export const productsData = [
     "fullDescription": "Ceedo 20% SC is an effective suspension concentrate formulation for pest management.",
     "groupKey": "ceedo-20-sc",
     "groupTitle": "Ceedo 20% SC",
-    "variantLabel": "200 ml"
+    "variantLabel": "200 ml",
+    "labelImage": "/images/ProductLable/Ceedo 200ml 20SC (Clothianidin) Label_page-0001.jpg"
   },
   {
     "id": 11,
@@ -151,7 +157,8 @@ export const productsData = [
     "fullDescription": "Ceedo 20% SC in 1L pack provides economical option for larger scale applications.",
     "groupKey": "ceedo-20-sc",
     "groupTitle": "Ceedo 20% SC",
-    "variantLabel": "1000 ml"
+    "variantLabel": "1000 ml",
+    "labelImage": "/images/ProductLable/Ceedo 200ml 20SC (Clothianidin) Label_page-0001.jpg"
   },
   {
     "id": 12,
@@ -165,7 +172,8 @@ export const productsData = [
     "fullDescription": "Chlorfenapyr 36% SC imported offers broad-spectrum pest control with unique mode of action.",
     "groupKey": "chlorfenapyr-36-sc",
     "groupTitle": "Chlorfenapyr 36% SC",
-    "variantLabel": "200 ml"
+    "variantLabel": "200 ml",
+    "labelImage": "/images/ProductLable/Chlorfenapyr 200ml Label (HDP)_page-0001.jpg"
   },
   {
     "id": 13,
@@ -221,7 +229,8 @@ export const productsData = [
     "fullDescription": "Cypermethrin 10% EC is a reliable synthetic pyrethroid for effective control of various crop pests.",
     "groupKey": "cypermethrin-10-ec",
     "groupTitle": "Cypermethrin 10% EC",
-    "variantLabel": "250 ml"
+    "variantLabel": "250 ml",
+    "labelImage": "/images/ProductLable/Cypermethrin 250ml Label Final_page-0001.jpg"
   },
   {
     "id": 17,
@@ -235,7 +244,8 @@ export const productsData = [
     "fullDescription": "Cypermethrin 10% EC in 1L pack provides economical solution for large-scale pest management.",
     "groupKey": "cypermethrin-10-ec",
     "groupTitle": "Cypermethrin 10% EC",
-    "variantLabel": "1000 ml"
+    "variantLabel": "1000 ml",
+    "labelImage": "/images/ProductLable/Cypermethrin 250ml Label Final_page-0001.jpg"
   },
   {
     "id": 18,
@@ -249,7 +259,8 @@ export const productsData = [
     "fullDescription": "Dimethoate 40% imported combines systemic and contact action for comprehensive pest control.",
     "groupKey": "dimethoate-40-imp",
     "groupTitle": "Dimethoate 40% IMP",
-    "variantLabel": "400 ml"
+    "variantLabel": "400 ml",
+    "labelImage": "/images/ProductLable/Dimethoate 400ml Label_page-0001.jpg"
   },
   {
     "id": 19,
@@ -263,7 +274,8 @@ export const productsData = [
     "fullDescription": "Dumei 50% containing Flonicamid is a premium imported product for sucking insect control.",
     "groupKey": "dumei-50-wg",
     "groupTitle": "Dumei 50% WG (Flonicamid)",
-    "variantLabel": "120 gm"
+    "variantLabel": "120 gm",
+    "labelImage": "/images/ProductLable/Dumei 60gm Label 2026_page-0001.jpg"
   },
   {
     "id": 20,
@@ -277,7 +289,8 @@ export const productsData = [
     "fullDescription": "Dumei 50% WG with Flonicamid offers convenient water-dispersible granule format for pest management.",
     "groupKey": "dumei-50-wg",
     "groupTitle": "Dumei 50% WG (Flonicamid)",
-    "variantLabel": "60 gm"
+    "variantLabel": "60 gm",
+    "labelImage": "/images/ProductLable/Dumei 60gm Label 2026_page-0001.jpg"
   },
   {
     "id": 21,
@@ -291,7 +304,8 @@ export const productsData = [
     "fullDescription": "Dursban 40% EC containing Chlorpyrifos is an effective organophosphate for broad pest control.",
     "groupKey": "dursban-40-ec",
     "groupTitle": "Dursban 40% EC (Chlorpyrifos)",
-    "variantLabel": "250 ml"
+    "variantLabel": "250 ml",
+    "labelImage": "/images/ProductLable/Dursban+ 48EC 100ml Label_page-0001.jpg"
   },
   {
     "id": 22,
@@ -305,7 +319,8 @@ export const productsData = [
     "fullDescription": "Dursban 40% EC in 1L pack provides economical option for extensive pest management.",
     "groupKey": "dursban-40-ec",
     "groupTitle": "Dursban 40% EC (Chlorpyrifos)",
-    "variantLabel": "1000 ml"
+    "variantLabel": "1000 ml",
+    "labelImage": "/images/ProductLable/Darsban (Chlorpyrifos) 1Ltr Label.cdr 1_page-0001.jpg"
   },
   {
     "id": 23,
@@ -319,7 +334,8 @@ export const productsData = [
     "fullDescription": "Dursban 40% EC imported (1L) offers premium quality organophosphate for reliable pest control.",
     "groupKey": "dursban-40-ec",
     "groupTitle": "Dursban 40% EC (Chlorpyrifos)",
-    "variantLabel": "1000 ml (Imported)"
+    "variantLabel": "1000 ml (Imported)",
+    "labelImage": "/images/ProductLable/Darsban (Chlorpyrifos) 1Ltr Label.cdr 1_page-0001.jpg"
   },
   {
     "id": 24,
@@ -333,7 +349,8 @@ export const productsData = [
     "fullDescription": "Emamectin 1.9% EC is an avermectin-based insecticide effective against lepidopteran and mite pests.",
     "groupKey": "emamectin-benzoate-series",
     "groupTitle": "Emamectin Benzoate Series",
-    "variantLabel": "1.9% EC (1000ml)"
+    "variantLabel": "1.9% EC (1000ml)",
+    "labelImage": "/images/ProductLable/Emamectin 1Ltr Label_page-0001.jpg"
   },
   {
     "id": 25,
@@ -347,7 +364,8 @@ export const productsData = [
     "fullDescription": "Emamectin 1.9% EC in 1L pack is economical for large field applications.",
     "groupKey": "emamectin-benzoate-series",
     "groupTitle": "Emamectin Benzoate Series",
-    "variantLabel": "1.9% EC (1000ml)"
+    "variantLabel": "1.9% EC (1000ml)",
+    "labelImage": "/images/ProductLable/Emamectin 1Ltr Label_page-0001.jpg"
   },
   {
     "id": 26,
@@ -361,7 +379,8 @@ export const productsData = [
     "fullDescription": "Emamectin 1.9% EC imported (1L) provides premium quality for critical pest management.",
     "groupKey": "emamectin-benzoate-series",
     "groupTitle": "Emamectin Benzoate Series",
-    "variantLabel": "1.9% EC (1000ml Imported)"
+    "variantLabel": "1.9% EC (1000ml Imported)",
+    "labelImage": "/images/ProductLable/Emamectin 1Ltr Label_page-0001.jpg"
   },
   {
     "id": 27,
@@ -375,7 +394,8 @@ export const productsData = [
     "fullDescription": "Emamectin 1.9% EC imported in 400ml pack offers convenient size for field applications.",
     "groupKey": "emamectin-benzoate-series",
     "groupTitle": "Emamectin Benzoate Series",
-    "variantLabel": "1.9% EC (400ml)"
+    "variantLabel": "1.9% EC (400ml)",
+    "labelImage": "/images/ProductLable/Emamectin 1Ltr Label_page-0001.jpg"
   },
   {
     "id": 28,
@@ -389,7 +409,8 @@ export const productsData = [
     "fullDescription": "Emamectin 5% WDG imported in water-dispersible granule format for convenient application.",
     "groupKey": "emamectin-benzoate-series",
     "groupTitle": "Emamectin Benzoate Series",
-    "variantLabel": "5% WDG (150gm)"
+    "variantLabel": "5% WDG (150gm)",
+    "labelImage": "/images/ProductLable/Emamection Benzoaite 5WDG 150gm Label_page-0001.jpg"
   },
   {
     "id": 29,
@@ -403,7 +424,8 @@ export const productsData = [
     "fullDescription": "Emamectin 5% WDG in 75gm pack is ideal for small to medium field applications.",
     "groupKey": "emamectin-benzoate-series",
     "groupTitle": "Emamectin Benzoate Series",
-    "variantLabel": "5% WDG (75gm)"
+    "variantLabel": "5% WDG (75gm)",
+    "labelImage": "/images/ProductLable/Emamection Benzoaite 5WDG 150gm Label_page-0001.jpg"
   },
   {
     "id": 30,
@@ -417,7 +439,8 @@ export const productsData = [
     "fullDescription": "Fentrol (Fipronil) 5% SC is a premium suspension concentrate for broad-spectrum pest control.",
     "groupKey": "fentrol-5-sc",
     "groupTitle": "Fentrol (Fipronil) 5% SC",
-    "variantLabel": "480 ml"
+    "variantLabel": "480 ml",
+    "labelImage": "/images/ProductLable/Fentrol (Fipronil) 480ml Label_page-0001.jpg"
   },
   {
     "id": 31,
@@ -431,7 +454,8 @@ export const productsData = [
     "fullDescription": "Fentrol (Fipronil) 5% SC in 1L pack provides economical option for extensive applications.",
     "groupKey": "fentrol-5-sc",
     "groupTitle": "Fentrol (Fipronil) 5% SC",
-    "variantLabel": "1000 ml"
+    "variantLabel": "1000 ml",
+    "labelImage": "/images/ProductLable/Fentrol (Fipronil) 480ml Label_page-0001.jpg"
   },
   {
     "id": 32,
@@ -445,7 +469,8 @@ export const productsData = [
     "fullDescription": "Freedom 11.6% SC imported containing Chlorantraniliprole and Emamectin offers dual-action pest control.",
     "groupKey": "freedom-11-6-sc",
     "groupTitle": "Freedom 11.6% SC (CTPR+EMA)",
-    "variantLabel": "100 ml"
+    "variantLabel": "100 ml",
+    "labelImage": "/images/ProductLable/Freedom (Sudao) 100ml Label_page-0001.jpg"
   },
   {
     "id": 33,
@@ -459,7 +484,8 @@ export const productsData = [
     "fullDescription": "Freedom 11.6% SC in 150ml pack provides convenient size for field applications.",
     "groupKey": "freedom-11-6-sc",
     "groupTitle": "Freedom 11.6% SC (CTPR+EMA)",
-    "variantLabel": "150 ml"
+    "variantLabel": "150 ml",
+    "labelImage": "/images/ProductLable/Freedom (Sudao) 100ml Label_page-0001.jpg"
   },
   {
     "id": 34,
@@ -501,7 +527,8 @@ export const productsData = [
     "fullDescription": "Lamdacyhalothrin 2.5% EC is a synthetic pyrethroid for effective broad-spectrum pest control.",
     "groupKey": "lamdacyhalothrin-2-5-ec",
     "groupTitle": "Lamdacyhalothrin 2.5% EC",
-    "variantLabel": "1000 ml"
+    "variantLabel": "1000 ml",
+    "labelImage": "/images/ProductLable/Lambda 1000ml Label 2026  ٖ_page-0001.jpg"
   },
   {
     "id": 37,
@@ -515,7 +542,8 @@ export const productsData = [
     "fullDescription": "Lamdacyhalothrin 2.5% EC in 500ml pack provides practical size for field applications.",
     "groupKey": "lamdacyhalothrin-2-5-ec",
     "groupTitle": "Lamdacyhalothrin 2.5% EC",
-    "variantLabel": "500 ml"
+    "variantLabel": "500 ml",
+    "labelImage": "/images/ProductLable/Lambda 1000ml Label 2026  ٖ_page-0001.jpg"
   },
   {
     "id": 38,
@@ -529,7 +557,8 @@ export const productsData = [
     "fullDescription": "Lamdacyhalothrin 2.5% EC in 250ml pack is ideal for small field applications.",
     "groupKey": "lamdacyhalothrin-2-5-ec",
     "groupTitle": "Lamdacyhalothrin 2.5% EC",
-    "variantLabel": "250 ml"
+    "variantLabel": "250 ml",
+    "labelImage": "/images/ProductLable/Lambda 1000ml Label 2026  ٖ_page-0001.jpg"
   },
   {
     "id": 39,
@@ -543,7 +572,8 @@ export const productsData = [
     "fullDescription": "Lejing 60% WDG imported offers premium water-dispersible granule format for pest control.",
     "groupKey": "lejing-60-wdg",
     "groupTitle": "Lejing 60% WDG",
-    "variantLabel": "100 gm"
+    "variantLabel": "100 gm",
+    "labelImage": "/images/ProductLable/Lijing 100gm Label (HDP 250ml)_page-0001.jpg"
   },
   {
     "id": 40,
@@ -557,7 +587,8 @@ export const productsData = [
     "fullDescription": "Leufenuron 5% EC is a chitin synthesis inhibitor effective against lepidopteran pests.",
     "groupKey": "leufenuron-5-ec",
     "groupTitle": "Lufenuron 5% EC",
-    "variantLabel": "400 ml"
+    "variantLabel": "400 ml",
+    "labelImage": "/images/ProductLable/Lufenuron 400ml Label_page-0001.jpg"
   },
   {
     "id": 41,
@@ -571,7 +602,8 @@ export const productsData = [
     "fullDescription": "Manyu 27% FS imported is specifically designed for seed treatment to protect against soil and seed-borne pests.",
     "groupKey": "manyu-27-fs",
     "groupTitle": "Manyu 27% FS (Seed Treatment)",
-    "variantLabel": "150 ml"
+    "variantLabel": "150 ml",
+    "labelImage": "/images/ProductLable/Manyu 27FS 150ml label_page-0001.jpg"
   },
   {
     "id": 42,
@@ -585,7 +617,8 @@ export const productsData = [
     "fullDescription": "Niko 20% SG imported is a soluble granule formulation for convenient field application.",
     "groupKey": "niko-20-sg",
     "groupTitle": "Niko 20% SG",
-    "variantLabel": "100 gm"
+    "variantLabel": "100 gm",
+    "labelImage": "/images/ProductLable/Niko (Dinotefuran) 100gm Digital Printed_page-0001.jpg"
   },
   {
     "id": 43,
@@ -599,7 +632,8 @@ export const productsData = [
     "fullDescription": "Pyriprixifin 10.8% EC is a pyrethroid-based concentrate for effective pest control.",
     "groupKey": "pyriprixifin-10-8-ec",
     "groupTitle": "Pyriproxyfen 10.8% EC",
-    "variantLabel": "500 ml"
+    "variantLabel": "500 ml",
+    "labelImage": "/images/ProductLable/Pyriproxyfen 500ml Label_page-0001.jpg"
   },
   {
     "id": 44,
@@ -613,7 +647,8 @@ export const productsData = [
     "fullDescription": "Sadi 25% ZC imported contains Lambda-cyhalothrin and Clothianidin for broad-spectrum pest control.",
     "groupKey": "sadi-25-zc",
     "groupTitle": "Sadi 25% ZC (Lambda+Clothianidin)",
-    "variantLabel": "200 ml"
+    "variantLabel": "200 ml",
+    "labelImage": "/images/ProductLable/Sadi 25ZC (Lambdacyhalothrin + Clothianidin) 25ZC 200ml Label_page-0001.jpg"
   },
   {
     "id": 45,
@@ -627,7 +662,8 @@ export const productsData = [
     "fullDescription": "Sega Pest Clear 3% SC is a suspension concentrate for effective pest management.",
     "groupKey": "sega-pest-clear-3-sc",
     "groupTitle": "Sega Pest Clear 3% SC",
-    "variantLabel": "400 ml"
+    "variantLabel": "400 ml",
+    "labelImage": "/images/ProductLable/Sega Pest Clear 1000ml Label_page-0001.jpg"
   },
   {
     "id": 46,
@@ -641,7 +677,8 @@ export const productsData = [
     "fullDescription": "Sega Pest Clear 3% SC in 1L pack is economical for larger field applications.",
     "groupKey": "sega-pest-clear-3-sc",
     "groupTitle": "Sega Pest Clear 3% SC",
-    "variantLabel": "1000 ml"
+    "variantLabel": "1000 ml",
+    "labelImage": "/images/ProductLable/Sega Pest Clear 1000ml Label_page-0001.jpg"
   },
   {
     "id": 47,
@@ -655,7 +692,8 @@ export const productsData = [
     "fullDescription": "Shiding 21% EC is a premium emulsifiable concentrate for comprehensive pest control.",
     "groupKey": "shiding-21-ec",
     "groupTitle": "Shiding 21% EC",
-    "variantLabel": "800 ml"
+    "variantLabel": "800 ml",
+    "labelImage": "/images/ProductLable/Shiding 800ml Label 2026 _page-0001.jpg"
   },
   {
     "id": 48,
@@ -683,7 +721,8 @@ export const productsData = [
     "fullDescription": "Togo 30% SC imported is a suspension concentrate for effective pest management.",
     "groupKey": "togo-30-sc",
     "groupTitle": "Togo 30% SC",
-    "variantLabel": "50 ml"
+    "variantLabel": "50 ml",
+    "labelImage": "/images/ProductLable/Togo 30SC 50ml Label 2026_page-0001.jpg"
   },
   {
     "id": 50,
@@ -1159,7 +1198,8 @@ export const productsData = [
     "fullDescription": "Gengwei 55% SC imported is an effective herbicide for weed control.",
     "groupKey": "gengwei-55-sc",
     "groupTitle": "Gengwei 55% SC",
-    "variantLabel": "1000 ml (Imported)"
+    "variantLabel": "1000 ml (Imported)",
+    "labelImage": "/images/ProductLable/Gengwei 1Ltr Label_page-0001.jpg"
   },
   {
     "id": 84,
@@ -1173,7 +1213,8 @@ export const productsData = [
     "fullDescription": "Gengwei 55% SC imported in 500ml pack is practical for field applications.",
     "groupKey": "gengwei-55-sc",
     "groupTitle": "Gengwei 55% SC",
-    "variantLabel": "500 ml"
+    "variantLabel": "500 ml",
+    "labelImage": "/images/ProductLable/Gengwei 1Ltr Label_page-0001.jpg"
   },
   {
     "id": 85,
@@ -1187,7 +1228,8 @@ export const productsData = [
     "fullDescription": "Gengwei 55% SC is an effective herbicide for comprehensive weed control.",
     "groupKey": "gengwei-55-sc",
     "groupTitle": "Gengwei 55% SC",
-    "variantLabel": "1000 ml"
+    "variantLabel": "1000 ml",
+    "labelImage": "/images/ProductLable/Gengwei 1Ltr Label_page-0001.jpg"
   },
   {
     "id": 86,
@@ -1229,7 +1271,8 @@ export const productsData = [
     "fullDescription": "Paraquat 20% SL imported is a non-selective contact herbicide for rapid weed control.",
     "groupKey": "paraquat-20-sl",
     "groupTitle": "Paraquat 20% SL",
-    "variantLabel": "1000 ml"
+    "variantLabel": "1000 ml",
+    "labelImage": "/images/ProductLable/Paraquat 1 Ltr Label 2026_page-0001.jpg"
   },
   {
     "id": 89,
@@ -1271,7 +1314,8 @@ export const productsData = [
     "fullDescription": "Pendi+Acetachlor 42% EC combines Pendimethalin and Acetachlor for broad weed spectrum control.",
     "groupKey": "pendi-acetachlor-42-ec",
     "groupTitle": "Pendi+Acetachlor 42% EC",
-    "variantLabel": "800 ml"
+    "variantLabel": "800 ml",
+    "labelImage": "/images/ProductLable/Pendi + Aceto 800ml Label_page-0001.jpg"
   },
   {
     "id": 92,
@@ -1285,7 +1329,8 @@ export const productsData = [
     "fullDescription": "Pendimethalin 33% EC is a selective pre-emergence herbicide for various crops.",
     "groupKey": "pendimethalin-33-ec",
     "groupTitle": "Pendimethalin 33% EC",
-    "variantLabel": "1000 ml"
+    "variantLabel": "1000 ml",
+    "labelImage": "/images/ProductLable/Pendi + Aceto 800ml Label_page-0001.jpg"
   },
   {
     "id": 93,
@@ -1410,7 +1455,7 @@ export const productsData = [
     "slug": "joba-biostimulant-500",
     "packSize": "500 ml",
     "price": 690,
-    "image": "/images/job-75-sp-300.jpeg",
+    "image": "/images/Joba Bio stimulate.jpeg",
     "description": "Biostimulant growth promoter.",
     "fullDescription": "Joba Biostimulant enhances plant vigor and stress tolerance for better yields.",
     "groupKey": "joba-series",
@@ -1425,7 +1470,7 @@ export const productsData = [
     "slug": "joba-biostimulant-1000",
     "packSize": "1000 ml",
     "price": 1200,
-    "image": "/images/Jobaplus.jpeg",
+    "image": "/images/Joba Bio stimulate.jpeg",
     "description": "Medium pack biostimulant.",
     "fullDescription": "Joba Biostimulant in 1L pack provides economical option for larger applications.",
     "groupKey": "joba-series",
@@ -1440,7 +1485,7 @@ export const productsData = [
     "slug": "joba-biostimulant-3ltr",
     "packSize": "3 ltr",
     "price": 3150,
-    "image": "/images/Jobaplus.jpeg",
+    "image": "/images/Joba Bio stimulate.jpeg",
     "description": "Large pack biostimulant.",
     "fullDescription": "Joba Biostimulant in 3L pack is economical for extensive field coverage.",
     "groupKey": "joba-series",
@@ -1880,6 +1925,7 @@ export const productsData = [
     "fullDescription": "Lambda 25% WP in convenient sachet form is ideal for household pest management.",
     "groupKey": "lambda-25-wp-sachet",
     "groupTitle": "Lambda 25% WP Sachet",
-    "variantLabel": "62.5 gm"
+    "variantLabel": "62.5 gm",
+    "labelImage": "/images/ProductLable/Lambda 1000ml Label 2026  ٖ_page-0001.jpg"
   }
 ];
